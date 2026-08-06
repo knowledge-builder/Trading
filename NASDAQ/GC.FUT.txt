@@ -1,0 +1,535 @@
+# Understanding `GC.FUT` in Databento
+
+## Overview
+
+When first learning futures market data, one of the biggest conceptual differences from stocks and forex is that **there is no single instrument called "Gold Futures."**
+
+Instead, a futures market consists of **many contracts**, each with its own expiration date.
+
+Understanding this distinction is essential because it changes how market data should be requested, interpreted, and analyzed.
+
+---
+
+# The Original Request
+
+```python
+data = client.timeseries.get_range(
+    dataset="GLBX.MDP3",
+    symbols="GC.FUT",
+    schema="ohlcv-1m",
+    start="2026-01-01",
+    end="2026-01-02",
+)
+
+df = data.to_df()
+```
+
+This request produced the following errors.
+
+---
+
+# Error 1
+
+```text
+No data found for the request you submitted.
+```
+
+### Meaning
+
+Databento searched for:
+
+```text
+GC.FUT
+```
+
+as though it were an actual tradable instrument but found no matching contract.
+
+---
+
+# Error 2
+
+```text
+The symbols GC.FUT match the parent format (ROOT.FUT/OPT/SPOT);
+use stype_in=parent.
+```
+
+This error is much more informative.
+
+It tells us:
+
+• `GC.FUT` is recognized.
+• It is **not** a tradable futures contract.
+• It is a **parent symbol**.
+• Databento requires the symbol type to be specified explicitly.
+
+---
+
+# Understanding Futures Contracts
+
+Unlike stocks or forex, futures are not represented by a single instrument.
+
+## Stocks
+
+	Example:
+
+	```text
+	Apple
+		│
+		▼
+	AAPL
+	```
+
+	There is only one Apple stock.
+
+	---
+
+	## Forex
+
+	Example:
+
+	```text
+	Euro / US Dollar
+			│
+			▼
+	EURUSD
+	```
+
+There is only one spot currency pair.
+
+---
+
+## Futures
+
+Gold Futures consist of multiple contracts.
+
+
+	Gold Futures
+
+	├── February Contract
+	├── April Contract
+	├── June Contract
+	├── August Contract
+	├── December Contract
+	└── ...
+
+
+	Each contract has its own:
+
+	• Expiration date.
+	• Liquidity.
+	• Price.
+	• Trading activity.
+	• Symbol.
+
+Each contract is an independent tradable instrument.
+
+---
+
+# Root Symbol
+
+The root symbol identifies the futures product.
+
+Example:
+
+```text
+GC
+```
+
+Meaning:
+
+> Gold Futures
+
+The root symbol identifies the product, but it does **not** specify a particular expiration month.
+
+Think of it as the product category.
+
+---
+
+# Parent Symbol
+
+Databento extends the root symbol using:
+
+```text
+GC.FUT
+```
+
+Meaning:
+
+> The Gold Futures product family.
+
+It represents **all** Gold futures contracts collectively.
+
+It is **not** a tradable instrument.
+
+Think of it like:
+
+```text
+Toyota
+```
+
+versus
+
+```text
+2026 Toyota Corolla
+```
+
+The first represents an entire product family.
+
+The second represents one specific product.
+
+---
+
+# Why the Original Request Failed
+
+The original request was:
+
+```python
+symbols="GC.FUT"
+```
+
+Without specifying the symbol type, Databento assumed:
+
+> "`GC.FUT` is an actual instrument."
+
+No instrument exists with that exact name.
+
+However, Databento recognized the naming convention and responded:
+
+```text
+GC.FUT matches the parent symbol format.
+
+Please specify:
+
+stype_in="parent"
+```
+
+---
+
+# What is `stype_in`?
+
+`stype_in` tells Databento how the supplied symbol should be interpreted.
+
+Conceptually:
+
+```text
+How should this symbol be interpreted?
+```
+
+Examples include:
+
+• Raw symbol.
+• Instrument ID.
+• Parent symbol.
+• Continuous symbol.
+• Other supported symbol types.
+
+Without specifying `stype_in`, Databento assumes the symbol refers to an actual instrument.
+
+That assumption is incorrect for `GC.FUT`.
+
+---
+
+# Correct Request
+
+
+	data = client.timeseries.get_range(
+		dataset="GLBX.MDP3",
+		symbols="GC.FUT",
+		stype_in="parent",
+		schema="ohlcv-1m",
+		start="2026-01-01",
+		end="2026-01-02",
+	)
+
+	df = data.to_df()
+
+
+	Now Databento understands:
+
+
+	GC.FUT
+
+	↓
+
+	Parent Symbol
+
+	↓
+
+	Gold Futures Product Family
+
+
+instead of attempting to locate an instrument literally named `GC.FUT`.
+
+---
+
+# What Happens Internally?
+
+When Databento receives:
+
+```python
+symbols="GC.FUT"
+stype_in="parent"
+```
+
+it interprets the request as:
+
+```text
+Return every instrument belonging to the Gold Futures product family.
+```
+
+Conceptually:
+
+
+		GC.FUT
+
+		↓
+
+		Gold Futures Product Family
+
+		↓
+
+		├── GCF6
+		├── GCG6
+		├── GCH6
+		├── GCJ6
+		├── GCK6
+		├── GCM6
+		├── GCN6
+		├── GCQ6
+		├── GCU6
+		├── GCV6
+		├── GCX6
+		├── GCZ6
+		├── GCG6-GCJ6
+		├── GCG6-GCH6
+		├── GCG6-GCM6
+		└── ...
+
+
+The returned dataset may include:
+
+• Individual futures contracts.
+• Calendar spreads.
+• Other related instruments belonging to the product family.
+
+Databento **does not automatically choose the front-month contract** when requesting a parent symbol.
+
+Instead, it exposes the exchange structure and allows the researcher to decide which instruments should be analyzed.
+
+---
+
+# Folder Analogy
+
+Imagine a directory:
+
+
+		Gold Futures/
+
+		├── GCF6
+		├── GCG6
+		├── GCH6
+		├── GCJ6
+		├── GCK6
+		├── GCM6
+		├── GCN6
+		├── GCQ6
+		├── GCU6
+		├── GCV6
+		├── GCX6
+		├── GCZ6
+		├── GCG6-GCJ6
+		├── GCG6-GCH6
+		└── ...
+
+
+Requesting:
+
+```text
+GC.FUT
+```
+
+is equivalent to saying:
+
+> "Show me everything inside the Gold Futures folder."
+
+You can then decide which files (contracts) are relevant for your research.
+
+---
+
+# Product Family Structure
+
+A more accurate mental model is:
+
+
+		Exchange (CME)
+				│
+				▼
+		Product
+		(Gold Futures)
+				│
+				▼
+		Contract Family
+		(GC.FUT)
+				│
+				├── Outright Contracts
+				│     ├── GCF6
+				│     ├── GCG6
+				│     ├── GCH6
+				│     ├── GCJ6
+				│     ├── ...
+				│
+				└── Calendar Spreads
+					  ├── GCG6-GCJ6
+					  ├── GCG6-GCH6
+					  └── ...
+
+This hierarchy closely reflects how the CME organizes futures instruments.
+
+---
+
+# Symbol Hierarchy
+
+
+		Gold Futures
+				│
+				▼
+		Root Symbol
+				│
+				▼
+		GC
+				│
+				▼
+		Parent Symbol
+				│
+				▼
+		GC.FUT
+				│
+				├── Individual Futures Contracts
+				│
+				└── Calendar Spreads
+
+
+---
+
+# Key Terminology
+
+## Root Symbol
+
+Example:
+
+```text
+GC
+```
+
+Meaning:
+
+> Gold Futures product.
+
+---
+
+## Parent Symbol
+
+Example:
+
+```text
+GC.FUT
+```
+
+Meaning:
+
+> Gold Futures product family.
+
+Characteristics:
+
+• Represents multiple instruments.
+• Not directly tradable.
+
+---
+
+## Specific Contract
+
+Examples:
+
+```text
+GCG6
+
+GCJ6
+
+GCQ6
+```
+
+Characteristics:
+
+• One expiration month.
+• One tradable instrument.
+• Independent price series.
+
+This is what traders actually buy and sell.
+
+---
+
+## Calendar Spread
+
+Example:
+
+```text
+GCG6-GCJ6
+```
+
+Meaning:
+
+```text
+Price(GCG6)
+
+−
+
+Price(GCJ6)
+```
+
+Characteristics:
+
+• Independent tradable instrument.
+• Represents the price difference between two contracts.
+• Frequently traded by professional spread traders.
+
+---
+
+## Continuous Contract
+
+A synthetic instrument created by automatically rolling from one futures contract to the next.
+
+Useful for:
+
+• Historical analysis.
+• Backtesting.
+• Indicator development.
+• Long-term charting.
+
+Continuous contracts are **not** actual tradable instruments.
+
+---
+
+# Summary
+
+| Concept             | Example                | Description                                                              |
+|---------------------|------------------------|--------------------------------------------------------------------------|
+| Root Symbol         | `GC`                   | Identifies the Gold Futures product.                                     |
+| Parent Symbol       | `GC.FUT`               | Identifies the Gold Futures product family. Not tradable.                |
+| Specific Contract   | `GCG6`, `GCJ6`, `GCQ6` | Actual tradable futures contracts with defined expiration months.        |
+| Calendar Spread     | `GCG6-GCJ6`            | Tradable spread representing the price difference between two contracts. |
+| Continuous Contract | Provider-specific      | Synthetic historical series created by rolling between contracts.        |  
+
+---
+
+# Key Takeaways
+
+• Futures markets consist of many contracts rather than a single instrument.
+• `GC` is the root symbol representing the Gold Futures product.
+• `GC.FUT` is Databento's parent symbol representing the entire Gold Futures product family.
+• Parent symbols are **not** tradable instruments.
+• Requesting a parent symbol with `stype_in="parent"` returns the family of instruments associated with that product rather than automatically selecting a single contract.
+• Individual futures contracts (e.g., `GCG6`, `GCJ6`) are the actual tradable instruments.
+• Calendar spreads are separate tradable instruments whose prices represent the difference between two futures contracts.
+• Trading volume can be used to identify the active (front-month) contract for a given period.
+• Continuous contracts are synthetic series created by rolling between contracts and are primarily used for historical analysis and backtesting.
+• For quantitative research, it is often best to begin with the active contract before progressing to continuous contract construction.

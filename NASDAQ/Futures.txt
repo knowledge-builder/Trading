@@ -1,0 +1,391 @@
+# Understanding Futures: What They Are and How They Differ from Forex and Stocks
+
+====================================
+Objective
+====================================
+
+Understand:
+
+* What a futures contract is
+* What it means for a futures contract to "track" an asset
+* How futures differ from stocks and forex
+* Why traders trade futures instead of the underlying index
+
+====================================
+Financial Markets Overview
+====================================
+
+The financial world consists of many different markets.
+
+
+	Financial Markets
+	│
+	├── Stocks
+	├── Bonds
+	├── Forex
+	├── Commodities
+	├── Futures
+	├── Options
+	├── ETFs
+	└── Crypto
+
+
+Each market represents a different type of asset or financial instrument.
+
+====================================
+Stocks
+====================================
+
+A stock represents ownership in a company.
+
+**Examples**
+
+* Apple (AAPL)
+* Microsoft (MSFT)
+* NVIDIA (NVDA)
+
+Buying one share of Apple means:
+
+> You own a very small portion of Apple Inc.
+
+The stock price depends on:
+
+* Company performance
+* Earnings
+* News
+* Economic conditions
+* Investor expectations
+
+====================================
+Forex
+====================================
+
+Forex stands for **Foreign Exchange**.
+
+Instead of buying companies, you trade currencies.
+
+**Examples**
+
+* EUR/USD
+* GBP/USD
+* USD/JPY
+
+Buying EUR/USD means:
+
+> You believe the Euro will become stronger relative to the US Dollar.
+
+There is no company involved.
+
+You are trading:
+
+```text
+Exchange Rate
+```
+
+====================================
+The NASDAQ-100 Index
+====================================
+
+The NASDAQ-100 is:
+
+* Not a company
+* Not a stock
+* Not something you can own
+
+It is a mathematical calculation representing the combined performance of the 100 largest non-financial companies listed on the Nasdaq exchange.
+
+**Examples of Companies**
+
+* Apple
+* Microsoft
+* NVIDIA
+* Amazon
+* Meta
+* ...
+
+These companies collectively determine the value of the index.
+
+**Example**
+
+```text
+NASDAQ-100 Index
+
+29,000
+```
+
+The number **29,000** is simply the calculated value of the index.
+
+Think of it like:
+
+* Average temperature
+* Average salary
+* Average exam score
+
+These are measurements—not assets you can buy.
+
+====================================
+Why Can't You Buy the Index?
+====================================
+
+The index is only a number.
+
+You cannot purchase:
+
+```text
+29,000
+```
+
+Just like you cannot buy:
+
+```text
+Average Temperature
+```
+
+Since the index itself cannot be traded directly, financial markets created another instrument.
+
+====================================
+Futures Contracts
+====================================
+
+A futures contract is a tradable financial contract whose value is based on another asset.
+
+
+	Underlying Asset
+
+	      ↓
+
+	NASDAQ-100 Index
+
+	      ↓
+
+	NQ Futures Contract
+
+
+The futures contract allows traders to:
+
+* Speculate on price movements
+* Hedge against market risk
+
+====================================
+What Does "Tracking" Mean?
+====================================
+
+Tracking simply means:
+
+> The price of the futures contract follows the price movement of the underlying asset.
+
+**Example**
+
+
+	NASDAQ Index
+
+	29,000
+
+	↓
+
+	29,100
+
+
+The NQ futures contract typically moves similarly:
+
+
+	NQ Futures
+
+	29,000
+
+	↓
+
+	29,100
+
+
+The contract is said to **track** the index.
+
+====================================
+Analogy: A Shadow
+====================================
+
+Imagine:
+
+
+	Person
+
+	↓
+
+	Shadow
+
+
+When the person moves:
+
+
+	Person →
+
+	Shadow →
+
+
+	Likewise:
+
+
+	NASDAQ Index →
+
+	NQ Futures →
+
+
+The futures contract follows (or **tracks**) the movement of the underlying index.
+
+====================================
+Why Were Futures Originally Created?
+====================================
+
+Imagine a farmer harvesting wheat.
+
+The farmer wants to know in advance what price will be received.
+
+A buyer wants to know what price will be paid.
+
+Both agree today:
+
+```text
+"I will sell
+
+100 tons
+
+for $500
+
+in six months."
+```
+
+That agreement is a futures contract.
+
+Originally, futures helped businesses reduce uncertainty.
+
+Today, traders often buy and sell these contracts before they expire.
+
+====================================
+Modern Futures
+====================================
+
+Modern futures exist for many different assets.
+
+**Examples**
+
+* Oil Futures
+* Gold Futures
+* Corn Futures
+* Bitcoin Futures
+* NASDAQ Futures
+* S&P 500 Futures
+
+====================================
+Nasdaq Futures (NQ)
+====================================
+
+NQ stands for:
+
+```text
+NASDAQ-100 E-mini Futures
+```
+
+NQ is **not**:
+
+* A stock
+* The Nasdaq-100 Index itself
+* An ETF
+
+It is a futures contract whose value follows the Nasdaq-100 Index.
+
+====================================
+Relationship Between Companies, Index, and Futures
+====================================
+
+
+	Apple
+
+	Microsoft
+
+	NVIDIA
+
+		Amazon
+
+				│
+				▼
+
+		NASDAQ-100 Index
+		(Mathematical Calculation)
+
+				│
+				▼
+
+		NQ Futures
+		(Tradable Contract)
+
+				│
+				▼
+
+		Trader
+
+
+The relationship is:
+
+* Companies determine the index.
+* The futures contract tracks the index.
+* The trader buys and sells the futures contract.
+
+====================================
+Forex vs Futures
+====================================
+
+### Forex
+
+
+	EUR/USD
+
+	↓
+
+	Actual Currency Exchange Rate
+
+
+You trade the exchange rate directly.
+
+### Futures
+
+
+	Companies
+
+	↓
+
+	Index
+
+	↓
+
+	Tradable Contract
+
+	↓
+
+	Trader
+
+
+You trade the contract, not the underlying index.
+
+====================================
+Comparison
+====================================
+
+| Feature              | Stocks            | Forex                  | Futures                                |
+|----------------------|-------------------|------------------------|----------------------------------------|
+| What is traded?      | Company ownership | Currency exchange rate | Contract based on an underlying asset  |
+| Example              | Apple             | EUR/USD                | NQ, ES, Gold Futures                   |
+| Centralized exchange | Yes               | No (OTC market)        | Yes                                    |
+| Underlying asset     | Company           | Currency pair          | Index, commodity, bond, currency, etc. |
+| Can use leverage     | Sometimes         | Yes                    | Yes                                    |
+
+====================================
+Key Takeaways
+====================================
+
+* A stock is ownership in a company.
+* Forex is the exchange rate between two currencies.
+* An index is a mathematical measurement and cannot be bought directly.
+* A futures contract is a tradable agreement whose value depends on an underlying asset.
+* "Tracking" means the futures contract's price generally follows the movement of its underlying asset.
+* NQ is a futures contract that tracks the Nasdaq-100 Index.
+* Traders buy and sell the NQ contract rather than the index itself.

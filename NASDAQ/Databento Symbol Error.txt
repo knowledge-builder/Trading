@@ -1,0 +1,105 @@
+========================================
+Understanding the Databento Symbol Error
+========================================
+
+The API connection is working correctly.
+
+The problem is **not** authentication or GLBX.MDP3 access.
+
+The issue is the **symbol format**.
+
+====================================
+Error 1
+====================================
+
+```text
+No data found for the request you submitted.
+```
+
+Meaning:
+
+Databento searched for:
+
+```text
+GC.FUT
+```
+
+but did not find a matching instrument for the request parameters.
+
+====================================
+Error 2 (Important)
+====================================
+
+```text
+The symbols GC.FUT match the parent format (ROOT.FUT/OPT/SPOT);
+use stype_in=parent.
+```
+
+This tells us:
+
+• `GC.FUT` is a **parent symbol**.
+• It is **not** an actual tradable futures contract.
+• Databento recognizes the symbol format but requires it to be requested as a parent symbol.
+
+====================================
+Understanding Futures Symbols
+====================================
+
+Unlike stocks:
+
+Stock:
+
+```text
+AAPL
+```
+
+A stock represents one company with one ticker.
+
+Futures work differently because each contract has an expiration month.
+
+Example:
+
+Root Symbol:
+
+```text
+GC
+```
+
+Actual tradable contracts:
+
+```text
+GCQ6
+
+GCZ6
+
+GCV6
+```
+
+Where:
+
+• `GC` = Gold Futures.
+• `Q` = August expiration.
+• `Z` = December expiration.
+• `6` = Year 2026.
+
+====================================
+Your Example
+====================================
+
+Your previous screenshots showed:
+
+```text
+GCQ2026
+```
+
+This represents:
+
+• Gold Futures.
+• August 2026 contract.
+
+Unlike stocks, futures are identified by both:
+
+• The root symbol.
+• The expiration month and year.
+
+Each expiration month is a separate tradable contract.

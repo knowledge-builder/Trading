@@ -1,0 +1,857 @@
+# Trading Strategy Documentation
+# Key Level Reaction Trading System (KLRTS)
+# Reverse-Engineered from Socrates Trading Methodology
+
+====================================
+1. Overview
+====================================
+
+## Strategy Name
+
+Key Level Reaction Trading System (KLRTS)
+
+## Core Idea
+
+The strategy is based on the principle:
+
+"Price tends to react when it reaches important historical reference areas because other market participants are also observing those areas."
+
+The trader does not attempt to predict every market movement.
+
+Instead, the strategy focuses on:
+
+	• Identifying important price locations.
+	• Waiting for price to reach those locations.
+	• Observing market behavior at those locations.
+	• Entering only when reaction confirms the trade idea.
+	• Managing risk with predefined limits.
+
+
+====================================
+2. Trading Philosophy
+====================================
+
+## Market View
+
+The market is viewed as:
+
+A continuous auction between buyers and sellers.
+
+Price movement represents:
+
+	• Supply and demand imbalance.
+	• Institutional activity.
+	• Trader positioning.
+	• Market sentiment.
+
+Historical price areas matter because traders remember previous interactions.
+
+
+## Core Principle
+
+The strategy follows:
+
+	Location
+
+	  ↓
+
+	Reaction
+
+	  ↓
+
+	Confirmation
+
+	  ↓
+
+	Execution
+
+
+	Not:
+
+	Prediction
+
+	  ↓
+
+	Entry
+
+	  ↓
+
+	Hope
+
+
+====================================
+3. Strategy Components
+====================================
+
+The system consists of five major components:
+
+• Market Context Identification
+
+	      ↓
+
+	• Key Level Mapping
+
+	      ↓
+
+	• Price Reaction Analysis
+
+	      ↓
+
+	• Trade Execution
+
+	      ↓
+
+	• Risk Management
+
+
+====================================
+4. Market Context Identification
+====================================
+
+Before entering a trade, the trader creates a map of important price levels.
+
+The analysis starts from higher timeframes and moves downward.
+
+
+====================================
+4.1 Multi-Timeframe Analysis
+====================================
+
+Analysis hierarchy:
+
+	Weekly
+
+	  ↓
+
+	Daily
+
+	  ↓
+
+	4 Hour
+
+	  ↓
+
+	1 Hour
+
+	  ↓
+
+	5 Minute
+
+
+====================================
+Weekly Timeframe
+====================================
+
+Purpose:
+
+• Determine large market context.
+
+Questions:
+
+• Where is price relative to major historical areas?
+• Are we near significant highs or lows?
+
+
+====================================
+Daily Timeframe
+====================================
+
+Purpose:
+
+• Identify daily reference points.
+
+Important levels:
+
+• Daily Open.
+• Previous Day High.
+• Previous Day Low.
+
+
+====================================
+4 Hour Timeframe
+====================================
+
+Purpose:
+
+• Identify intermediate structure.
+
+Important levels:
+
+• 4H Open.
+• Previous 4H High.
+• Previous 4H Low.
+
+
+====================================
+1 Hour Timeframe
+====================================
+
+Purpose:
+
+• Setup identification.
+
+The trader mentioned taking most trades from this timeframe.
+
+
+====================================
+5 Minute Timeframe
+====================================
+
+Purpose:
+
+• Execution timing.
+
+Used for:
+
+• Entries.
+• Exits.
+• Short-term confirmation.
+
+
+====================================
+5. Key Level Identification
+====================================
+
+The strategy does not use random indicators.
+
+The focus is on historical price references.
+
+
+====================================
+5.1 Session Reference Levels
+====================================
+
+Asia Session:
+
+• Asia Open.
+• Asia High.
+• Asia Low.
+
+
+London Session:
+
+• London Open.
+• London High.
+• London Low.
+
+
+New York Session:
+
+• NY Open.
+• NY High.
+• NY Low.
+
+
+====================================
+5.2 Higher Timeframe Reference Levels
+====================================
+
+Daily:
+
+• Daily Open.
+• Previous Day High.
+• Previous Day Low.
+
+
+4 Hour:
+
+• 4H Open.
+• Previous 4H High.
+• Previous 4H Low.
+
+
+Additional:
+
+• Weekly Open.
+• Quarterly Open.
+
+
+====================================
+6. Building the Market Map
+====================================
+
+The trader creates a visual map of where price currently exists.
+
+Example:
+
+Higher Price
+
+
+	4100
+	──── Previous Day High
+
+
+	4095
+	──── Previous 4H High
+
+
+	4081
+	──── 4H Open
+
+
+	4073
+	──── NY Open
+
+
+	4064
+	──── Asia Low
+
+
+	4050
+	──── Previous 4H Low
+
+
+	4041
+	──── Potential Entry Zone
+
+
+	4034
+	──── NY/London Low
+
+
+	4025
+	──── Quarterly Open
+
+
+	Lower Price
+
+
+Key question:
+
+"Where are areas where other traders may react?"
+
+
+====================================
+7. Entry Logic
+====================================
+
+The strategy does not enter immediately when price reaches a level.
+
+
+Incorrect:
+
+	Price touches level
+
+	↓
+
+	Immediately buy/sell
+
+
+	Correct:
+
+	Price reaches key level
+
+	↓
+
+	Observe market behavior
+
+	↓
+
+	Determine if reaction occurs
+
+	↓
+
+	Confirm with volume/context
+
+	↓
+
+	Execute trade
+
+
+====================================
+8. Reaction Confirmation
+====================================
+
+A key level becomes a trade opportunity only when price behavior confirms it.
+
+
+Possible confirmations:
+
+
+	• Rejection
+
+	Example:
+
+	Price moves down
+
+	↓
+
+	Touches support
+
+	↓
+
+	Buyers reject lower prices
+
+	↓
+
+	Price closes higher
+
+
+	• Failure to Continue
+
+Example:
+
+	Selling pressure
+
+	↓
+
+	Momentum decreases
+
+	↓
+
+	Price cannot break lower
+
+
+	• Market Structure Shift
+
+	Example:
+
+	Lower lows
+
+	↓
+
+	Failure to make new low
+
+	↓
+
+	Break above previous short-term high
+
+
+	• Volume Confirmation
+
+	Volume is used as confirmation.
+
+	Purpose:
+
+	• Determine whether participation supports the move.
+
+
+====================================
+9. Trade Execution
+====================================
+
+Example:
+
+Instrument:
+
+	GC Futures
+
+	(Gold Futures)
+
+
+	Trade:
+
+	BUY
+
+	5 Contracts
+
+
+	Entry:
+
+	4041.5
+
+
+Trading thesis:
+
+• Price reached a meaningful support zone.
+• Selling pressure weakened.
+• Buyers appeared.
+
+
+Expected movement:
+
+• Rotation upward toward next reference level.
+
+
+====================================
+10. Trade Management
+====================================
+
+After entry, two scenarios exist.
+
+
+Scenario A — Trade Failure
+
+
+	Example:
+
+	Entry:
+
+	4041.5
+
+
+	↓
+
+	Price breaks support
+
+	4030
+
+
+	Interpretation:
+
+	• Original thesis is invalid.
+
+
+	Action:
+
+	• Exit trade.
+	• Accept loss.
+	• Move on.
+
+
+Scenario B — Trade Success
+
+
+	Example:
+
+	Entry:
+
+	4041.5
+
+
+	↓
+
+	4050
+
+
+	↓
+
+	4065
+
+
+	Interpretation:
+
+	• Price is moving toward the next reference area.
+
+
+	Action:
+
+	• Take profit.
+	• Manage position toward target.
+
+
+====================================
+11. Exit Logic
+====================================
+
+The target is usually another important market reference level.
+
+
+	Example:
+
+	Entry:
+
+	4041.5
+
+
+	Target:
+
+	4065.5
+
+
+	Reason:
+
+	Nearby reference:
+
+	• 4064
+	• Asia Low
+
+
+	Logic:
+
+	Entry Location
+
+	↓
+
+	Next Significant Reference Level
+
+	↓
+
+	Exit
+
+
+====================================
+12. Risk Management Framework
+====================================
+
+Risk management is part of the strategy.
+
+
+====================================
+12.1 Daily Objective
+====================================
+
+Before trading:
+
+Define:
+
+• Daily Profit Target.
+• Maximum Acceptable Loss.
+
+
+Example:
+
+Profit Goal:
+
++$5,000
+
+
+Maximum Loss:
+
+-$4,000
+
+
+====================================
+12.2 Trade Frequency
+====================================
+
+Typical activity:
+
+• 1 - 4 trades per day.
+
+
+The trader does not need to trade every day.
+
+
+====================================
+12.3 Consecutive Loss Rule
+====================================
+
+Rule:
+
+Two losing trades in a row
+
+↓
+
+Stop trading for the day
+
+
+Purpose:
+
+• Prevent revenge trading.
+• Prevent emotional decisions.
+• Prevent overtrading.
+
+
+====================================
+12.4 Account Protection
+====================================
+
+The trader uses automatic limits.
+
+
+	Example:
+
+	Maximum Daily Loss
+
+	↓
+
+	Account Lockout
+
+
+	Purpose:
+
+	• Prevent catastrophic decisions.
+
+
+====================================
+13. Psychological Framework
+====================================
+
+Psychology is a critical part of execution.
+
+
+	Main threats:
+
+
+	• Greed
+
+	Example:
+
+	Small profit achieved
+
+	↓
+
+	Continue trading unnecessarily
+
+	↓
+
+	Give profits back
+
+
+	• Emotional Trading
+
+	Example:
+
+	Loss
+
+	↓
+
+	Frustration
+
+	↓
+
+	Increase size
+
+	↓
+
+	Larger loss
+
+
+Professional behavior:
+
+• Follow system.
+• Accept uncertainty.
+• Respect limits.
+
+
+====================================
+14. Market Context Factors
+====================================
+
+For Gold Futures:
+
+
+Dollar Strength:
+
+• USD ↑ can create downward pressure on Gold.
+
+
+Other Metals:
+
+Monitor:
+
+• Silver.
+• Platinum.
+• Copper.
+
+
+Macro Events:
+
+Examples:
+
+• Geopolitical events.
+• Economic releases.
+• Major news.
+
+
+Purpose:
+
+• Understand abnormal market conditions.
+
+
+====================================
+15. Complete Strategy Flow
+====================================
+
+	START
+
+	↓
+
+	Analyze Weekly/Daily/4H Structure
+
+	↓
+
+	Mark Important Reference Levels
+
+	↓
+
+	Build Market Map
+
+	↓
+
+	Wait for Price to Reach Level
+
+	↓
+
+	Observe Reaction
+
+	↓
+
+	Check Volume + Context
+
+	↓
+
+	Enter Trade
+
+	↓
+
+	Define Risk
+
+	↓
+
+	Target Next Reference Level
+
+	↓
+
+	Exit
+
+	↓
+
+	Review Trade
+
+
+====================================
+16. Core Strategy Definition
+====================================
+
+The strategy can be summarized as:
+
+"A discretionary futures trading methodology that identifies historically significant price levels, waits for price interaction with those levels, confirms a reaction through market behavior and volume, and executes trades with predefined risk controls."
+
+
+====================================
+17. Quantitative Research Hypothesis
+====================================
+
+Future testing:
+
+If:
+
+• Price reaches reference level.
+• Market condition matches criteria.
+• Reaction confirmation occurs.
+
+
+Then:
+
+• Probability distribution of future price movement changes.
+
+
+Research Question:
+
+"Do key market reference levels create statistically measurable advantages in futures markets?"
+
+
+====================================
+Final Summary
+====================================
+
+The strategy is not based on predicting price.
+
+It is based on:
+
+	Where is price?
+
+	↓
+
+	What happened there before?
+
+	↓
+
+	How are traders reacting now?
+
+	↓
+
+	Is risk defined?
+
+	↓
+
+	Is expected reward justified?
+
+
+The potential edge comes from:
+
+• Market Location.
+• Reaction.
+• Disciplined Risk Management.

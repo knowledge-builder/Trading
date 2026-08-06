@@ -1,0 +1,384 @@
+# Trading Logic (Inferred)
+
+====================================
+1. Market Context Identification
+====================================
+
+The first step is mapping important reference levels.
+
+These levels are not random indicators.
+
+They are based on:
+
+• Time-based reference points.
+• Higher timeframe reference points.
+• Previous market structure.
+• Liquidity zones where traders may react.
+
+====================================
+Time-Based Reference Points
+====================================
+
+### Asia Session
+
+
+	Asia Session
+		|
+		├── Asia Open
+		└── Asia High / Low
+
+
+	### London Session
+
+
+	London Session
+		|
+		├── London Open
+		└── London High / Low
+
+
+	### New York Session
+
+
+	New York Session
+		|
+		├── NY Open
+		└── NY High / Low
+
+
+====================================
+Higher Timeframe Reference Points
+====================================
+
+### Daily
+
+
+	Daily
+		|
+		├── Daily Open
+		├── Previous Day High
+		└── Previous Day Low
+
+
+	### 4 Hour
+
+	
+	4 Hour
+		|
+		├── 4H Open
+		├── Previous 4H High
+		└── Previous 4H Low
+
+
+	### Quarterly
+
+	
+	Quarterly
+		|
+		└── Quarterly Open
+	
+
+====================================
+2. Build a Market Map
+====================================
+
+Before entering a trade, he creates a map of important price zones.
+
+Example:
+
+
+	Resistance
+
+	4100
+	────── Previous Day Low
+
+
+	4095
+	────── Previous 4H High
+
+
+	4081
+	────── 4H Open
+
+
+	4073
+	────── New York Open
+
+
+	4064
+	────── Asia Low
+
+
+	4050
+	────── Previous 4H Low
+
+
+	4041
+	────── Entry Area
+
+
+	4034
+	────── NY/London Low
+
+
+	4025
+	────── Quarterly Open
+
+
+	Support
+
+
+The main question:
+
+> "Where are important price zones where traders may react?"
+
+====================================
+3. Wait for Price to Reach a Key Level
+====================================
+
+He does not appear to chase price.
+
+	The sequence:
+
+	
+	Before:
+
+	Price:
+	4080
+
+
+	↓
+
+	Falls
+
+
+	↓
+
+	4050
+
+
+	↓
+
+	4041
+	
+
+	He waits for price to reach a meaningful area.
+
+	Example:
+
+	
+	Previous 4H Low
+
+	+
+
+	NY/London Low
+
+	=
+
+	Potential Reaction Zone
+	
+
+====================================
+4. Look for Reaction
+====================================
+
+	The entry is not:
+
+
+	Price touches level
+
+	↓
+
+	Buy
+	
+
+	Instead:
+
+
+	Price reaches support
+
+			↓
+
+	Observe behavior
+
+			↓
+
+	Does selling pressure weaken?
+
+			↓
+
+	Does price reclaim level?
+
+			↓
+
+	Enter
+
+
+Possible confirmations:
+
+• Rejection candle.
+• Failure to continue lower.
+• Break back above the level.
+• Momentum shift.
+• Change in market behavior.
+
+====================================
+5. Execute Position
+====================================
+
+Example:
+
+	
+	BUY
+
+	5 GC Contracts
+
+
+	Entry:
+
+	4041.5
+	
+
+The trading thesis:
+
+> "This support area should hold, and price should rotate upward."
+
+====================================
+6. Manage the Trade
+====================================
+
+After entry:
+
+### Scenario A — Wrong
+
+	Price continues lower:
+
+	
+	4041
+
+	↓
+
+	4030
+
+	↓
+
+	Support fails
+	
+
+	Action:
+
+	• Exit the position.
+	• The original thesis is invalidated.
+
+
+### Scenario B — Right
+
+	Price moves upward:
+
+	
+	4041
+
+	↓
+
+	4050
+
+	↓
+
+	4065
+	
+
+	Action:
+
+	• Take profit.
+	• Move toward the next reference level.
+
+====================================
+7. Exit Logic
+====================================
+
+The exit appears to target another liquidity/reference level.
+
+Example:
+
+
+	Entry:
+
+	4041.5
+
+
+	↓
+
+	Target:
+
+	4065.5
+	
+
+	Why?
+
+	Because around:
+
+	
+	4064
+	
+
+	was:
+
+	
+	Asia Low
+	
+
+	The logic:
+
+	
+	Entry
+
+	↓
+
+	Next important reference level
+	
+
+====================================
+Complete Trading Flow
+====================================
+
+
+	1. Mark important levels
+
+			↓
+
+	2. Determine market location
+
+			↓
+
+	3. Wait for price to reach level
+
+			↓
+
+	4. Observe reaction
+
+			↓
+
+	5. Enter when probability improves
+
+			↓
+
+	6. Place risk below/above invalidation
+
+			↓
+
+	7. Target next liquidity/reference level
+
+
+====================================
+Core Concept
+====================================
+
+The system is not predicting every price movement.
+
+It is identifying:
+
+• Where price is located.
+• Where other traders may react.
+• When the probability of a reaction improves.
+• Where the trade idea becomes invalid.
+• Where the next objective target exists.

@@ -1,0 +1,358 @@
+
+================================================
+Polygon.io
+================================================
+
+
+Overview
+========
+
+• Polygon is a market data infrastructure provider.
+
+• Best for:
+
+  • Stocks
+  • Options
+  • Crypto
+  • Forex
+
+• It functions primarily as a data vendor.
+
+
+Official Links
+==============
+
+• Main Website
+
+  Polygon.io
+
+
+• Developer Documentation
+
+  Polygon.io Documentation
+
+
+• Forex API Documentation
+
+  https://massive.com/dashboard/keys/6774f07b-2b1e-4063-8abb-878500de2b4f
+  
+  OHLCV Data
+  
+	  https://massive.com/docs/rest/forex/aggregates/custom-bars
+	  https://massive.com/docs/rest/forex/aggregates/daily-market-summary
+	  https://massive.com/docs/rest/forex/aggregates/previous-day-bar  
+
+
+• WebSocket Documentation
+
+  Polygon.io WebSocket Documentation
+
+
+
+Data Available
+==============
+
+
+REST API
+--------
+
+Historical:
+
+
+• OHLC candles
+• Aggregates
+• Quotes
+• Snapshots
+
+
+Example:
+
+
+    {
+      "ticker": "C:EURUSD",
+      "open": 1.1438,
+      "high": 1.1442,
+      "low": 1.1436,
+      "close": 1.1440,
+      "volume": 1000
+    }
+
+
+
+WebSocket
+---------
+
+Real-time:
+
+• Tick updates
+• Quotes
+• Aggregated candles
+
+
+
+Architecture:
+
+
+		Polygon WebSocket
+				|
+				▼
+		  Python Async Client
+				|
+				▼
+			  DataFrame
+
+
+
+Authentication / API Keys
+=========================
+
+• Polygon uses API keys.
+
+
+Example:
+
+
+    API_KEY = "your_key_here"
+
+
+
+Authentication:
+
+
+    Authorization:
+    Bearer YOUR_API_KEY
+
+
+or:
+
+
+    ?apiKey=YOUR_API_KEY
+
+
+
+Python Libraries
+================
+
+
+Official Python Client:
+
+
+Install:
+
+    pip install polygon-api-client
+
+
+
+Example:
+
+
+    from polygon import RESTClient
+
+
+    client = RESTClient(
+        "YOUR_API_KEY"
+    )
+
+
+    data = client.get_aggs(
+        "C:EURUSD",
+        1,
+        "minute",
+        "2026-01-01",
+        "2026-01-02"
+    )
+
+
+
+WebSocket Client
+----------------
+
+Libraries:
+
+    pip install websocket-client
+
+or:
+
+    pip install polygon-api-client
+
+
+
+Flow:
+
+
+		Python
+		   |
+		   ▼
+		Polygon WebSocket
+		   |
+		   ▼
+		Forex Stream
+		   |
+		   ▼
+		Pandas
+
+
+
+Trading Capability
+==================
+
+No.
+
+Polygon does not execute trades.
+
+
+Architecture:
+
+
+		Polygon
+		   |
+		   ▼
+		Strategy Engine
+		   |
+		   ▼
+		Broker API
+		   |
+		   ▼
+		Execution
+
+
+
+Possible execution brokers:
+
+• Interactive Brokers
+• Alpaca
+• OANDA
+• MT5 Brokers
+
+
+
+================================================
+Comparison for Quant Research
+================================================
+
+
+| Feature          | Dukascopy            | Polygon          |
+|------------------|----------------------|------------------|
+| Forex            | ⭐⭐⭐⭐⭐          | ⭐⭐⭐         |
+| Stocks           | ⭐                   | ⭐⭐⭐⭐⭐     |
+| Crypto           | Limited              | ⭐⭐⭐⭐⭐     |
+| Historical OHLCV | Yes                  | Yes              |
+| Tick Data        | Yes                  | Yes              |
+| Real-Time Stream | Yes                  | Yes              |
+| API Key          | No traditional key   | Yes              |
+| Python SDK       | Community            | Official         |
+| Trading          | Yes                  | No               |
+| Best Use         | Forex quant research | Multi-asset data |
+
+
+
+================================================
+Recommended Architecture for Multi-Space Market Logic
+================================================
+
+
+                 Data Sources
+
+
+        Dukascopy          Polygon
+             |                |
+             |                |
+             ▼                ▼
+
+
+            Market Data Adapter
+
+
+                    |
+                    ▼
+
+
+              Raw Data Storage
+
+                  Parquet
+
+
+                    |
+                    ▼
+
+
+                DuckDB
+              / MotherDuck
+
+
+                    |
+                    ▼
+
+
+            Feature Engineering
+
+
+            State Space
+
+            Derivative Space
+
+            Behavior Space
+
+
+                    |
+                    ▼
+
+
+          Predictive Power Analysis
+
+
+                    |
+                    ▼
+
+
+          Trading Decision Engine
+
+
+                    |
+                    ▼
+
+
+          Execution Broker
+
+
+
+================================================
+Recommended Starting Point
+================================================
+
+
+For your current objective:
+
+• Understanding Forex market behavior
+• Building quantitative research
+• Testing Multi-Space Market Logic
+• Studying OHLC/tick behavior
+
+
+Start with:
+
+    Dukascopy
+
+
+Reason:
+
+• Forex focused
+• Historical tick data
+• Bid/ask information
+• Suitable for market behavior research
+• Can later connect to execution through JForex
+
+
+Keep Polygon for future expansion:
+
+• Stocks
+• Options
+• Crypto
+• Multi-asset research
+
+
+Core Principle:
+
+Use the best data source for understanding the market first.
+
+Execution infrastructure comes after the research framework proves that the observed properties contain predictive information.

@@ -1,0 +1,218 @@
+# Understanding the Key IBKR Client Agreement Disclosures
+
+====================================
+1. You Are Responsible for Your Trades
+====================================
+
+Once you click **Buy** or **Sell**, the trade becomes your responsibility.
+
+This remains true even if:
+
+* You made a mistake.
+* You misunderstood the market.
+* Your strategy failed.
+
+In general, **IBKR is not responsible for your trading losses**.
+
+---
+
+====================================
+2. Trading Involves Substantial Risk
+====================================
+
+IBKR makes it clear that:
+
+* You can lose money.
+* Markets can move rapidly.
+* Past performance does not predict future results.
+
+This is especially important for **futures**, where relatively small price movements can produce significant gains or losses because of leverage.
+
+---
+
+====================================
+3. Orders Are Not Guaranteed
+====================================
+
+When you place an order:
+
+* It may not execute.
+* It may execute at a different price than expected (slippage).
+* It may only partially fill.
+
+**Example**
+
+During a fast-moving market, a market order may execute at a different price than the last quote you saw.
+
+---
+
+====================================
+4. Margin Requirements Can Change
+====================================
+
+If you're approved for futures trading, **IBKR may change margin requirements at any time**.
+
+**Example**
+
+```text
+Today
+
+Initial Margin = $20,000
+
+↓
+
+Tomorrow
+
+Initial Margin = $24,000
+```
+
+If your account no longer satisfies the new requirement:
+
+* You may need to deposit additional funds.
+* IBKR may take action as permitted under the client agreement.
+
+---
+
+====================================
+5. Electronic Systems Can Fail
+====================================
+
+You acknowledge that:
+
+* Internet connections can fail.
+* Exchanges may experience outages.
+* Trading platforms may become unavailable.
+
+These operational risks are part of electronic trading.
+
+---
+
+====================================
+6. Market Data Is Not Guaranteed
+====================================
+
+Market quotes may be:
+
+* Delayed
+* Interrupted
+* Unavailable
+* Occasionally inaccurate
+
+Many professional traders monitor multiple market data sources whenever possible.
+
+---
+
+====================================
+7. You Are Responsible for Account Security
+====================================
+
+You are responsible for:
+
+* Keeping your password secure.
+* Protecting your two-factor authentication (2FA).
+* Reporting suspected unauthorized access immediately.
+
+---
+
+====================================
+8. Taxes Are Your Responsibility
+====================================
+
+Although IBKR provides tax reporting where required, you remain responsible for complying with your own country's tax laws.
+
+For a Philippine resident, this includes understanding:
+
+* Local Philippine tax obligations.
+* Any applicable U.S. withholding rules.
+
+---
+
+====================================
+9. Electronic Delivery
+====================================
+
+By accepting the agreement, you generally consent to receive documents electronically through the Client Portal, including:
+
+* Account statements
+* Trade confirmations
+* Tax documents
+* Official notices
+
+instead of receiving paper mail.
+
+---
+
+====================================
+10. IBKR May Restrict or Close Accounts
+====================================
+
+Under certain circumstances, IBKR may restrict or close an account, including situations involving:
+
+* Regulatory requirements
+* Suspected fraud
+* Violations of the client agreement
+
+---
+
+====================================
+11. Futures Are Different from Stocks
+====================================
+
+| Stocks | Futures |
+|---------|----------|
+| Buy company shares | Buy a standardized contract |
+| PDT rule may apply to margin accounts | PDT rule does not apply |
+| Stock margin rules | Futures margin rules |
+| Own company shares | Hold a futures contract with defined obligations |
+
+Understanding this distinction is important because margin, leverage, and risk operate differently in futures markets.
+
+---
+
+====================================
+12. Your Trading Workflow
+====================================
+
+
+	Python
+		│
+		▼
+	Research
+		│
+		▼
+	Probability Model
+		│
+		▼
+	Human Decision
+		│
+		▼
+	IBKR
+		│
+		▼
+	NQ Futures
+
+
+Your workflow separates:
+
+* Research
+* Signal generation
+* Human decision-making
+* Trade execution
+
+IBKR serves as your **execution platform**, while your analysis and probability models operate independently.
+
+This separation helps reduce operational risk, but once you submit an order, **you are responsible for both the trading decision and its outcome**.
+
+---
+
+====================================
+Three Clauses to Read Carefully
+====================================
+
+If you do not have time to read the entire agreement immediately, pay particular attention to these sections:
+
+* **Client Responsibilities** — Your obligations as the account holder.
+* **Futures & Margin Risk** — How futures margin works and the implications of changing margin requirements.
+* **Liquidation Rights** — The circumstances under which IBKR may liquidate positions or take action on your account under the agreement.
+
+These sections have the greatest practical impact for traders planning to manually trade futures through IBKR.

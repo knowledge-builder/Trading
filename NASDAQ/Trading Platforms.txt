@@ -1,0 +1,173 @@
+====================================
+1. Charting & Manual Analysis
+====================================
+
+### https://www.tradingview.com/data-coverage/
+
+**Purpose**
+
+* Market analysis
+* Advanced charting
+* Drawing tools (trendlines, support/resistance, Fibonacci, etc.)
+* Technical indicator development (Pine Script)
+* Manual trade validation
+* Multi-timeframe analysis
+* Strategy visualization
+
+**Pros**
+
+* Industry-standard charting platform
+* High-quality charts with smooth performance
+* Extensive built-in technical indicators
+* Supports custom indicators and strategies (Pine Script)
+* Can connect to selected brokers for order execution
+* Large global trading community
+* Cloud-synced layouts and watchlists
+* Available on Web, Desktop, and Mobile
+
+
+====================================
+2. Market Data
+====================================
+
+### https://polygon.io/?utm_source=chatgpt.com
+
+**Purpose**
+
+* Historical OHLCV data
+* Real-time market data API
+* Tick-level and aggregated market data
+* Quantitative research
+* Strategy backtesting
+* Market screening
+* Data ingestion pipelines
+
+**Python Libraries**
+
+* `requests` — REST API access
+* `websocket-client` — Real-time streaming
+* `pandas` — Data manipulation
+* `numpy` — Numerical analysis
+
+**Pros**
+
+* Institutional-quality market data
+* Extensive historical coverage
+* Low-latency WebSocket streaming
+* Supports Stocks, Options, Forex, Crypto, and Indices
+* Well-documented REST and WebSocket APIs
+* Easy integration with Python
+* Ideal for quantitative research and algorithmic trading
+
+
+### Alternative: Databento
+
+    https://databento.com/
+
+* Professional-grade futures market data
+* CME market data
+* Tick-by-tick historical data
+* Order book (Level 2 / Market Depth)
+* Trade and Quote (TBBO) data
+* Quantitative research
+* High-frequency strategy development
+* Futures backtesting
+
+**Python Libraries**
+
+* `databento` — Official Python SDK
+* `pandas` — Data manipulation
+* `numpy` — Numerical analysis
+
+**Pros**
+
+* Institutional-quality data
+* Native support for CME futures
+* High-performance historical data access
+* Tick, bar, and order book datasets
+* Well-designed Python API
+* Excellent for quantitative and systematic trading
+* Ideal for serious futures traders and researchers
+
+====================================
+3. Backtesting
+====================================
+
+### https://www.backtrader.com/?utm_source=chatgpt.com
+
+**Purpose**
+
+* Strategy development
+* Historical backtesting
+* Portfolio simulation
+* Indicator development
+* Strategy optimization
+
+**Python Libraries**
+
+* `backtrader`
+
+**Pros**
+
+* One of the most mature Python backtesting frameworks
+* Event-driven architecture
+* Large ecosystem and community
+* Supports multiple data feeds and brokers
+* Built-in performance metrics
+* Excellent for learning algorithmic trading
+
+
+### Option B: VectorBT
+
+**Purpose**
+
+* High-performance backtesting
+* Quantitative research
+* Portfolio analysis
+* Strategy optimization
+* Massive parameter testing
+
+**Python Libraries**
+
+* https://vectorbt.dev/?utm_source=chatgpt.com
+
+**Pros**
+
+* Extremely fast (NumPy + Numba powered)
+* Vectorized computations
+* Excellent for research and experimentation
+* Easy integration with Pandas
+* Ideal for large-scale strategy optimization
+* Widely used by quantitative traders
+
+
+====================================
+4. Futures Broker
+====================================
+
+### Option C: Interactive Brokers
+
+    https://www.interactivebrokers.com/?utm_source=chatgpt.com
+
+**Purpose**
+
+* Multi-asset trading
+* Professional brokerage
+* API-based automation
+
+**Supported Markets**
+
+* Stocks
+* Futures
+* Forex
+* Options
+* Bonds
+* ETFs
+
+**Pros**
+
+* Global multi-asset broker
+* Institutional-grade API
+* Extensive market coverage
+* Highly competitive commissions
+* Excellent for diversified quantitative trading

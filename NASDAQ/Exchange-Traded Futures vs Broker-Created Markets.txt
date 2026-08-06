@@ -1,0 +1,223 @@
+# Exchange-Traded Futures vs Broker-Created Markets
+
+====================================
+Case 1: Exchange-Traded Futures (NQ)
+====================================
+
+NQ trades on the **CME (Chicago Mercantile Exchange)**.
+
+There is one central exchange that creates the market.
+
+
+              CME Exchange
+                   │
+      ┌────────────┼────────────┐
+      ▼            ▼            ▼
+     IBKR      NinjaTrader   AMP Futures
+      ▼            ▼            ▼
+    Charts       Charts       Charts
+
+
+Everyone is ultimately looking at the same underlying market.
+
+Therefore:
+
+• The overall trend is the same.
+• Highs and lows should be almost identical.
+• Market structure is the same.
+• Price distribution is the same.
+
+Small differences can still exist because of:
+
+• Chart settings.
+• Session hours (Regular Trading Hours vs Extended Trading Hours).
+• Candle aggregation method.
+• Data latency.
+• Missing or corrected ticks.
+
+However, traders are generally observing the same market.
+
+====================================
+Case 2: Broker-Created Markets
+====================================
+
+Some financial products are created and priced by brokers.
+
+Examples:
+
+• CFDs.
+• OTC Forex.
+• Binary options.
+• Synthetic indices.
+
+The structure looks different:
+
+
+	Broker A
+		│
+	Own Price Feed
+
+
+	Broker B
+		│
+	Own Price Feed
+
+
+	Broker C
+		│
+	Own Price Feed
+
+
+Now prices can differ because each broker may:
+
+• Derive prices differently.
+• Apply its own spread.
+• Smooth market data.
+• Quote independently.
+
+In these markets, charts may differ significantly.
+
+====================================
+Example: IQ Option
+====================================
+
+Remember the IQ Option API experiments.
+
+You encountered instruments such as:
+
+• EURUSD.
+• EURUSD-OTC.
+• Digital Options.
+• CFDs.
+
+These are not necessarily the same market.
+
+Example:
+
+```text
+EURUSD
+
+and
+
+EURUSD-OTC
+```
+
+are different products.
+
+EURUSD:
+
+• Represents the traditional forex market.
+• References the global currency exchange market.
+
+EURUSD-OTC:
+
+• Is created and priced by the broker.
+• Often exists outside normal underlying market hours.
+• Does not necessarily match centralized exchange data.
+
+Therefore:
+
+• You should not expect OTC charts to match centralized market charts exactly.
+• Statistical analysis from one OTC feed may not transfer to another broker's OTC feed.
+
+====================================
+Why Databento + IBKR Makes Sense for NQ
+====================================
+
+For CME NQ futures:
+
+• Databento provides CME market data.
+• IBKR provides access to trade the CME futures contract.
+
+Conceptually:
+
+
+			  CME
+			   │
+		┌──────┴──────┐
+		▼             ▼
+	Databento       IBKR
+		▼             ▼
+	Python        TWS Chart
+
+
+The underlying trades originate from CME.
+
+Therefore:
+
+• Your statistical models are analyzing the same market you are trading.
+• Your Python research data and execution platform describe the same underlying price movement.
+• Differences are mainly presentation, timing, and data handling.
+
+====================================
+Rule of Thumb: Who Creates the Price?
+====================================
+
+When evaluating a market, ask:
+
+```text
+Who creates the price?
+```
+
+If the answer is:
+
+```text
+Exchange
+
+Examples:
+CME
+NYSE
+NASDAQ
+```
+
+Then:
+
+• Different brokers should look very similar.
+• They are distributing the same underlying market data.
+• Research is more portable across brokers.
+
+If the answer is:
+
+```text
+Broker
+```
+
+Then:
+
+• Charts can differ legitimately.
+• Each broker may produce its own quotes.
+• Statistical models may not transfer reliably.
+
+====================================
+Why Professionals Prefer Exchange-Traded Futures
+====================================
+
+Professional quantitative traders often prefer exchange-traded futures because:
+
+• Everyone analyzes the same underlying market.
+• Data is centralized.
+• Price discovery happens in one location.
+• Research results are more portable.
+
+Example:
+
+If a statistical model works on CME NQ data:
+
+```text
+CME NQ Data
+
+↓
+
+Statistical Model
+
+↓
+
+Trading Decision
+```
+
+The model should generally remain applicable whether execution happens through:
+
+• IBKR.
+• NinjaTrader Brokerage.
+• AMP Futures.
+• Other brokers connected to the same CME contract.

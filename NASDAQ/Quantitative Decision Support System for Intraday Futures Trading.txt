@@ -1,0 +1,415 @@
+Architecture Proposal: Quantitative Decision Support System for Intraday Futures Trading
+
+Overview
+
+The objective of this project is not to build a fully automated trading bot.
+
+Instead, the goal is to build a real-time quantitative decision support system that assists a discretionary futures trader by combining:
+
+• Historical statistical analysis
+• Real-time market data
+• Live signal evaluation
+• Human decision making
+
+The trader remains responsible for the final execution.
+
+Core Philosophy
+
+Separate the system into two fundamentally different problems:
+
+Research
+
+• Discover how the market behaves.
+• Learn statistical properties.
+• Validate hypotheses.
+• Produce a market model.
+
+Production
+
+• Observe the live market.
+• Continuously evaluate the learned model.
+• Notify the trader when important conditions occur.
+
+This separation mirrors how quantitative research and live trading operate in professional environments.
+
+High-Level Architecture
+
+						HISTORICAL DATA
+						 (DataBento)
+
+							  │
+							  ▼
+
+					 Python Research Engine
+			---------------------------------------
+			• Data Cleaning
+			• Feature Engineering
+			• Statistical Analysis
+			• Probability Analysis
+			• Monte Carlo Simulation
+			• Pattern Discovery
+			• Strategy Validation
+			• Backtesting
+			---------------------------------------
+
+							  │
+							  ▼
+
+					  Market Model / Trading Plan
+
+							  │
+	═══════════════════════════════════════════════════════
+					NEXT TRADING SESSION
+	═══════════════════════════════════════════════════════
+
+							  │
+							  ▼
+
+						C++ Live Engine
+
+			---------------------------------------
+			• Market Data Feed
+			• Tick Processing
+			• Order Book Updates
+			• OHLC Construction
+			• Event Processing
+			• Low-Latency I/O
+			• State Updates
+			---------------------------------------
+
+							  │
+							  ▼
+
+				   Model Evaluation Engine
+
+							  │
+							  ▼
+
+				 Decision Support Interface
+
+			   BUY / SELL / WAIT / WARNING
+
+							  │
+							  ▼
+
+					  Human Executes Trade
+
+Phase 1 — Historical Research (Python)
+
+This phase occurs after the market closes.
+
+There are no real-time constraints.
+
+The objective is to learn from historical data.
+
+	Inputs
+
+	• Historical market data
+
+	Examples:
+
+	• Tick data
+	• OHLC candles
+	• Volume
+	• Trades
+	• Order book snapshots
+
+Activities
+
+The Python research engine performs tasks such as:
+
+Data Preparation
+
+	• Cleaning
+	• Normalization
+	• Feature creation
+
+	Statistical Analysis
+
+	Examples:
+
+	• Rolling statistics
+	• Distributions
+	• Conditional probability
+	• Correlations
+	• Regime detection
+
+	Model Development
+
+	Examples:
+
+	• Pattern discovery
+	• Market structure analysis
+	• Multi-space analysis
+	• Feature importance
+
+	Validation
+
+	Examples:
+
+	• Backtesting
+	• Walk-forward testing
+	• Monte Carlo simulation
+	• Statistical significance testing
+
+Output
+
+The result is not a trade.
+
+Instead, it is a structured representation of today's research.
+
+	Example:
+
+	{
+		"market_bias": "Bullish",
+
+		"important_levels": [...],
+
+		"expected_volatility": ...,
+
+		"high_probability_patterns": [...],
+
+		"risk_conditions": [...],
+
+		"watch_conditions": [...]
+	}
+
+This becomes the Trading Plan for the next session.
+
+Phase 2 — Live Trading (C++)
+
+When the market opens, the C++ application begins processing live data.
+
+Its responsibility is not statistical discovery.
+
+Instead, it continuously evaluates the live market against the previously generated Trading Plan.
+
+Responsibilities
+
+Connect to Market Data
+
+	Examples:
+
+	• DataBento Live
+	• Broker API
+	• CME feed
+
+	Receive Live Data
+
+	Examples:
+
+	• Trades
+	• Quotes
+	• Tick stream
+	• Order book
+
+	Maintain Market State
+
+	Examples:
+
+	• Current price
+	• Current volume
+	• Session high
+	• Session low
+	• Current candle
+	• Current VWAP
+	• Current order book
+
+Evaluate Rules
+
+Examples:
+
+Did price reach Key Level?
+
+	YES
+
+	↓
+
+	Did momentum confirm?
+
+	YES
+
+	↓
+
+	Volume increasing?
+
+	YES
+
+	↓
+
+	Generate Alert
+
+	Notify the Trader
+
+	Possible outputs:
+
+	• Potential Long Setup
+
+	Confidence: High
+
+	Conditions:
+
+	• ✓ Key level reached
+	• ✓ Momentum confirmed
+	• ✓ Volume increasing
+
+The human trader decides whether to execute the trade.
+
+Why C++?
+
+C++ is responsible for the infrastructure layer, where performance and predictable latency matter.
+
+Typical responsibilities include:
+
+	• Network communication
+	• Parsing market messages
+	• Tick processing
+	• Maintaining the order book
+	• Incremental state updates
+	• Event generation
+	• Inter-process communication (IPC)
+
+Its purpose is to ensure that the system always has an accurate, up-to-date representation of the market.
+
+Why Python?
+
+Python is responsible for the intelligence layer.
+
+Typical responsibilities include:
+
+	• Data science
+	• Statistics
+	• Machine learning
+	• Research
+	• Strategy development
+	• Visualization
+	• Backtesting
+
+Python excels at experimentation and rapid model development.
+
+Information Flow
+
+	Historical Data
+
+	↓
+
+	Python learns market behaviour
+
+	↓
+
+	Creates Trading Plan
+
+	↓
+
+	Trading Plan saved
+
+	↓
+
+	Market Opens
+
+	↓
+
+	C++ loads Trading Plan
+
+	↓
+
+	Receives Live Data
+
+	↓
+
+	Updates Market State
+
+	↓
+
+	Evaluates Trading Plan
+
+	↓
+
+	Produces Alerts
+
+	↓
+
+	Human Executes Trade
+
+Separation of Responsibilities
+
+	| Component                | Responsibility                                       |
+	|--------------------------|------------------------------------------------------|
+	| Python Research Engine   | Learn from historical market data                    |
+	| Python Validation Engine | Validate hypotheses and strategies                   |
+	| Trading Plan             | Encodes actionable insights for the next session     |
+	| C++ Live Engine          | Process live market data with low latency            |
+	| Decision Engine          | Evaluate the current market against the trading plan |
+	| User Interface           | Present recommendations and market context           |
+	| Human Trader             | Make the final execution decision                    |
+
+Design Philosophy
+
+	The system is intentionally divided into two independent layers:
+
+	Layer 1 — Research
+
+	Question:
+
+	What has history taught us about market behaviour?
+
+	Output:
+
+	A validated market model and trading plan.
+
+	Layer 2 — Production
+
+	Question:
+
+	Is the current live market behaving according to the model?
+
+	Output:
+
+	Real-time decision support.
+
+	Future Expansion
+
+This architecture naturally supports future enhancements.
+
+Current workflow:
+
+	Research
+
+	  ↓
+
+	Decision Support
+
+	  ↓
+
+	Human Execution
+
+	Possible future workflow:
+
+	Research
+
+	  ↓
+
+	Decision Engine
+
+	  ↓
+
+	Human Interface
+		   │
+		   └──────────────► Automated Execution Engine
+
+Because the decision engine is independent of execution, automation can be introduced later without redesigning the research or live processing components.
+
+Guiding Principle
+
+The objective is not to predict every market movement or replace the trader.
+
+The objective is to build a system that transforms historical quantitative research into actionable, real-time market intelligence.
+
+	In this architecture:
+
+	• Python discovers knowledge from historical data.
+	• C++ observes and evaluates the live market efficiently.
+	• The decision engine bridges research and production by applying validated models to current market conditions.
+	• The human trader remains the final decision maker.
+
+This separation creates a modular, scalable, and maintainable platform where research can continuously evolve while the live trading infrastructure remains stable and performant.

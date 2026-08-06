@@ -1,0 +1,563 @@
+# GLBX.MDP3 — CME Futures Market Data Feed Documentation
+
+====================================
+1. Overview
+====================================
+
+GLBX.MDP3 represents the **CME Globex Market Data Platform 3.0**.
+
+It provides access to:
+
+• Real-time market data.
+• Historical market data.
+• Exchange-originated futures data.
+
+For futures research, GLBX.MDP3 is important because it represents data originating from the actual exchange where futures contracts are traded.
+
+====================================
+2. Understanding the Name
+====================================
+
+## GLBX
+
+GLBX = **Globex**
+
+CME Globex is the electronic trading platform operated by CME Group.
+
+It is where many major futures products are traded.
+
+Examples:
+
+| Market                | Products               |
+|-----------------------|--++++++++++++++--------|
+| Equity Index Futures  | NASDAQ-100, S&P 500    |
+| Metals Futures        | Gold, Silver           |
+| Energy Futures        | Crude Oil, Natural Gas |
+| Agricultural Futures  | Corn, Wheat, Soybeans  |
+| Interest Rate Futures | Treasury Futures       |
+
+------------------------------------
+
+## MDP3
+
+MDP3 = **Market Data Platform 3.0**
+
+It is CME's market data distribution system.
+
+It publishes:
+
+• Trades.
+• Quotes.
+• Order book information.
+• Market updates.
+
+====================================
+3. Market Data Flow
+====================================
+
+The architecture:
+
+
+                  CME Exchange
+
+                       |
+
+                       ▼
+
+              CME Globex Platform
+
+                       |
+
+                       ▼
+
+                  GLBX.MDP3
+
+                       |
+
+                       ▼
+
+                 Data Provider
+                 (Databento)
+
+                       |
+
+                       ▼
+
+              Python Research System
+
+                       |
+
+                       ▼
+
+        Statistical Analysis / Trading Models
+
+
+====================================
+4. GLBX.MDP3 vs Broker Platforms
+====================================
+
+A common misunderstanding:
+
+> Brokers create the market data.
+
+They do not.
+
+The exchange creates the market.
+
+Example:
+
+
+                CME Globex
+
+                    |
+
+        ------------------------
+
+        |          |           |
+
+        ▼          ▼           ▼
+
+     IBKR     Tradovate   NinjaTrader
+
+
+        |
+
+        ▼
+
+    Trader Interface
+
+
+All brokers access the same underlying exchange market.
+
+Therefore:
+
+• The source market is identical.
+• Differences usually come from chart settings, data handling, or latency.
+
+====================================
+5. Example: NASDAQ-100 Futures
+====================================
+
+Instrument:
+
+
+	NQ
+
+
+	Full Name:
+
+
+	E-mini Nasdaq-100 Futures
+
+
+	Exchange:
+
+
+	CME
+
+
+	Market Source:
+
+
+	GLBX.MDP3
+
+
+Data Flow:
+
+
+	NASDAQ-100 Futures Market
+
+			↓
+
+	CME Globex
+
+			↓
+
+	GLBX.MDP3
+
+			↓
+
+	Databento
+
+			↓
+
+	Python Analysis
+
+
+====================================
+6. Example: Gold Futures
+====================================
+
+Instrument:
+
+
+	GC
+
+
+	Full Name:
+
+
+	Gold Futures
+
+
+	Exchange:
+
+
+	COMEX (CME Group)
+
+
+	Market Source:
+
+
+	GLBX.MDP3
+
+
+	Example Trade:
+
+
+	BUY
+
+	5 GC Contracts
+
+
+	Entry:
+
+	4041.5
+
+
+	Exit:
+
+	4065.5
+
+
+The price movement originates from the CME futures market.
+
+====================================
+7. What Data Can Be Obtained?
+====================================
+
+Depending on the selected schema, GLBX.MDP3 can provide:
+
+====================================
+OHLCV Data
+====================================
+
+Used for:
+
+• Charting.
+• Technical analysis.
+• Statistical research.
+
+Example:
+
+
+	Timestamp:
+
+	Open:
+	4041.5
+
+	High:
+	4060.0
+
+	Low:
+	4035.0
+
+	Close:
+	4055.0
+
+	Volume:
+	xxxxx
+
+
+====================================
+Trade Data
+====================================
+
+Individual executed transactions.
+
+Example:
+
+
+	Time:
+
+	10:31:02.451
+
+
+	Price:
+
+	4045.25
+
+
+	Size:
+
+	12 contracts
+
+
+	Side:
+
+	Buy
+
+
+Useful for:
+
+• Order flow analysis.
+• Market microstructure studies.
+• Volume analysis.
+
+====================================
+Quote Data
+====================================
+
+Bid and ask information.
+
+	Example:
+
+
+	Bid:
+
+	4041.25
+
+
+	Ask:
+
+	4041.50
+
+
+	Spread:
+
+	0.25
+
+
+	Useful for:
+
+	• Liquidity analysis.
+	• Execution studies.
+
+====================================
+Order Book Data
+====================================
+
+Shows market depth.
+
+Example:
+
+
+	SELL
+
+	4042.00   50 contracts
+
+	4041.75   30 contracts
+
+
+
+	BUY
+
+	4041.50   45 contracts
+
+	4041.25   20 contracts
+
+
+Useful for:
+
+• Liquidity modeling.
+• Institutional behavior analysis.
+• Market depth research.
+
+====================================
+8. Why GLBX.MDP3 Matters for Research
+====================================
+
+The goal is not immediately trading.
+
+The goal is understanding market behavior.
+
+Research pipeline:
+
+
+	Real Exchange Data
+
+			↓
+
+	Feature Engineering
+
+			↓
+
+	Market Structure Analysis
+
+			↓
+
+	Statistical Testing
+
+			↓
+
+	Strategy Development
+
+			↓
+
+	Risk Management
+
+
+====================================
+9. Relationship With Trading Strategy Research
+====================================
+
+Example hypothesis:
+
+
+	"When Gold Futures reach previous 4-hour lows,
+	the probability of reversal increases."
+
+
+	Using GLBX.MDP3 data:
+
+
+	Historical GC Futures Data
+
+			↓
+
+	Find every occurrence:
+
+	Price touches previous 4H low
+
+			↓
+
+	Measure:
+
+	• Win rate
+	• Average return
+	• Maximum adverse movement
+	• Maximum favorable movement
+
+			↓
+
+	Determine:
+
+	Does this level contain an edge?
+
+
+====================================
+10. GLBX.MDP3 vs Synthetic Markets
+====================================
+
+## Exchange Data
+
+	Example:
+
+
+	GLBX.MDP3
+
+	↓
+
+	CME Futures
+
+
+	Characteristics:
+
+	• Real transactions.
+	• Centralized exchange.
+	• Regulated market.
+	• Transparent pricing.
+	• Shared market structure.
+
+------------------------------------
+
+## Synthetic / Broker-Created Markets
+
+Examples:
+
+• Some OTC products.
+• Synthetic indices.
+• Certain CFD feeds.
+
+Characteristics:
+
+• Broker may generate pricing.
+• Not directly connected to an exchange.
+• Different liquidity model.
+• Different price formation process.
+
+====================================
+11. Role in Trading Research Architecture
+====================================
+
+The planned system:
+
+
+                 Market Layer
+
+                    CME
+                     |
+                     |
+                GLBX.MDP3
+                     |
+                     |
+                 Databento
+
+
+                 Analysis Layer
+
+                     |
+                     ▼
+
+              Python / Pandas
+
+                     |
+                     ▼
+
+          Feature Engineering
+
+                     |
+                     ▼
+
+        Statistical Testing
+
+
+                 Decision Layer
+
+                     |
+                     ▼
+
+            Human Interpretation
+
+                     |
+                     ▼
+
+              Future Execution
+
+
+====================================
+12. Core Principle
+====================================
+
+	GLBX.MDP3 is not a trading strategy.
+
+	It is the measurement instrument.
+
+	It provides access to the environment where professional futures traders operate.
+
+	The objective:
+
+
+	Observe the market accurately first.
+
+	↓
+
+	Develop understanding second.
+
+	↓
+
+	Consider execution only after evidence
+	and risk controls exist.
+
+
+====================================
+Summary
+====================================
+
+| Component  | Purpose                           |
+|------------|-----------------------------------|
+| CME Globex | Actual futures trading venue      |
+| GLBX.MDP3  | CME market data distribution feed |
+| Databento  | Data access layer for researchers |
+| Python     | Analysis and modeling environment |
+| Broker     | Execution platform when ready     |
