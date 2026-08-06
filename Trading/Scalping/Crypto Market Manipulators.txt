@@ -1,0 +1,219 @@
+==========================
+Crypto Market Manipulators
+==========================
+
+Overview
+--------
+
+Common terms used in cryptocurrency markets to describe different types
+of participants or behaviors.
+
+* These are informal community terms.
+* A single person or organization may fall into multiple categories.
+* Some participants are legitimate investors, while others engage in
+  fraudulent or manipulative activities.
+
+================
+Rug Pullers
+================
+
+Description
+-----------
+
+A Rug Puller is a developer, founder, or insider who intentionally scams
+investors by abandoning a cryptocurrency project or stealing its funds.
+
+Characteristics
+---------------
+
+* Creates a new cryptocurrency or token.
+* Markets the project aggressively.
+* Attracts investors and builds hype.
+* Removes liquidity or sells insider holdings.
+* Abandons the project after profiting.
+
+Common Warning Signs
+--------------------
+
+* Anonymous or unverifiable developers.
+* Unrealistic promises of guaranteed returns.
+* No independent smart contract audit.
+* Liquidity is not locked.
+* Developers control a large percentage of the token supply.
+* Poor documentation or vague roadmap.
+* No working product despite heavy marketing.
+
+Typical Outcome
+---------------
+
+* Token price rapidly approaches zero.
+* Investors lose most or all of their investment.
+* Developers disappear from the community.
+* Trading activity significantly declines.
+
+================
+Whales
+================
+
+Description
+-----------
+
+A Whale is an individual or organization that owns a very large amount
+of a cryptocurrency.
+
+Characteristics
+---------------
+
+* Holds a significant percentage of a cryptocurrency.
+* Can execute large buy or sell orders.
+* Has the ability to influence market prices.
+* Often monitored through blockchain transactions.
+
+Common Examples
+---------------
+
+* Early cryptocurrency adopters.
+* Investment funds.
+* Institutional investors.
+* Cryptocurrency exchanges.
+* High-net-worth individuals.
+
+Market Impact
+-------------
+
+Positive
+
+* Increases market liquidity.
+* Demonstrates long-term confidence.
+* Can stabilize markets through long-term holding.
+
+Negative
+
+* Large purchases may rapidly increase prices.
+* Large sales may trigger panic selling.
+* Can increase short-term volatility.
+* May influence market sentiment.
+
+Important Notes
+---------------
+
+* Being a whale is not inherently bad.
+* Holding a large amount of cryptocurrency is not illegal.
+* Many whales simply accumulated assets early.
+
+================
+Manipulators
+================
+
+Description
+-----------
+
+A Manipulator intentionally attempts to influence cryptocurrency prices
+or market sentiment to generate profit.
+
+Objectives
+----------
+
+* Artificially increase prices.
+* Artificially decrease prices.
+* Influence trader behavior.
+* Create buying or selling pressure.
+* Profit from predictable market reactions.
+
+Common Techniques
+-----------------
+
+Pump and Dump
+
+* Purchase a token before public promotion.
+* Generate hype through social media or influencers.
+* Encourage other investors to buy.
+* Sell after the price increases.
+* Leave late buyers with losses.
+
+Wash Trading
+
+* Buy and sell the same asset repeatedly.
+* Create fake trading volume.
+* Make a token appear more popular than it actually is.
+
+Spoofing
+
+* Place large buy or sell orders.
+* Create the illusion of strong demand or supply.
+* Cancel the orders before execution.
+* Influence other traders' decisions.
+
+Fear, Uncertainty, and Doubt (FUD)
+
+* Spread misleading negative information.
+* Encourage panic selling.
+* Purchase assets after prices decline.
+
+False Bullish News
+
+* Spread misleading positive information.
+* Encourage rapid buying.
+* Sell into the resulting demand.
+
+================
+Relationship Between Terms
+================
+
+These categories are not mutually exclusive.
+
+Example Scenario
+----------------
+
+A project founder may:
+
+* Own 60% of the token supply.
+  * Acts as a Whale.
+* Promote the project using misleading claims.
+  * Acts as a Manipulator.
+* Sell all holdings and remove liquidity.
+  * Becomes a Rug Puller.
+
+The same individual can therefore be:
+
+* A Whale.
+* A Manipulator.
+* A Rug Puller.
+
+================
+Comparison
+================
+
+Rug Puller
+
+* Focuses on stealing investor funds.
+* Usually a project founder or insider.
+* Often ends with the project being abandoned.
+* Considered a form of fraud.
+
+Whale
+
+* Focuses on holding large amounts of cryptocurrency.
+* May influence prices through trade size.
+* Can be legitimate or malicious.
+* Large ownership alone is not manipulation.
+
+Manipulator
+
+* Focuses on influencing market prices or sentiment.
+* May or may not own large holdings.
+* Uses deceptive strategies for profit.
+* Can operate independently or alongside other actors.
+
+================
+Key Takeaways
+================
+
+* Rug Pullers intentionally scam investors.
+* Whales are simply large cryptocurrency holders.
+* Manipulators intentionally distort market behavior for profit.
+* A whale is not automatically a manipulator.
+* A manipulator is not necessarily a rug puller.
+* A rug puller is often both a whale and a manipulator.
+* Always research projects before investing.
+* Be cautious of excessive hype and unrealistic promises.

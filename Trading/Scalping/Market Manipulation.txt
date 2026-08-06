@@ -1,0 +1,144 @@
+Market Manipulation Documentation
+=================================
+
+A Better Way to Study Manipulation
+----------------------------------
+Instead of organizing manipulation by strategy, organize it by the
+market illusion being created. This makes detection more practical
+because algorithms can focus on observable market behavior.
+
+1. Fake Liquidity
+-----------------
+
+Objective
+    Convince other participants that significant buying or selling
+    interest exists.
+
+Examples
+    • Spoofing
+    • Layering
+    • Fleeting orders
+
+Observe
+    • Order additions
+    • Order cancellations
+    • Order lifetime
+    • Cancellation ratio
+    • Order wall persistence
+
+Python Analysis Ideas
+    • Measure order lifetime.
+    • Calculate cancellation ratios.
+    • Detect large orders removed before execution.
+    • Track persistent vs. short-lived liquidity walls.
+
+
+2. Fake Demand
+--------------
+
+Objective
+    Make the market appear more active than it actually is.
+
+Examples
+    • Wash trading
+    • Self-trading
+    • Coordinated trading
+
+Observe
+    • Repeated counterparties (when available)
+    • High volume with little price movement
+    • Temporary volume spikes
+
+Python Analysis Ideas
+    • Compare volume against price movement.
+    • Detect recurring trade patterns.
+    • Identify abnormal volume spikes.
+    • Compute rolling volume statistics.
+
+
+3. Liquidity Traps
+------------------
+
+Objective
+    Encourage traders to enter positions that become profitable targets.
+
+Examples
+    • Stop-loss hunting
+    • Liquidity sweeps
+    • False breakouts
+
+Observe
+    • Liquidity cluster locations
+    • Price acceptance or rejection
+    • Volume around the event
+    • Execution behavior
+
+Python Analysis Ideas
+    • Identify liquidity zones.
+    • Detect breakout failures.
+    • Measure reversal probability.
+    • Analyze execution around key price levels.
+
+
+4. Information Manipulation
+---------------------------
+
+Objective
+    Influence market expectations instead of the order book.
+
+Examples
+    • Pump-and-dump campaigns
+    • False announcements
+    • Coordinated social media activity
+
+Observe
+    • News timing relative to price
+    • Volume before announcements
+    • Cross-platform sentiment
+
+Python Analysis Ideas
+    • Align news with market timestamps.
+    • Detect unusual pre-announcement volume.
+    • Perform sentiment analysis.
+    • Compare sentiment changes with price reactions.
+
+
+Summary
+-------
+
+• Fake Liquidity
+    • Goal: Create the illusion of available liquidity.
+    • Metrics:
+        • Order lifetime
+        • Cancellation ratio
+        • Wall persistence
+
+• Fake Demand
+    • Goal: Create the illusion of strong market activity.
+    • Metrics:
+        • Volume anomalies
+        • Price-volume divergence
+        • Repeated trading patterns
+
+• Liquidity Traps
+    • Goal: Lure traders into vulnerable positions.
+    • Metrics:
+        • Liquidity zones
+        • Breakout success/failure
+        • Reversal behavior
+
+• Information Manipulation
+    • Goal: Influence expectations through external information.
+    • Metrics:
+        • News timing
+        • Sentiment
+        • Pre-event trading volume
+
+
+Design Principles
+-----------------
+
+• Focus on observable market behavior.
+• Detect anomalies rather than specific strategies.
+• Combine order book, trade, volume, price, and external data.
+• Treat each category as a measurable market illusion.

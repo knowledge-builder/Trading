@@ -1,0 +1,382 @@
+===============================================================================
+SCALPING RESEARCH FRAMEWORK
+A Market Microstructure Approach
+===============================================================================
+
+Objective
+---------
+
+Develop expertise in short-term market behavior by understanding the
+underlying mechanics that produce price movement.
+
+The objective is NOT to predict price using indicators alone.
+
+Instead, the objective is to understand
+
+    • Buying Decisions
+
+    • Selling Decisions
+
+    • Liquidity
+
+    • Order Flow
+
+    • Market Constraints
+
+that collectively produce short-term price movement.
+
+Time Horizon
+------------
+
+    • Seconds
+
+    • Tens of Seconds
+
+    • A Few Minutes
+
+This framework is designed exclusively for scalping.
+
+===============================================================================
+Core Philosophy
+===============================================================================
+
+A long-term investor asks
+
+    "Where will price be next month?"
+
+A swing trader asks
+
+    "Will this trend continue?"
+
+A scalper asks
+
+    "What is the highest probability movement over
+     the next few seconds or minutes?"
+
+The unit of analysis is no longer the daily trend.
+
+It becomes the continuous interaction between buyers and sellers.
+
+===============================================================================
+The Order Book
+===============================================================================
+
+The order book is NOT a trading signal.
+
+It is a snapshot of the current battlefield.
+
+It represents
+
+    • Current Buy Interest
+
+    • Current Sell Interest
+
+    • Available Liquidity
+
+    • Immediate Market Constraints
+
+It does NOT directly tell us
+
+    • Buy
+
+    • Sell
+
+Instead, it provides information about the current market structure.
+
+===============================================================================
+Research Mindset
+===============================================================================
+
+Do not immediately ask
+
+    "Should I Buy?"
+
+or
+
+    "Should I Sell?"
+
+Instead ask
+
+    "What is currently happening?"
+
+The purpose is observation before decision.
+
+	===============================================================================
+	Observation Framework
+	===============================================================================
+
+	Liquidity
+
+		• Is buy liquidity increasing?
+
+		• Is sell liquidity increasing?
+
+		• Is liquidity disappearing?
+
+		• Is liquidity being replenished?
+
+	Order Flow
+
+		• Are aggressive buyers arriving?
+
+		• Are aggressive sellers arriving?
+
+		• Which side is consuming liquidity faster?
+
+	Market Constraints
+
+		• Can buyers overcome the current sell liquidity?
+
+		• Can sellers overcome the current buy liquidity?
+
+		• Where are the largest liquidity concentrations?
+
+	Market Evolution
+
+		• Does the liquidity remain?
+
+		• Does it move?
+
+		• Does it disappear?
+
+		• Does it get cancelled?
+
+		• Does it get executed?
+
+	Spread
+
+		• Is the spread widening?
+
+		• Is the spread narrowing?
+
+===============================================================================
+Research Workflow
+===============================================================================
+
+Phase 1
+Observation
+
+Collect
+
+    • Order Book Snapshots
+
+    • Order Book Updates
+
+    • Trade Executions
+
+    • Exchange Timestamp
+
+    • Local Receive Timestamp
+
+Purpose
+
+    Build an accurate record of market activity.
+
+-------------------------------------------------------------------------------
+
+Phase 2
+Event Detection
+
+Detect events such as
+
+    • Large Buy Wall Appears
+
+    • Large Sell Wall Appears
+
+    • Buy Wall Cancelled
+
+    • Sell Wall Cancelled
+
+    • Buy Wall Executed
+
+    • Sell Wall Executed
+
+    • Aggressive Buying
+
+    • Aggressive Selling
+
+    • Increasing Buy Liquidity
+
+    • Increasing Sell Liquidity
+
+Purpose
+
+    Transform raw market data into observable market events.
+
+-------------------------------------------------------------------------------
+
+Phase 3
+Outcome Measurement
+
+Measure
+
+    • Price after 1 second
+
+    • Price after 5 seconds
+
+    • Price after 10 seconds
+
+    • Price after 30 seconds
+
+    • Maximum Favorable Movement
+
+    • Maximum Adverse Movement
+
+Purpose
+
+    Determine how the market responded after each event.
+
+-------------------------------------------------------------------------------
+
+Phase 4
+Hypothesis Testing
+
+Examples
+
+    • Persistent buy walls increase the probability
+      of short-term upward movement.
+
+    • Persistent sell walls increase the probability
+      of short-term downward movement.
+
+    • Large buy wall cancellations precede
+      downward price movement.
+
+    • Large sell wall cancellations precede
+      upward price movement.
+
+    • Repeated aggressive buying eventually
+      consumes resistance.
+
+    • Repeated aggressive selling eventually
+      consumes support.
+
+Purpose
+
+    Replace intuition with measurable evidence.
+
+===============================================================================
+Static vs Dynamic Thinking
+===============================================================================
+
+Weak Question
+
+    "There is a large buy wall.
+
+     Will price go up?"
+
+Better Question
+
+    "How does the buy wall evolve over time?"
+
+Even Better Question
+
+    "How does the interaction between liquidity
+     and aggressive market orders influence
+     short-term price movement?"
+
+The objective is not to analyze static snapshots.
+
+The objective is to analyze continuous market evolution.
+
+===============================================================================
+Constraint-Oriented Thinking
+===============================================================================
+
+Instead of asking
+
+    "Will price move upward?"
+
+Ask
+
+    "What must happen before price can move upward?"
+
+Examples
+
+    • Buy liquidity must overcome sell liquidity.
+
+    • Sell wall must be consumed.
+
+    • Sell wall must be cancelled.
+
+    • Additional buyers must enter.
+
+Likewise
+
+Instead of asking
+
+    "Will price move downward?"
+
+Ask
+
+    "What must happen before price can move downward?"
+
+Examples
+
+    • Buy liquidity must be consumed.
+
+    • Buy wall must disappear.
+
+    • Aggressive sellers must dominate order flow.
+
+Thinking in terms of constraints encourages
+mechanistic rather than speculative reasoning.
+
+===============================================================================
+Scientific Principle
+===============================================================================
+
+     Observe
+
+        ↓
+
+     Measure
+
+        ↓
+
+   Detect Events
+
+        ↓
+
+  Form Hypothesis
+
+        ↓
+
+  Test Hypothesis
+
+        ↓
+
+  Evaluate Evidence
+
+        ↓
+
+Improve Understanding
+
+===============================================================================
+Ultimate Objective
+===============================================================================
+
+Develop intuition that is grounded in measurable market behavior.
+
+The goal is not merely to predict direction.
+
+The goal is to understand the underlying mechanics that produce
+
+    • Buying Pressure
+
+    • Selling Pressure
+
+    • Liquidity Changes
+
+    • Order Flow
+
+    • Market Constraints
+
+    • Short-Term Price Movement
+
+A skilled scalper should not react to price alone.
+
+A skilled scalper should understand the market processes
+that continuously generate price.
+
+===============================================================================

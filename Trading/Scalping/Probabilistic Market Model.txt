@@ -1,0 +1,258 @@
+===============================================================================
+PROBABILISTIC MARKET STATE MODEL
+A Probability-Driven Decision Framework
+===============================================================================
+
+Core Philosophy
+---------------
+
+The objective of the system is NOT to predict price with certainty.
+
+Instead, the objective is to continuously estimate the probability of a future
+market outcome based on the interaction of multiple market observations.
+
+Unlike traditional rule-based systems:
+
+    IF Delta > 0 THEN BUY
+
+our approach treats every observation as evidence that changes our belief about
+the current market state.
+
+The probability is therefore continuously updated as new information arrives.
+
+Example
+
+    P(Price moves UP within the next 1 minute)
+
+    50%
+        ↓
+    Positive Trade Delta
+        ↓
+    57%
+        ↓
+    Spread Narrows
+        ↓
+    63%
+        ↓
+    Large Sell Wall Appears
+        ↓
+    49%
+        ↓
+    Sell Wall Weakens
+        ↓
+    67%
+
+The probability evolves together with the market.
+
+===============================================================================
+System Architecture
+===============================================================================
+
+                    Raw Market Data
+                           │
+                           ▼
+                  Feature Extraction
+                           │
+                           ▼
+                  Interaction Analysis
+                           │
+                           ▼
+                 Probability Estimation
+                           │
+                           ▼
+                P(Up Move | Observations)
+                           │
+                           ▼
+                    Trading Decision
+                           │
+                           ▼
+                  Observe Actual Outcome
+                           │
+                           ▼
+                  Model Performance Review
+
+===============================================================================
+Prediction vs Outcome
+===============================================================================
+
+Prediction
+
+    Time
+    ----
+
+    10:01:15
+
+    P(Price Up in 1 minute)
+
+    = 62%
+
+Outcome
+
+    Time
+    ----
+
+    10:02:15
+
+    Price actually moved DOWN
+
+Prediction
+
+    Incorrect
+
+The purpose of recording every prediction is not to determine whether a single
+trade was successful, but to evaluate the quality of the probability model over
+many observations.
+
+===============================================================================
+Probability Calibration
+===============================================================================
+
+The model should not only generate probabilities.
+
+It must also measure whether those probabilities accurately represent reality.
+
+Suppose the model produced
+
+    P(UP) = 62%
+
+five hundred different times.
+
+Observed Result
+
+    Price increased
+
+    310 times
+
+Calibration
+
+    310 / 500
+
+    = 62%
+
+This indicates that the model is well-calibrated.
+
+If instead
+
+    180 / 500
+
+    = 36%
+
+then the model is overconfident.
+
+If
+
+    450 / 500
+
+    = 90%
+
+then the model is underconfident.
+
+A calibrated model is more valuable than a model that simply reports arbitrary
+confidence values.
+
+===============================================================================
+Why Calibration Matters
+===============================================================================
+
+Traditional Trading Question
+
+    "Did this trade win?"
+
+Probability-Based Question
+
+    "When my model predicts a 62% probability,
+     does the market actually move upward
+     approximately 62% of the time?"
+
+These are fundamentally different questions.
+
+The first evaluates an individual trade.
+
+The second evaluates the quality of the predictive model.
+
+===============================================================================
+Continuous Learning Cycle
+===============================================================================
+
+             Market Observation
+                     │
+                     ▼
+          Compute Current Probability
+                     │
+                     ▼
+             Store Prediction
+                     │
+                     ▼
+           Wait For Future Outcome
+                     │
+                     ▼
+         Compare Prediction vs Reality
+                     │
+                     ▼
+        Measure Calibration Accuracy
+                     │
+                     ▼
+       Improve Predictive Model Offline
+
+===============================================================================
+Important Principle
+===============================================================================
+
+The live trading engine and the learning engine should remain separate.
+
+Live Engine
+
+    Purpose
+
+        Produce real-time probability estimates.
+
+Offline Learning Engine
+
+    Purpose
+
+        Evaluate historical predictions.
+
+        Measure calibration.
+
+        Improve model parameters.
+
+This separation ensures that the live model remains stable while allowing
+continuous improvement based on accumulated market evidence.
+
+===============================================================================
+Research Objective
+===============================================================================
+
+The objective is NOT to maximize the number of winning trades.
+
+The objective is to construct a probabilistic market model whose estimated
+probabilities closely match the true frequencies observed in the market.
+
+Success is measured by calibration.
+
+When the model predicts
+
+    70%
+
+the market should move upward approximately 70% of the time over a sufficiently
+large number of observations.
+
+Only after achieving a well-calibrated probability model should trading
+decisions be optimized.
+
+In this framework,
+
+    Prediction
+        ↓
+    Calibration
+        ↓
+    Decision
+
+rather than
+
+    Prediction
+        ↓
+    Immediate Trade
+
+This shifts the focus from reacting to individual trades toward building a
+reliable probabilistic understanding of market behavior.

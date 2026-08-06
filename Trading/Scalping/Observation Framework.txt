@@ -1,0 +1,386 @@
+==============================================================================
+Market Microstructure Observation Framework
+==============================================================================
+
+Project Milestone:
+Building a real-time market behavior observation system using exchange data.
+
+Purpose:
+--------
+This project focuses on understanding market behavior by observing the
+interaction between:
+
+    1. Price movement
+    2. Aggressive order flow
+    3. Order book liquidity pressure
+    4. Candle response
+
+The objective is not to predict the market directly, but to study how buying
+and selling pressure develops and how price reacts.
+
+==============================================================================
+Core Idea
+==============================================================================
+
+A candle is only the final output of market activity.
+
+Behind every candle exists a continuous battle between:
+
+    - Traders aggressively buying into available liquidity
+    - Traders aggressively selling into available liquidity
+    - Passive liquidity waiting in the order book
+    - Market participants absorbing incoming pressure
+
+This framework attempts to observe that interaction.
+
+==============================================================================
+Data Components
+==============================================================================
+
+1. OHLCV Data
+--------------
+
+Purpose:
+    Provides the visible result of market activity.
+
+Captured:
+
+    Open
+    High
+    Low
+    Close
+    Volume
+    Amount
+
+
+Interpretation:
+
+    The candle shows what happened.
+
+    It does not explain why it happened.
+
+
+Example:
+
+    Strong bullish candle
+
+    Possible causes:
+
+        - Strong aggressive buying
+        - Weak selling pressure
+        - Liquidity absorption
+        - Short covering
+
+
+==============================================================================
+2. Aggressive Buy / Sell Flow
+==============================================================================
+
+Purpose:
+    Measure market participants who actively consume liquidity.
+
+Aggressive Buy:
+
+    Market buyers crossing the spread and lifting asks.
+
+
+Aggressive Sell:
+
+    Market sellers crossing the spread and hitting bids.
+
+
+Metrics:
+
+    batch_buy_value
+    batch_sell_value
+    trade_delta
+    cumulative_delta
+
+
+Interpretation:
+
+
+    Positive Delta:
+
+        Buyers are consuming more liquidity.
+
+
+    Negative Delta:
+
+        Sellers are consuming more liquidity.
+
+
+
+Example:
+
+    Aggressive Buy:
+
+        $800,000
+
+
+    Aggressive Sell:
+
+        $200,000
+
+
+    Delta:
+
+        +$600,000
+
+
+Observation:
+
+    Strong buying pressure is present.
+
+    Next question:
+
+        Can this pressure move price higher?
+
+
+==============================================================================
+3. Order Book Wall Pressure
+==============================================================================
+
+Purpose:
+    Observe available liquidity that can support or resist movement.
+
+
+Measured By:
+
+    Largest Bid Wall
+    Largest Ask Wall
+
+
+Example:
+
+
+    Bid Wall:
+
+        $2,000,000
+
+
+    Ask Wall:
+
+        $500,000
+
+
+    Pressure Ratio:
+
+        4x Buy Pressure
+
+
+
+Interpretation:
+
+    Higher Bid Wall:
+
+        More visible support liquidity.
+
+
+    Higher Ask Wall:
+
+        More visible resistance liquidity.
+
+
+
+Important:
+
+    Liquidity does not guarantee movement.
+
+    A large wall may:
+
+        - Absorb pressure
+        - Disappear
+        - Be tested repeatedly
+
+
+==============================================================================
+Decision Framework
+==============================================================================
+
+The analysis combines three layers:
+
+
+Layer 1:
+--------
+Aggressive Flow
+
+Question:
+
+    Who is actively attacking?
+
+
+Example:
+
+    Buyers are aggressively buying.
+
+
+
+Layer 2:
+--------
+Liquidity Pressure
+
+Question:
+
+    Is there enough liquidity support or resistance?
+
+
+Example:
+
+    Buyers have stronger bid walls.
+
+
+
+Layer 3:
+--------
+Price Response
+
+Question:
+
+    Did the market actually react?
+
+
+Example:
+
+    5-minute candle closes near the high.
+
+
+
+==============================================================================
+Example Observation
+==============================================================================
+
+
+Scenario:
+
+    Aggressive Buy Flow:
+
+        Strong increase
+
+
+    Wall Pressure:
+
+        Buy side stronger
+
+
+    Candle:
+
+        5-minute candle closes bullish
+
+
+
+Interpretation:
+
+    Buyers are active.
+
+    Liquidity supports the move.
+
+    Price confirms the pressure.
+
+
+
+==============================================================================
+Important Market Behavior Patterns
+==============================================================================
+
+
+Pattern 1:
+----------
+
+Aggressive Buy
++
+Strong Bid Pressure
++
+Bullish Candle Response
+
+
+Possible Interpretation:
+
+    Buyers are controlling the auction.
+
+
+
+Pattern 2:
+----------
+
+Aggressive Buy
++
+Strong Ask Pressure
++
+Weak Candle Response
+
+
+Possible Interpretation:
+
+    Sellers may be absorbing buying pressure.
+
+
+
+Pattern 3:
+----------
+
+Aggressive Sell
++
+Strong Bid Support
++
+Price Refuses To Drop
+
+
+Possible Interpretation:
+
+    Possible accumulation or absorption.
+
+
+
+==============================================================================
+Current Trading Philosophy
+==============================================================================
+
+The goal is not to predict every candle.
+
+The goal is to understand:
+
+    "What pressure is currently entering the market,
+     where liquidity exists,
+     and how price responds."
+
+
+
+The market should be observed before it is acted upon.
+
+
+==============================================================================
+Development Milestone
+==============================================================================
+
+Achievement:
+
+    Built a real-time market observation laboratory.
+
+Capabilities:
+
+    ✓ Exchange WebSocket connection
+    ✓ Real-time OHLCV processing
+    ✓ Live price visualization
+    ✓ Moving average context
+    ✓ Aggressive order flow tracking
+    ✓ Buy/Sell pressure visualization
+    ✓ Order book liquidity analysis
+
+
+Next Phase:
+
+    Collect observations.
+
+    Identify repeating behaviors.
+
+    Improve interpretation.
+
+    Avoid premature assumptions.
+
+
+
+The edge comes from understanding market behavior,
+not from adding more indicators.
+
+==============================================================================

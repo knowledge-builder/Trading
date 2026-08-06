@@ -1,0 +1,49 @@
+# ==============================================================================
+# Market Behavior Analysis Framework
+# ==============================================================================
+
+# 1. Liquidity Layer
+# ------------------------------------------------------------------------------
+# Question:
+# Where are participants showing interest?
+
+Metrics:
+    - Bid wall size
+    - Ask wall size
+    - Wall Pressure Ratio
+    - Liquidity imbalance
+
+
+# 2. Execution Layer
+# ------------------------------------------------------------------------------
+# Question:
+# Who is actually attacking the market?
+
+Metrics:
+    - Aggressive Buy Volume
+    - Aggressive Sell Volume
+    - Trade Delta
+    - Cumulative Delta
+
+
+# 3. Response Layer
+# ------------------------------------------------------------------------------
+# Question:
+# How does price react?
+
+Metrics:
+    - Candle movement
+    - High/Low expansion
+    - Close location
+    - Volume
+
+
+# 4. Relationship Layer
+# ------------------------------------------------------------------------------
+# Question:
+# Is the pressure producing results?
+
+Examples:
+    - Strong buying + price rising
+    - Strong buying + price flat
+    - Strong buying + price falling

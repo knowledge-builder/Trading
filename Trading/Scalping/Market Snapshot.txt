@@ -1,0 +1,439 @@
+==================================================================================
+MARKET SNAPSHOT
+==================================================================================
+
+	Exchange Time          : 2026-07-29 21:19:17.361 UTC
+	Receive Time           : 2026-07-29 21:19:17.878 UTC
+
+==================================================================================
+TOP OF BOOK
+==================================================================================
+
+	Best Bid               : 1883.66
+	Best Ask               : 1883.72
+
+	Spread                 : 0.06
+
+==================================================================================
+LIQUIDITY
+==================================================================================
+
+	Bid Liquidity          : 5.17M USDT
+	Ask Liquidity          : 3.12M USDT
+
+	Buy Liquidity          : 62.33%
+	Sell Liquidity         : 37.67%
+
+	Top-5 Bid Liquidity    : 128.93K USDT
+	Top-5 Ask Liquidity    : 68.14K USDT
+
+==================================================================================
+WALLS
+==================================================================================
+
+	Largest Bid Wall
+
+		Price              : 1856.44
+		Size               : 1082.45 ETH
+		Value              : 2.01M USDT
+		Distance           : 27.22 USDT
+		Concentration      : 38.85%
+
+	Largest Ask Wall
+
+		Price              : 1906.76
+		Size               : 1025.66 ETH
+		Value              : 1.96M USDT
+		Distance           : 23.04 USDT
+		Concentration      : 62.55%
+
+==================================================================================
+PRESSURE
+==================================================================================
+
+	Nearest Support Wall   : 1883.56
+	Nearest Resistance Wall: 1883.73
+
+	Top-of-Book Imbalance  : 61.42%
+
+==================================================================================
+
+
+# ==============================================================================
+# ORDER BOOK
+# ==============================================================================
+#
+# Best Bid
+#     Highest price currently offered by buyers.
+#
+#     Derived
+#         max(Bid Price)
+#
+# ------------------------------------------------------------------------------
+#
+# Best Ask
+#     Lowest price currently offered by sellers.
+#
+#     Derived
+#         min(Ask Price)
+#
+# ------------------------------------------------------------------------------
+#
+# Spread
+#     Difference between the best ask and best bid.
+#
+#     Formula
+#         Spread = Best Ask - Best Bid
+#
+# ------------------------------------------------------------------------------
+
+
+# ==============================================================================
+# LIQUIDITY
+# ==============================================================================
+#
+# Bid Liquidity
+#     Total buying liquidity currently visible in the order book.
+#
+#     Formula
+#         Bid Liquidity = Σ(Bid Price × Bid Quantity)
+#
+# ------------------------------------------------------------------------------
+#
+# Ask Liquidity
+#     Total selling liquidity currently visible in the order book.
+#
+#     Formula
+#         Ask Liquidity = Σ(Ask Price × Ask Quantity)
+#
+
+
+# ==============================================================================
+# Buy Liquidity
+# ==============================================================================
+#
+# Definition
+#     Percentage of total visible liquidity resting on the bid side.
+#
+# Unit
+#     %
+#
+# Formula
+#
+#     Buy Liquidity (%) =
+#
+#         Bid Liquidity
+#         ─────────────────────────────── × 100
+#         Bid Liquidity + Ask Liquidity
+#
+# Interpretation
+#     Higher values indicate more resting buy-side liquidity.
+#
+# ==============================================================================
+
+
+# ==============================================================================
+# Sell Liquidity
+# ==============================================================================
+#
+# Definition
+#     Percentage of total visible liquidity resting on the ask side.
+#
+# Unit
+#     %
+#
+# Formula
+#
+#     Sell Liquidity (%) =
+#
+#         Ask Liquidity
+#         ─────────────────────────────── × 100
+#         Bid Liquidity + Ask Liquidity
+#
+# Interpretation
+#     Higher values indicate more resting sell-side liquidity.
+#
+# ==============================================================================
+
+
+# ------------------------------------------------------------------------------
+#
+# Top N Bid Liquidity
+#     Total liquidity of the closest N bid levels.
+#
+#     Formula
+#         Σ(Bid Value of first N bids)
+#
+# ------------------------------------------------------------------------------
+#
+# Top N Ask Liquidity
+#     Total liquidity of the closest N ask levels.
+#
+#     Formula
+#         Σ(Ask Value of first N asks)
+#
+# ------------------------------------------------------------------------------
+
+
+# ==============================================================================
+# WALLS
+# ==============================================================================
+#
+# Largest Bid Wall
+#     Bid level containing the largest resting buy liquidity.
+#
+#     Derived
+#         max(Bid Value)
+#
+# ------------------------------------------------------------------------------
+#
+# Largest Ask Wall
+#     Ask level containing the largest resting sell liquidity.
+#
+#     Derived
+#         max(Ask Value)
+#
+# ------------------------------------------------------------------------------
+#
+# Distance
+#     Distance between the current market and the wall.
+#
+#     Formula
+#         Bid Wall Distance =
+#             Best Bid - Largest Bid Wall Price
+#
+#         Ask Wall Distance =
+#             Largest Ask Wall Price - Best Ask
+#
+# ------------------------------------------------------------------------------
+
+
+# ==============================================================================
+# Concentration
+# ==============================================================================
+#
+# Definition
+#     Percentage of total side liquidity represented by the largest
+#     visible liquidity wall.
+#
+# Unit
+#     %
+#
+# Formula
+#
+#     Bid Concentration (%) =
+#
+#         Largest Bid Wall Value
+#         ───────────────────────── × 100
+#         Total Bid Liquidity
+#
+#
+#     Ask Concentration (%) =
+#
+#         Largest Ask Wall Value
+#         ───────────────────────── × 100
+#         Total Ask Liquidity
+#
+# Interpretation
+#     Higher concentration means liquidity is clustered around one
+#     dominant price level.
+#
+#     Lower concentration means liquidity is distributed across many
+#     price levels.
+#
+# Example
+#
+#     Total Bid Liquidity      = 5.17M USDT
+#     Largest Bid Wall Value   = 2.01M USDT
+#
+#     Bid Concentration
+#         = 2.01M / 5.17M × 100
+#         = 38.9%
+#
+#     Interpretation
+#         Nearly 39% of all visible bid liquidity is concentrated at a
+#         single price level, making it a significant support wall.
+# ==============================================================================
+
+
+# ==============================================================================
+# PRESSURE
+# ==============================================================================
+#
+# Nearest Support Wall
+#     Bid row containing the largest liquidity among the nearest N bids.
+#
+#     Derived
+#         Select the bid row with the maximum Value.
+#
+#     Formula
+#         Largest Bid Value =
+#             max(Bid Value)
+#
+#         Nearest Support Wall =
+#             Price corresponding to Largest Bid Value
+#
+#         Largest Bid Size =
+#             Quantity corresponding to Largest Bid Value
+#
+# ------------------------------------------------------------------------------
+#
+# Nearest Resistance Wall
+#     Ask row containing the largest liquidity among the nearest N asks.
+#
+#     Derived
+#         Select the ask row with the maximum Value.
+#
+#     Formula
+#         Largest Ask Value =
+#             max(Ask Value)
+#
+#         Nearest Resistance Wall =
+#             Price corresponding to Largest Ask Value
+#
+#         Largest Ask Size =
+#             Quantity corresponding to Largest Ask Value
+
+
+# ==============================================================================
+# Top-of-Book Imbalance
+# ==============================================================================
+#
+# Definition
+#     Relative distribution of resting liquidity between buyers and sellers
+#     near the current market price.
+#
+#     This metric measures how much liquidity is available on the bid side
+#     versus the ask side using only the nearest N price levels.
+#
+# Formula
+#
+#     Top-N Bid Liquidity =
+#         Σ(Bid Value)
+#
+#     Top-N Ask Liquidity =
+#         Σ(Ask Value)
+#
+#     Top-of-Book Imbalance =
+#
+#         Top-N Bid Liquidity
+#         -------------------------------
+#         Top-N Bid Liquidity +
+#         Top-N Ask Liquidity
+#
+# Range
+#     0%   → All nearby liquidity is on the ask side.
+#
+#     50%  → Buy and sell liquidity are balanced.
+#
+#     100% → All nearby liquidity is on the bid side.
+#
+# Example
+#
+#     Top-N Bid Liquidity = 614,200 USDT
+#
+#     Top-N Ask Liquidity = 385,800 USDT
+#
+#     Total Liquidity = 1,000,000 USDT
+#
+#     Top-of-Book Imbalance =
+#
+#         614,200 / 1,000,000
+#         = 61.42%
+#
+# Interpretation
+#
+#     Buy Liquidity  = 61.42%
+#
+#     Sell Liquidity = 38.58%
+#
+# Meaning
+#     • 61.42% of the nearby resting liquidity is waiting to buy.
+#     • 38.58% of the nearby resting liquidity is waiting to sell.
+#     • This measures available liquidity, NOT executed trades.
+#     • A high value suggests stronger bid-side support.
+#     • A low value suggests stronger ask-side resistance.
+#
+# Note
+#     This metric is computed from the order book only.
+#     It does not indicate market aggressiveness or buying pressure.
+#     Aggressive buying and selling are measured separately using
+#     Trade Delta and Cumulative Delta.
+# ==============================================================================
+
+
+# ==============================================================================
+# SUPPORT
+# ==============================================================================
+#
+# Definition
+#     A price region containing sufficient resting buy liquidity to absorb
+#     incoming aggressive sell orders.
+#
+# Mechanism
+#
+#     Aggressive Sellers
+#              │
+#              ▼
+#     Resting Buy Limit Orders
+#
+# Result
+#     If buy liquidity is sufficient, selling pressure is absorbed and price
+#     tends to stabilize or rebound.
+#
+# Interpretation
+#     Strong support indicates buyers are willing to purchase significant
+#     quantity near that price.
+#
+# ==============================================================================
+
+
+# ==============================================================================
+# RESISTANCE
+# ==============================================================================
+#
+# Definition
+#     A price region containing sufficient resting sell liquidity to absorb
+#     incoming aggressive buy orders.
+#
+# Mechanism
+#
+#     Aggressive Buyers
+#              │
+#              ▼
+#     Resting Sell Limit Orders
+#
+# Result
+#     If sell liquidity is sufficient, buying pressure is absorbed and price
+#     tends to stall or reverse.
+#
+# Interpretation
+#     Strong resistance indicates sellers are willing to sell significant
+#     quantity near that price.
+#
+# ==============================================================================
+
+
+# ==============================================================================
+# KEY PRINCIPLE
+# ==============================================================================
+#
+# Support
+#     Resting Buy Liquidity
+#         absorbs
+#     Aggressive Selling
+#
+# Resistance
+#     Resting Sell Liquidity
+#         absorbs
+#     Aggressive Buying
+#
+# Therefore
+#     Price moves when aggressive orders consume passive liquidity.
+#
+#     • Aggressive buyers lift resting asks.
+#     • Aggressive sellers hit resting bids.
+#
+#     Once the resting liquidity is exhausted or removed, price can continue
+#     moving through that level.
+# ==============================================================================

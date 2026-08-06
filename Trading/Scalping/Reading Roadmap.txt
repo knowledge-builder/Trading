@@ -1,0 +1,231 @@
+Recommended Reading Roadmap
+===========================
+
+This roadmap is organized from foundational market knowledge to
+advanced quantitative detection of market manipulation.
+
+====================================================================
+Tier 1 — Foundation (Must Read)
+====================================================================
+
+1. Trades, Quotes and Prices
+   Author: Larry Harris
+   Rating: ⭐⭐⭐⭐⭐
+
+Purpose
+    The best starting point for understanding why market
+    manipulation works.
+
+Topics
+    • Order books
+    • Liquidity
+    • Market participants
+    • Information asymmetry
+    • Market impact
+    • Price discovery
+
+Why Read It
+    Without understanding market microstructure, it is difficult to
+    distinguish manipulation from normal market behavior.
+
+
+2. Trading and Exchanges
+   Rating: ⭐⭐⭐⭐⭐
+
+Purpose
+    A comprehensive textbook covering how modern electronic markets
+    operate.
+
+Topics
+    • Exchange mechanics
+    • Order types
+    • Liquidity providers
+    • Market abuse concepts
+    • Electronic trading systems
+
+Why Read It
+    Provides the operational knowledge needed to understand how
+    exchanges function and how manipulation can occur.
+
+====================================================================
+Tier 2 — Manipulation & Market Behavior
+====================================================================
+
+1. Flash Boys
+   Rating: ⭐⭐⭐⭐☆
+
+Focus
+    • High-frequency trading (HFT)
+    • Exchange incentives
+    • Latency advantages
+    • Market structure
+
+Why Read It
+    Demonstrates how incentives and technology influence market
+    behavior, even though the examples focus on traditional markets.
+
+
+2. Dark Pools
+   Rating: ⭐⭐⭐⭐☆
+
+Focus
+    • Hidden liquidity
+    • Institutional execution
+    • Information leakage
+    • Market transparency
+
+Why Read It
+    Explains how large institutional participants interact with
+    markets and how hidden liquidity affects price formation.
+
+====================================================================
+Tier 3 — Crypto-Specific
+====================================================================
+
+1. Mastering Bitcoin
+
+Purpose
+    Build a strong understanding of blockchain fundamentals.
+
+Topics
+    • Blockchain
+    • Mempool
+    • Transaction propagation
+    • Mining
+    • Network mechanics
+
+Why Read It
+    Essential for understanding on-chain market behavior.
+
+
+2. Mastering Ethereum
+
+Purpose
+    Understand decentralized finance (DeFi) and Ethereum's execution
+    model.
+
+Topics
+    • Smart contracts
+    • DeFi
+    • Oracles
+    • Maximal Extractable Value (MEV)
+    • Transaction ordering
+
+Why Read It
+    Important for studying manipulation within decentralized
+    financial systems.
+
+====================================================================
+Tier 4 — Quantitative Detection
+====================================================================
+
+1. Algorithmic Trading and DMA
+
+Focus
+    • Order routing
+    • Execution algorithms
+    • Market impact
+    • Electronic trading infrastructure
+
+Why Read It
+    Provides the foundation for building tools that analyze order
+    flow and execution quality.
+
+
+2. Market Microstructure Theory
+
+Focus
+    • Information asymmetry
+    • Dealer behavior
+    • Liquidity models
+    • Informed trading
+
+Why Read It
+    A rigorous academic treatment of market microstructure concepts.
+    Recommended after reading Larry Harris.
+
+====================================================================
+Beyond Books
+====================================================================
+
+Books provide theoretical foundations, but practical knowledge about
+market manipulation often comes from real-world research and case
+studies.
+
+Recommended Sources
+
+• Academic papers on:
+    • Market surveillance
+    • Order-book manipulation
+    • Market microstructure
+    • Liquidity analysis
+
+• Regulatory enforcement actions
+    • Spoofing investigations
+    • Wash trading cases
+    • Pump-and-dump schemes
+    • Insider trading investigations
+
+• Cryptocurrency exchange research
+    • Wash trading detection
+    • Spoofing detection
+    • Market surveillance
+    • Trading analytics
+
+• Exchange surveillance documentation
+    • Technical reports
+    • Detection methodologies
+    • Surveillance frameworks
+
+These sources frequently include
+
+    • Order timelines
+    • Execution patterns
+    • Surveillance methodologies
+    • Evidence used during investigations
+    • Real-world manipulation examples
+
+====================================================================
+Recommended Reading Order
+====================================================================
+
+1. Trades, Quotes and Prices
+   Foundation in market microstructure.
+
+2. Trading and Exchanges
+   Exchange mechanics and electronic markets.
+
+3. Flash Boys
+   Electronic market behavior and incentives.
+
+4. Dark Pools
+   Institutional trading and hidden liquidity.
+
+5. Mastering Bitcoin
+   Blockchain infrastructure.
+
+6. Mastering Ethereum
+   DeFi, smart contracts, and MEV.
+
+7. Algorithmic Trading and DMA
+   Execution algorithms and order-flow analysis.
+
+8. Market Microstructure Theory
+   Advanced academic understanding.
+
+====================================================================
+Overall Recommendation
+====================================================================
+
+For anyone studying spoofing, layering, wash trading, pump-and-dump
+schemes, liquidity manipulation, or broader crypto market abuse,
+combine these books with:
+
+• Academic research papers
+• Regulatory enforcement case studies
+• Exchange surveillance reports
+• Technical documentation
+
+These resources often provide more practical insight into manipulation
+than books alone because they analyze real-world incidents and the
+evidence used to identify abusive market behavior.

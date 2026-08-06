@@ -1,0 +1,363 @@
+==============================================================================
+LIQUIDITY SPACE
+==============================================================================
+
+Definition
+
+    Liquidity Space represents the available buying and selling interest
+    currently resting in the order book.
+
+    Unlike executed trades, liquidity represents potential future trades.
+
+Research Objective
+
+    Measure how liquidity changes over time and investigate its influence
+    on price movement.
+
+Fundamental Principle
+
+    Price does not move because of Trade Delta alone.
+
+    Price emerges from the interaction between
+
+        • Available Liquidity
+        • Aggressive Orders
+        • Order Cancellations
+        • Newly Added Liquidity
+
+==============================================================================
+1. BEST BID LIQUIDITY
+==============================================================================
+
+Definition
+
+    Quantity available at the highest bid price.
+
+Interpretation
+
+    • Immediate buying support.
+    • First liquidity consumed by Market Sell orders.
+
+Example
+
+    Price        Quantity
+
+    1899.99      120 ETH
+
+Variable
+
+    Best Bid Liquidity = 120 ETH
+
+==============================================================================
+2. BEST ASK LIQUIDITY
+==============================================================================
+
+Definition
+
+    Quantity available at the lowest ask price.
+
+Interpretation
+
+    • Immediate selling pressure.
+    • First liquidity consumed by Market Buy orders.
+
+Example
+
+    Price        Quantity
+
+    1900.00      85 ETH
+
+Variable
+
+    Best Ask Liquidity = 85 ETH
+
+==============================================================================
+3. TOTAL BID LIQUIDITY
+==============================================================================
+
+Definition
+
+    Sum of all bid quantities within the selected depth.
+
+Formula
+
+    Total Bid Liquidity
+
+        =
+
+    Σ(Bid Quantities)
+
+Interpretation
+
+    • Overall buying support.
+    • Larger values indicate stronger demand.
+
+==============================================================================
+4. TOTAL ASK LIQUIDITY
+==============================================================================
+
+Definition
+
+    Sum of all ask quantities within the selected depth.
+
+Formula
+
+    Total Ask Liquidity
+
+        =
+
+    Σ(Ask Quantities)
+
+Interpretation
+
+    • Overall selling pressure.
+    • Larger values indicate greater available supply.
+
+==============================================================================
+5. LIQUIDITY IMBALANCE
+==============================================================================
+
+Definition
+
+    Measures the proportion of buy-side liquidity relative to the total
+    available liquidity.
+
+Formula
+
+    Liquidity Imbalance
+
+        =
+
+    Bid Liquidity
+
+        /
+
+    (Bid Liquidity + Ask Liquidity)
+
+Range
+
+    0 → Entirely Ask Liquidity
+
+    0.5 → Balanced
+
+    1 → Entirely Bid Liquidity
+
+Interpretation
+
+    > 0.50
+
+        Buy-side liquidity dominates.
+
+    < 0.50
+
+        Sell-side liquidity dominates.
+
+==============================================================================
+6. LIQUIDITY WALL
+==============================================================================
+
+Definition
+
+    A price level containing an unusually large resting quantity.
+
+Interpretation
+
+    • Potential support.
+    • Potential resistance.
+    • May attract or repel price.
+    • May disappear through cancellation.
+
+Example
+
+    Price        Quantity
+
+    1900.02      1200 ETH
+
+==============================================================================
+7. DISTANCE TO LIQUIDITY WALL
+==============================================================================
+
+Definition
+
+    Distance between the current price and the nearest significant
+    liquidity wall.
+
+Formula
+
+    Distance
+
+        =
+
+    |Current Price − Wall Price|
+
+Interpretation
+
+    • Smaller distance means price is approaching major liquidity.
+    • Larger distance indicates open price space.
+
+==============================================================================
+8. LIQUIDITY ADDED
+==============================================================================
+
+Definition
+
+    New resting limit orders added to the order book.
+
+Formula
+
+    Liquidity Added
+
+        =
+
+    Current Quantity
+
+        −
+
+    Previous Quantity
+
+Interpretation
+
+    • Positive values indicate new liquidity entering the market.
+
+==============================================================================
+9. LIQUIDITY REMOVED
+==============================================================================
+
+Definition
+
+    Liquidity removed from the order book.
+
+Possible Causes
+
+    • Trade Execution
+    • Order Cancellation
+
+Interpretation
+
+    Liquidity removal alone does not indicate which event occurred.
+
+==============================================================================
+10. CANCELLATION RATE
+==============================================================================
+
+Definition
+
+    Rate at which resting orders disappear without execution.
+
+Formula
+
+    Cancellation Rate
+
+        =
+
+    Cancelled Quantity
+
+        /
+
+    Time
+
+Research Question
+
+    Does an increase in cancellation activity precede higher volatility?
+
+==============================================================================
+11. LIQUIDITY CONSUMPTION RATE
+==============================================================================
+
+Definition
+
+    Rate at which aggressive orders consume available liquidity.
+
+Formula
+
+    Consumption Rate
+
+        =
+
+    Executed Quantity
+
+        /
+
+    Time
+
+Interpretation
+
+    • Higher values indicate faster liquidity depletion.
+
+==============================================================================
+12. LIQUIDITY VELOCITY
+==============================================================================
+
+Definition
+
+    Net rate of liquidity change over time.
+
+Formula
+
+    Liquidity Velocity
+
+        =
+
+    Liquidity Added
+
+        −
+
+    Liquidity Removed
+
+Interpretation
+
+    Positive
+
+        Liquidity is accumulating.
+
+    Negative
+
+        Liquidity is disappearing.
+
+==============================================================================
+MENTAL MODEL
+==============================================================================
+
+Trader Decisions
+
+    • Place Limit Order
+    • Cancel Order
+    • Submit Market Order
+
+            │
+
+            ▼
+
+Order Book Changes
+
+            │
+
+            ▼
+
+Liquidity Changes
+
+            │
+
+            ▼
+
+Trade Executions
+
+            │
+
+            ▼
+
+Price Movement
+
+Research Principle
+
+    Do not ask
+
+        "What determines price?"
+
+    Ask
+
+        "How do changes in liquidity influence price movement?"
+
+    Price is an emergent property of market interactions rather than a
+    directly calculated variable.
+==============================================================================
