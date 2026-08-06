@@ -1,0 +1,347 @@
+===============================================================================
+MARKET ANALYTICS LEARNING ROADMAP
+===============================================================================
+
+Objective
+---------
+
+Develop a strong understanding of how financial markets operate before
+building statistical models and analytical software.
+
+The objective is NOT simply to learn trading.
+
+The objective is to understand:
+
+    • How markets are structured.
+
+    • How financial instruments work.
+
+    • How prices are formed.
+
+    • How liquidity affects market behavior.
+
+    • How macroeconomic forces influence markets.
+
+This roadmap serves as the domain knowledge foundation that complements
+mathematics, statistics, programming, and market research.
+
+===============================================================================
+PHASE 1 — FINANCIAL INSTRUMENTS
+===============================================================================
+
+Objective
+
+    Understand the products being analyzed.
+
+Learning Focus
+
+    • Stocks
+
+    • Bonds
+
+    • Futures Contracts
+
+    • Options
+
+    • ETFs
+
+    • Swaps
+
+    • Margin
+
+    • Leverage
+
+    • Settlement
+
+Expected Outcome
+
+    Develop a solid understanding of the financial instruments that
+    generate market data.
+
+===============================================================================
+PHASE 2 — CAPITAL MARKETS
+===============================================================================
+
+Objective
+
+    Learn how financial markets are organized.
+
+Learning Focus
+
+    • Primary Market
+
+    • Secondary Market
+
+    • Stock Exchanges
+
+    • Futures Exchanges
+
+    • Clearing Houses
+
+    • Institutional Participants
+
+    • Retail Participants
+
+Expected Outcome
+
+    Understand where transactions occur, who participates, and how
+    financial assets move through the market ecosystem.
+
+===============================================================================
+PHASE 3 — MARKET MICROSTRUCTURE
+===============================================================================
+
+Objective
+
+    Understand how prices are formed through the interaction of buyers
+    and sellers.
+
+Learning Focus
+
+    • Limit Orders
+
+    • Market Orders
+
+    • Bid and Ask
+
+    • Order Book
+
+    • Market Makers
+
+    • Price Discovery
+
+    • Order Flow
+
+    • Slippage
+
+    • Spread
+
+Expected Outcome
+
+    Develop the ability to interpret order book data, execution quality,
+    and short-term market behavior.
+
+===============================================================================
+PHASE 4 — LIQUIDITY
+===============================================================================
+
+Objective
+
+    Understand how easily assets can be traded and how liquidity impacts
+    execution and price movement.
+
+Learning Focus
+
+    • Market Depth
+
+    • Trading Volume
+
+    • Liquidity Providers
+
+    • Liquidity Consumption
+
+    • Impact Cost
+
+    • Execution Quality
+
+Expected Outcome
+
+    Develop intuition about why identical strategies can produce
+    different results under different liquidity conditions.
+
+===============================================================================
+PHASE 5 — COMMODITY MARKETS
+===============================================================================
+
+Objective
+
+    Understand the structure of futures markets.
+
+Learning Focus
+
+    • Commodity Futures
+
+    • Contract Specifications
+
+    • Tick Size
+
+    • Contract Expiration
+
+    • Rolling Contracts
+
+    • Contango
+
+    • Backwardation
+
+Expected Outcome
+
+    Understand how futures contracts behave and how they differ from
+    traditional equity markets.
+
+===============================================================================
+PHASE 6 — INTEREST RATES
+===============================================================================
+
+Objective
+
+    Understand how interest rates influence financial markets.
+
+Learning Focus
+
+    • Central Banks
+
+    • Monetary Policy
+
+    • Yield Curves
+
+    • Inflation
+
+    • Discount Rates
+
+    • Cost of Capital
+
+Expected Outcome
+
+    Develop an understanding of why macroeconomic events affect market
+    prices and investor behavior.
+
+===============================================================================
+OPTIONAL SUBJECTS
+===============================================================================
+
+Study these after completing the core roadmap.
+
+Equity Markets
+
+    • Equity valuation
+
+    • Corporate actions
+
+    • Dividends
+
+    • Market indices
+
+International Finance
+
+    • Foreign exchange
+
+    • Exchange rates
+
+    • Capital flows
+
+    • International trade
+
+Energy Markets
+
+    • Oil
+
+    • Natural Gas
+
+    • Electricity Markets
+
+Carbon Markets
+
+    • Carbon Credits
+
+    • Emissions Trading
+
+===============================================================================
+LEARNING SEQUENCE
+===============================================================================
+
+    Financial Instruments
+
+            │
+
+            ▼
+
+    Capital Markets
+
+            │
+
+            ▼
+
+    Market Microstructure
+
+            │
+
+            ▼
+
+    Liquidity
+
+            │
+
+            ▼
+
+    Commodity Markets
+
+            │
+
+            ▼
+
+    Interest Rates
+
+            │
+
+            ▼
+
+    Mathematics & Statistics
+
+            │
+
+            ▼
+
+    Market Analytics
+
+            │
+
+            ▼
+
+    Quantitative Research
+
+===============================================================================
+FINAL PRINCIPLE
+===============================================================================
+
+The objective of this roadmap is not to become a trader.
+
+It is to understand how markets function before attempting to model,
+analyze, or predict their behavior.
+
+Understanding the market domain enables better:
+
+    • Feature Engineering
+
+    • Hypothesis Generation
+
+    • Statistical Modeling
+
+    • Market Research
+
+    • Software Design
+
+Ultimately,
+
+    Market Knowledge
+
+            ↓
+
+    Better Research Questions
+
+            ↓
+
+    Better Mathematical Models
+
+            ↓
+
+    Better Software
+
+            ↓
+
+    Better Market Analytics
+
+A strong quantitative researcher combines domain knowledge,
+mathematics, statistics, and software engineering into a single
+evidence-based research process.
+
+===============================================================================

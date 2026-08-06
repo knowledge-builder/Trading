@@ -1,0 +1,423 @@
+
+================================================================================
+LIQUIDITY AS CAPACITY
+A Physics-Inspired Mental Model of Price Movement
+================================================================================
+
+Objective
+---------
+This document is NOT claiming that financial markets obey the laws of physics.
+
+Instead, it borrows a scientific way of thinking:
+
+    • Understand the mechanism first.
+    • Measure it second.
+    • Validate it statistically later.
+
+The objective is to understand WHY price moves
+before asking HOW OFTEN it moves.
+
+================================================================================
+BIG PICTURE
+================================================================================
+
+Forget:
+
+    • Candlestick charts
+    • Indicators
+    • Technical analysis
+
+Instead, imagine:
+
+    • Buyers
+    • Sellers
+    • Orders
+    • A Matching Engine
+
+At its core, a market is simply a system that continuously
+matches buyers and sellers.
+
+================================================================================
+PRICE LEVELS
+================================================================================
+
+Imagine each price level as a floor in a building.
+
+                 Price = $102
+             ─────────────────
+
+                 Price = $101
+             ─────────────────
+
+                 Price = $100
+
+Each floor contains people waiting to trade.
+
+Example
+
+Price = $100
+
+Sell Orders
+
+████████████████████
+
+100 Contracts
+
+Interpretation
+
+    • Sellers are willing to sell
+      a total of 100 contracts.
+
+    • Those contracts are available
+      specifically at $100.
+
+================================================================================
+THE KEY IDEA
+================================================================================
+
+Do NOT think of those 100 contracts as:
+
+    • Mass
+    • Force
+    • Energy
+
+Instead think of them as
+
+    CAPACITY
+
+Definition
+
+Capacity is:
+
+    • The amount of order flow
+      that a price level can absorb
+      before no liquidity remains.
+
+================================================================================
+SMALL BUY ORDER
+================================================================================
+
+Buyer submits
+
+    • Buy 5 Contracts
+
+Before
+
+    • Capacity = 100 Contracts
+
+After
+
+    • Capacity = 95 Contracts
+
+Observation
+
+    • Plenty of liquidity remains.
+    • The system absorbs the order.
+    • Price usually does not change.
+
+================================================================================
+ANOTHER BUYER
+================================================================================
+
+Buyer submits
+
+    • Buy 10 Contracts
+
+Remaining Capacity
+
+    • 95
+      ↓
+      85 Contracts
+
+Observation
+
+    • Liquidity still exists.
+    • The current price continues
+      absorbing buying pressure.
+
+================================================================================
+SPONGE ANALOGY
+================================================================================
+
+Imagine pouring water onto a sponge.
+
+Water
+
+↓↓↓↓↓
+
+██████████████
+
+Sponge
+
+Initially
+
+    • Water is absorbed.
+    • Nothing spills.
+
+Eventually
+
+    • Sponge reaches capacity.
+    • Additional water overflows.
+
+Liquidity behaves similarly.
+
+		Incoming Orders
+
+				↓
+
+		Resting Liquidity
+
+				↓
+
+		Absorption
+
+				↓
+
+		Capacity Exhausted
+
+================================================================================
+LARGE BUY ORDER
+================================================================================
+
+Institution submits
+
+    • Buy 200 Contracts
+
+Current Liquidity
+
+    • 100 Contracts
+
+Exchange executes
+
+    • 100 Filled
+    • 100 Remaining
+
+Result
+
+    • No liquidity remains at $100.
+
+================================================================================
+WHAT HAPPENS NEXT?
+================================================================================
+
+The exchange CANNOT invent sellers.
+
+Instead it must:
+
+    • Search for the next seller.
+    • Continue matching orders.
+    • Execute at the next available price.
+
+Example
+
+Price = $101
+
+Available
+
+    • 150 Contracts
+
+Remaining order is completed here.
+
+================================================================================
+WHY DID PRICE RISE?
+================================================================================
+
+Price did NOT increase because
+
+    • The exchange decided.
+    • Buyers became stronger.
+    • Sellers became weaker.
+
+Price increased because
+
+    • Liquidity at $100 was exhausted.
+    • The next available liquidity
+      existed at $101.
+
+Price movement is therefore
+
+    A consequence of liquidity exhaustion.
+
+================================================================================
+SUPERMARKET ANALOGY
+================================================================================
+
+Imagine supermarket shelves.
+
+$100
+
+██████████████
+100 Items
+
+-----------------------
+
+$101
+
+██████████████████
+150 Items
+
+-----------------------
+
+$102
+
+██████████████████████
+300 Items
+
+Customers continuously remove products.
+
+Eventually
+
+    • Shelf becomes empty.
+    • Customers move to the next shelf.
+
+The supermarket did NOT decide
+to increase prices.
+
+The cheaper inventory simply disappeared.
+
+Markets behave similarly.
+
+================================================================================
+DOOR ANALOGY
+================================================================================
+
+Imagine every price level is a door.
+
+Door 1
+
+    • Price = $100
+    • Capacity = 100 Contracts
+
+Incoming buyers push.
+
+Small pushes
+
+    • Nothing happens.
+
+Larger pushes
+
+    • Still absorbed.
+
+Eventually
+
+    • Capacity exceeded.
+    • Door opens.
+
+Market transitions to
+
+Door 2
+
+    • Price = $101
+    • Capacity = 150 Contracts
+
+================================================================================
+THE MECHANISM
+================================================================================
+
+		Incoming Order
+				│
+				▼
+		Available Liquidity
+				│
+				▼
+		Can Current Price Absorb It?
+				│
+		   ┌────┴────┐
+		   │         │
+		 Yes         No
+		   │         │
+		   ▼         ▼
+		Stay at     Consume Remaining Liquidity
+		Same Price          │
+							▼
+				    Move to Next Price Level
+							│
+							▼
+				          Repeat
+
+================================================================================
+THE CORE INSIGHT
+================================================================================
+
+	Do NOT think
+
+		Buying Volume
+			  ↓
+		Price Movement
+
+	Instead think
+
+		Buying Volume
+				↓
+	 Interacts With Liquidity
+				↓
+	 Liquidity Absorbs Orders
+				↓
+	 Capacity Exhausted
+				↓
+	 Transition To Next Price
+
+The interaction is the mechanism.
+
+Price movement is the consequence.
+
+================================================================================
+RESEARCH QUESTIONS
+================================================================================
+
+Instead of asking
+
+    "Does buying volume move price?"
+
+Ask
+
+    • How much liquidity exists
+      at each price level?
+
+    • How quickly is liquidity consumed?
+
+    • How quickly is liquidity replenished?
+
+    • What determines the capacity
+      of a price level?
+
+    • How much buying pressure
+      is required to exhaust liquidity?
+
+    • Can liquidity capacity
+      be estimated mathematically?
+
+    • Why do some price levels
+      absorb enormous volume,
+      while others collapse almost immediately?
+
+================================================================================
+MENTAL MODEL
+================================================================================
+
+Price movement is NOT simply caused by:
+
+    • Buyers
+    • Sellers
+    • Volume
+
+Instead it emerges from the interaction between:
+
+    • Incoming Order Flow
+    • Available Liquidity
+    • The Matching Engine
+
+Liquidity continuously absorbs incoming orders.
+
+Once its capacity is exhausted,
+
+the exchange naturally continues matching
+orders at the next available price level.
+
+Price movement is therefore
+
+    An emergent consequence
+    of repeated interactions
+    between order flow and liquidity.
+
+================================================================================

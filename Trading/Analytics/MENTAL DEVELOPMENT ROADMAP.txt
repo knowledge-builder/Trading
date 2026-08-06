@@ -1,0 +1,101 @@
+===============================================================================
+MENTAL DEVELOPMENT ROADMAP
+===============================================================================
+
+Phase 1
+
+    Build the Right Mindset
+
+        • Process over outcomes
+
+        • Scientific thinking
+
+        • Evidence-based reasoning
+
+        • Risk management
+
+        • Process-oriented thinking
+
+        • Recognize cognitive biases
+
+        • Mental conditioning
+
+                ↓
+
+Phase 2
+
+    Observation
+
+        • OHLCV
+
+        • Order Book
+
+        • Liquidity
+
+        • Market Participants
+
+        • Market Structure
+
+                ↓
+
+Phase 3
+
+    Hypothesis Generation
+
+        Examples
+
+        • Order book imbalance may predict short-term movement.
+
+        • Liquidity walls may constrain price movement.
+
+        • Certain market conditions may favor mean reversion.
+
+        • Large cancellations may precede increased volatility.
+
+                ↓
+
+Phase 4
+
+    Hypothesis Testing
+
+        • Define measurable variables.
+
+        • Collect historical data.
+
+        • Design experiments.
+
+        • Test statistically.
+
+        • Reject or support hypotheses.
+
+        • Document findings.
+
+                ↓
+
+Phase 5
+
+    Build Evidence
+
+        • Repeat experiments.
+
+        • Measure robustness.
+
+        • Compare market regimes.
+
+        • Validate across assets.
+
+        • Understand failure cases.
+
+                ↓
+
+Phase 6
+
+    Develop an Edge
+
+        Edge becomes
+
+            Repeatedly Supported Evidence
+
+        rather than
+
+            Belief

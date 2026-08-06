@@ -1,0 +1,122 @@
+Market Constraints (Mechanisms to Explore)
+
+1. Matching Constraint
+	• Every trade requires:
+		• Buyer
+		• Seller
+
+Question
+
+	• How do buyers and sellers become matched?
+
+===================================================
+	
+2. Liquidity Constraint
+	• Price cannot move without available liquidity.
+
+Question
+
+	• How does liquidity enable or resist price movement?
+
+===================================================
+
+3. Order Interaction Constraint
+
+	• Orders interact before price changes.
+
+Question
+
+	• How do market orders interact with limit orders?
+	
+===================================================
+	
+4. Order Book Constraint
+
+	• Liquidity is finite at every price level.
+
+Question
+
+	• What happens when available liquidity is exhausted?
+
+===================================================
+
+5. Price Impact Constraint
+
+	• Not every unit of volume moves price equally.
+
+Question
+
+	• Why does identical volume sometimes move price a lot, and other times almost not at all?
+
+===================================================
+
+6. Absorption Constraint
+
+	• Opposing orders can absorb incoming pressure.
+
+Question
+
+	• How much buying pressure is required to absorb selling pressure?
+
+===================================================
+	
+7. Momentum Constraint
+
+	• Price movement tends to persist until something changes.
+
+Question
+
+	• What mechanisms terminate momentum?
+
+===================================================
+	
+8. Reversal Constraint
+
+	• Reversals are processes, not events.
+
+Question
+
+	• What conditions must exist before a reversal becomes possible?
+
+===================================================
+	
+9. State Transition Constraint
+
+	• The market changes from one state to another.
+
+Question
+
+	• Which state transitions are common?
+	• Which are rare?
+	• Which are impossible under normal market mechanics?
+
+===================================================
+	
+10. Time Constraint
+
+	• Markets evolve through time.
+
+Question
+
+	• How does information accumulate across 5m, 15m, 30m, and higher timeframes?
+
+===================================================
+	
+Physics-Inspired Research Questions
+
+Instead of asking:
+
+What indicator predicts price?
+
+Ask:
+
+	• What interactions generate movement?
+	• What variables constrain movement?
+	• What variables store pressure?
+	• What releases pressure?
+	• What creates resistance?
+	• What creates acceleration?
+	• What creates equilibrium?
+	• What breaks equilibrium?
+	• Which market states are reachable?
+	• Which transitions are impossible?

@@ -1,0 +1,292 @@
+===============================================================================
+MARKET MICROSTRUCTURE
+A Research-Oriented Learning Roadmap
+===============================================================================
+
+Objective
+---------
+
+Learn market microstructure as a researcher rather than as a
+traditional finance student.
+
+The goal is not to memorize financial terminology.
+
+The goal is to understand the underlying mechanisms that generate
+market behavior and eventually produce OHLCV data.
+
+Every topic should answer the question:
+
+    "Can this be measured, tested, and eventually used
+     to improve market understanding?"
+
+===============================================================================
+Learning Philosophy
+===============================================================================
+
+Traditional Learning
+
+    Learn Theory
+
+            ↓
+
+    Memorize Concepts
+
+            ↓
+
+    Take Examination
+
+Research-Oriented Learning
+
+    Learn Theory
+
+            ↓
+
+    Understand Mechanism
+
+            ↓
+
+    Observe Data
+
+            ↓
+
+    Form Hypothesis
+
+            ↓
+
+    Test with Python
+
+            ↓
+
+    Measure Results
+
+            ↓
+
+    Improve Understanding
+
+The objective is not knowledge alone.
+
+The objective is evidence-based understanding.
+
+===============================================================================
+Week 1
+Order Book Fundamentals
+===============================================================================
+
+Learning Objective
+
+    Understand exactly what the order book represents and how it
+    reflects current market intentions.
+
+Topics
+
+    • Bid Orders
+
+    • Ask Orders
+
+    • Price Levels
+
+    • Quantity
+
+    • Market Depth
+
+    • Best Bid
+
+    • Best Ask
+
+    • Spread
+
+Questions
+
+    □ What does each field represent?
+
+    □ What information does each value provide?
+
+    □ Which values change most frequently?
+
+    □ How does the order book evolve over time?
+
+    □ What events cause updates?
+
+Expected Outcome
+
+    Build a solid understanding of the current state of market
+    supply and demand.
+
+===============================================================================
+Week 2
+Trade Execution
+===============================================================================
+
+Learning Objective
+
+    Understand how orders interact to produce completed trades.
+
+Topics
+
+    • Market Orders
+
+    • Limit Orders
+
+    • Trade Matching
+
+    • Executions
+
+    • Aggressive Buyers
+
+    • Aggressive Sellers
+
+Questions
+
+    □ How are orders matched?
+
+    □ What creates an execution?
+
+    □ What is the difference between market orders and limit orders?
+
+    □ Who initiates the trade?
+
+    □ What information is lost once a trade is completed?
+
+Expected Outcome
+
+    Understand how market participants transform intentions
+    (orders) into actual transactions.
+
+===============================================================================
+Week 3
+Liquidity
+===============================================================================
+
+Learning Objective
+
+    Understand how liquidity influences short-term price movement.
+
+Topics
+
+    • Liquidity
+
+    • Liquidity Walls
+
+    • Order Cancellation
+
+    • Order Addition
+
+    • Liquidity Consumption
+
+Questions
+
+    □ Why does liquidity appear?
+
+    □ Why does liquidity disappear?
+
+    □ Why are liquidity walls created?
+
+    □ Why are liquidity walls cancelled?
+
+    □ How does changing liquidity affect price movement?
+
+Expected Outcome
+
+    Develop intuition about how liquidity constrains or enables
+    short-term market movement.
+
+===============================================================================
+Week 4
+Price Formation
+===============================================================================
+
+Learning Objective
+
+    Understand how market activity evolves into observable price data.
+
+Learning Flow
+
+        Order Book
+
+                ↓
+
+        Order Flow
+
+                ↓
+
+        Trade Executions
+
+                ↓
+
+        Liquidity Changes
+
+                ↓
+
+        Price Movement
+
+                ↓
+
+        OHLCV
+
+Questions
+
+    □ How does order flow influence price?
+
+    □ Why does price accelerate?
+
+    □ Why does price reverse?
+
+    □ What creates trends?
+
+    □ What creates volatility?
+
+    □ How are OHLCV candles formed from market activity?
+
+Expected Outcome
+
+    Understand that OHLCV is not the starting point of analysis,
+    but rather the observable outcome of interactions between
+    market participants.
+
+===============================================================================
+Research Mindset
+===============================================================================
+
+For every topic studied, continuously ask
+
+    □ Can this phenomenon be measured?
+
+    □ Can historical data be collected?
+
+    □ Can a hypothesis be formulated?
+
+    □ Can the hypothesis be tested statistically?
+
+    □ Can the findings improve market understanding?
+
+Knowledge should naturally progress into research.
+
+===============================================================================
+Final Principle
+===============================================================================
+
+The purpose of studying market microstructure is not to become
+an expert in financial terminology.
+
+The purpose is to understand the underlying mechanisms that produce
+
+    • Order Flow
+
+    • Liquidity Changes
+
+    • Price Movement
+
+    • Trends
+
+    • Reversals
+
+    • Volatility
+
+Only after understanding these mechanisms should statistical analysis,
+hypothesis testing, and signal generation be developed.
+
+The objective is not simply to predict price.
+
+The objective is to understand the processes that generate price.
+
+===============================================================================

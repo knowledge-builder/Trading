@@ -1,0 +1,271 @@
+=================================
+Foreign Exchange Learning Roadmap
+=================================
+
+Part 1 — History of the Foreign Exchange Market
+
+• If you want to understand why Forex exists, start here.
+
+1. The Ascent of Money by Niall Ferguson
+
+• Not a Forex book specifically, but one of the best histories of money.
+
+• It explains:
+  • gold
+  • silver
+  • paper money
+  • central banking
+  • exchange rates
+  • international finance
+  • Bretton Woods
+  • floating currencies
+
+• You'll understand why currencies need exchange rates in the first place.
+
+2. Currency Trading and Intermarket Analysis by Ashraf Laïdi
+
+• Excellent for understanding:
+  • how currencies are priced
+  • why exchange rates move
+  • central banks
+  • interest rates
+  • inflation
+  • capital flows
+
+• This is closer to the real FX market.
+
+3. The Battle of Bretton Woods by Benn Steil
+
+• This explains the birth of the modern currency system.
+
+• Topics include:
+  • WWII
+  • IMF
+  • World Bank
+  • Bretton Woods Agreement
+  • US Dollar becoming reserve currency
+  • collapse into floating exchange rates
+
+• Without this event, modern Forex wouldn't exist.
+
+=============================================
+Part 2 — How the Forex Market Actually Works
+=============================================
+
+• These books explain who trades with whom.
+
+4. Trading and Exchanges by Larry Harris
+
+• This is one of the best books ever written on market microstructure.
+
+• It explains:
+  • bids
+  • asks
+  • liquidity
+  • dealers
+  • brokers
+  • market makers
+  • ECNs
+  • order books
+  • spreads
+  • limit orders
+  • stop orders
+
+• This book answers questions like:
+  • What actually happens when I click Buy?
+  • Who is taking the opposite side?
+
+5. Market Microstructure in Practice by Charles-Albert Lehalle
+
+• Much more mathematical.
+
+• Topics include:
+  • order matching
+  • liquidity
+  • execution algorithms
+  • institutional trading
+  • price formation
+
+====================================
+Part 3 — How Trading Platforms Work
+====================================
+
+• This is probably what you're most curious about.
+
+• Imagine clicking:
+
+  BUY
+
+• You might think:
+
+  You
+   ↓
+  IQ Option
+   ↓
+  Market
+
+• Reality depends on the platform.
+
+• For example:
+
+  Your Click
+        │
+        ▼
+  Trading Platform
+        │
+        ▼
+  Order Management System
+        │
+        ▼
+  Matching Engine
+        │
+        ▼
+  Liquidity Provider
+        │
+        ▼
+  Interbank FX Market
+
+• Some platforms are brokers routing trades to external liquidity providers, while others may internalize trades or act as the counterparty depending on the product offered and the broker's execution model.
+
+• Understanding the platform's specific execution policy is important.
+
+• Books on electronic trading explain this.
+
+Algorithmic Trading by Ernest Chan
+
+• Covers:
+  • market data
+  • execution
+  • APIs
+  • trading systems
+
+Designing Stock Market Trading Systems by Bruce Vanstone
+
+• Focuses on:
+  • architecture
+  • signals
+  • execution
+
+===============================
+Part 4 — Candlestick Mechanics
+===============================
+
+• You specifically asked:
+
+  "I want to understand the mechanics of candles."
+
+• This is surprisingly simple.
+
+• Suppose every trade arriving at an exchange looks like:
+
+  09:00:00  1.10231
+  09:00:01  1.10240
+  09:00:02  1.10228
+  09:00:04  1.10255
+  ...
+
+• These are individual trades (often called "ticks").
+
+• A 1-minute candle is built by summarizing all trades within one minute.
+
+• For example:
+
+  09:00:00 → 09:00:59
+
+  Open
+  • First trade
+    1.10231
+
+  High
+  • Largest price
+    1.10260
+
+  Low
+  • Smallest price
+    1.10220
+
+  Close
+  • Last trade
+    1.10255
+
+  Volume
+  • Number (or total size) of trades in that interval, if volume data is available.
+
+• A candle is simply a statistical summary of the underlying tick data.
+
+==========================================
+Part 5 — Recommended Learning Progression
+==========================================
+
+• Since you're building your own quantitative trading framework, study market microstructure before technical analysis.
+
+• A progression could look like this:
+
+  Money
+      ↓
+  Currencies
+      ↓
+  Foreign Exchange
+      ↓
+  Interbank Market
+      ↓
+  Liquidity Providers
+      ↓
+  Electronic Trading
+      ↓
+  Matching Engines
+      ↓
+  Tick Data
+      ↓
+  OHLC Aggregation
+      ↓
+  Candlesticks
+      ↓
+  Indicators
+
+• Many traders start with candlestick patterns and indicators, but those are derived from the more fundamental processes above.
+
+• Understanding how prices are formed, how orders are matched, and how raw trade data becomes candles provides a stronger foundation.
+
+===============================
+Key Distinction
+===============================
+
+• There are two separate concepts to understand:
+
+  • How currencies became tradable
+    • History of money
+    • Bretton Woods
+    • Central banking
+    • Floating exchange rates
+    • Foreign exchange markets
+
+  • How a modern trading platform executes your order
+    • Order Management System (OMS)
+    • Matching Engine
+    • Liquidity Providers
+    • Brokers
+    • Market Makers
+    • ECNs
+    • Execution policies
+    • Order routing
+
+• Understanding both provides a complete picture—from the historical evolution of currencies to the technical mechanics of modern electronic trading.
+
+===============================
+Recommended Starting Point
+===============================
+
+• Given your interest in first-principles thinking and building quantitative systems:
+
+  • Start with:
+    • Trading and Exchanges — Larry Harris
+
+• Then continue with:
+  • Tick data
+  • OHLC aggregation
+  • Candlestick construction
+  • Execution algorithms
+  • Market microstructure
+
+• This progression builds understanding from the underlying mechanics of markets rather than starting with derived concepts such as indicators or candlestick patterns.

@@ -1,0 +1,37 @@
+This is the First Mechanism of Price Movement
+
+Market Liquidity: Refers to the ease of buying or selling an asset in a market without causing a drastic change in its price. 
+For example, highly traded stocks (like Apple) have high market liquidity, while penny stocks often lack it
+
+Price moves because available liquidity is consumed.
+
+	Buy Market Order
+
+	       ↓
+
+	Consumes Sell Orders
+
+	       ↓
+
+	Next Seller is More Expensive
+
+	       ↓
+
+	Price Rises
+
+	or
+
+	Sell Market Order
+
+	       ↓
+
+	Consumes Buy Orders
+
+	       ↓
+
+	Next Buyer Pays Less
+
+	       ↓
+
+	Price Falls
+	
