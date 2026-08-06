@@ -1,0 +1,52 @@
+===============================================================================
+MEXC REST API - Retrieve Current Order Book
+===============================================================================
+
+Objective
+
+    Retrieve the current order book for ETHUSDT.
+
+This is our first experiment.
+
+We are NOT building a trading bot.
+
+We simply want to observe the current market state.
+
+Reference
+
+    https://mexcdevelop.github.io/apidocs/spot_v3_en/
+
+Endpoint
+
+    GET /api/v3/depth
+
+Example
+
+    Symbol : ETHUSDT
+
+    Limit  : 10
+
+Returns
+
+    • Top 10 Buy Orders (Bids)
+
+    • Top 10 Sell Orders (Asks)
+
+===============================================================================
+
+import requests
+
+BASE_URL = "https://api.mexc.com"
+
+endpoint = "/api/v3/depth"
+
+params = {
+    "symbol": "ETHUSDT",
+    "limit": 10
+}
+
+response = requests.get(BASE_URL + endpoint, params=params)
+
+data = response.json()
+
+print(data)

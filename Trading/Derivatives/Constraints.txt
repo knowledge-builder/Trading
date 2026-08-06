@@ -1,0 +1,93 @@
+================================================================================
+MARKET CONSTRAINT PHILOSOPHY
+================================================================================
+
+Objective
+
+    Understand the constraints acting on price.
+
+NOT
+
+    Predict price with certainty.
+
+================================================================================
+WHY CONSTRAINTS?
+================================================================================
+
+Price does not move freely.
+
+Price moves within constraints created by
+
+    • Liquidity
+
+    • Order Book
+
+    • Market Participants
+
+    • Capital
+
+    • Time
+
+    • Market Rules
+
+These constraints influence
+
+    • Direction
+
+    • Speed
+
+    • Magnitude
+
+    • Probability
+
+================================================================================
+EXAMPLE
+================================================================================
+
+Current Order Book
+
+    Buy Liquidity
+
+        5,000 contracts
+
+    Sell Liquidity
+
+        500 contracts
+
+Observation
+
+    Buy side possesses significantly more
+    available liquidity.
+
+Possible Interpretation
+
+    • Upward movement becomes easier.
+
+    • Downward movement requires greater
+      selling pressure.
+
+Notice
+
+    This does NOT guarantee
+    price will increase.
+
+It only changes the constraints
+under which price can move.
+
+================================================================================
+SCIENTIFIC VIEW
+================================================================================
+
+We are NOT predicting
+
+    Future Price
+
+We ARE estimating
+
+    • Current market constraints.
+
+    • Possible outcomes.
+
+    • Relative probabilities.
+
+================================================================================

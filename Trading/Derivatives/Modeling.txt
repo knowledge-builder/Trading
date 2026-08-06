@@ -1,0 +1,532 @@
+================================================================================
+MARKET PHYSICS RESEARCH
+Data Availability & Participant Modeling
+================================================================================
+
+Objective
+---------
+Determine what participant behavior can realistically be modeled based on
+observable market data.
+
+The objective is NOT to recreate the financial market perfectly.
+
+The objective is to build scientifically defensible approximations grounded
+in real exchange data.
+
+================================================================================
+MODELING PRINCIPLE
+================================================================================
+
+Never model what cannot be reasonably approximated.
+
+If a participant's internal decision process cannot be observed,
+
+do NOT invent it.
+
+Instead,
+
+    • Observe what is measurable.
+
+    • Infer what is reasonable.
+
+    • Validate against historical market data.
+
+Every participant model should remain falsifiable.
+
+================================================================================
+LEVELS OF OBSERVABILITY
+================================================================================
+
+Level 1 — Directly Observable
+-----------------------------
+
+These become direct inputs to the model.
+
+Examples
+
+    • Price
+
+    • OHLC
+
+    • Volume
+
+    • Individual Trades (Time & Sales)
+
+    • Order Book
+
+    • Best Bid / Ask
+
+    • Funding Rate
+
+    • Open Interest
+
+    • Liquidation Data (where available)
+
+Confidence
+
+    ★★★★★
+
+================================================================================
+Level 2 — Inferable
+================================================================================
+
+These cannot be directly observed,
+
+but may be inferred from market behavior.
+
+Examples
+
+    • Buying Pressure
+
+    • Selling Pressure
+
+    • Liquidity Consumption
+
+    • Liquidity Replenishment
+
+    • Trend Following
+
+    • Mean Reversion
+
+    • Momentum
+
+    • Inventory Absorption
+
+Confidence
+
+    ★★★☆☆
+
+These remain hypotheses until validated.
+
+================================================================================
+Level 3 — Unobservable
+================================================================================
+
+These should NOT be modeled directly.
+
+Examples
+
+    • Trader emotions
+
+    • Institutional intentions
+
+    • Proprietary HFT algorithms
+
+    • Hidden orders
+
+    • Future news
+
+    • Internal hedge fund risk management
+
+Confidence
+
+    ★☆☆☆☆
+
+Attempting to model these introduces speculation
+instead of scientific reasoning.
+
+================================================================================
+PARTICIPANT MODEL FEASIBILITY
+================================================================================
+
+1. Spot Traders
+---------------
+
+Objective
+
+    • Acquire or dispose of an asset.
+
+Observable Data
+
+    • Trades
+
+    • Volume
+
+    • Order Book
+
+    • OHLC
+
+Confidence
+
+    ★★★★★
+
+Can We Model?
+
+    YES
+
+A simplified behavioral model is realistic.
+
+================================================================================
+
+2. Derivatives Traders
+----------------------
+
+Objective
+
+    • Profit from price movement.
+
+Observable Data
+
+    • Trades
+
+    • Order Book
+
+    • Open Interest
+
+    • Funding Rate
+
+    • Liquidations
+
+Confidence
+
+    ★★★★★
+
+Can We Model?
+
+    YES
+
+Behavior can be approximated using observable
+derivatives market data.
+
+================================================================================
+
+3. Market Makers
+----------------
+
+Objective
+
+    • Provide liquidity.
+
+    • Earn the bid-ask spread.
+
+    • Manage inventory risk.
+
+Direct Observation
+
+    Impossible.
+
+Indirect Observation
+
+    • Spread
+
+    • Quote updates
+
+    • Order Book dynamics
+
+    • Liquidity replenishment
+
+Confidence
+
+    ★★★★☆
+
+Can We Model?
+
+    YES
+
+As a behavioral approximation.
+
+================================================================================
+
+4. Institutions
+---------------
+
+Objective
+
+    • Execute very large positions.
+
+    • Minimize market impact.
+
+Direct Observation
+
+    Impossible.
+
+Indirect Observation
+
+    • Persistent buying/selling
+
+    • Large volume
+
+    • VWAP-like execution
+
+    • Block trade patterns
+
+Confidence
+
+    ★★★☆☆
+
+Can We Model?
+
+    Partially.
+
+Only through observable execution patterns.
+
+================================================================================
+
+5. High Frequency Traders (HFT)
+-------------------------------
+
+Objective
+
+    • React extremely quickly.
+
+    • Exploit microstructure opportunities.
+
+Direct Observation
+
+    Impossible.
+
+Indirect Observation
+
+    • Rapid quote updates
+
+    • Frequent order cancellations
+
+    • Extremely short-lived orders
+
+Confidence
+
+    ★★☆☆☆
+
+Can We Model?
+
+    Only simplified behavioral classes.
+
+Exact strategies are proprietary.
+
+================================================================================
+RECOMMENDED DATA SOURCES
+================================================================================
+
+Crypto Spot
+
+    • Binance Spot
+
+    • Coinbase Exchange
+
+    • Kraken
+
+    • Bybit Spot
+
+------------------------------------------------------------
+
+Crypto Derivatives
+
+    • Binance Futures
+
+    • Bybit Futures
+
+    • MEXC Futures
+
+    • Hyperliquid
+
+------------------------------------------------------------
+
+Professional Futures
+
+    • CME Market Data
+
+    • DataBento
+
+================================================================================
+DATA AVAILABLE FROM EXCHANGES
+================================================================================
+
+Most modern exchanges expose APIs providing
+
+    • OHLCV
+
+    • Individual Trades
+
+    • Order Book
+
+    • Bid / Ask
+
+    • Funding Rate
+
+    • Open Interest
+
+    • Mark Price
+
+    • Index Price
+
+These datasets form the empirical foundation
+of participant models.
+
+================================================================================
+INSTITUTIONAL BEHAVIOR
+================================================================================
+
+We cannot observe institutional intentions.
+
+Instead,
+
+we infer behavior from execution patterns.
+
+Example
+
+Observed
+
+    • Persistent buying
+
+    • Increasing volume
+
+    • Stable execution
+
+Possible Interpretation
+
+    A large participant may be executing
+    a split order.
+
+Notice
+
+This remains a hypothesis,
+
+not a confirmed fact.
+
+================================================================================
+THE ORDER BOOK
+================================================================================
+
+The Order Book is likely the most valuable dataset
+for understanding market microstructure.
+
+Reason
+
+It allows observation of
+
+    • Resting Liquidity
+
+    • Incoming Orders
+
+    • Liquidity Consumption
+
+    • Liquidity Replenishment
+
+    • Bid/Ask Dynamics
+
+This provides insight into the mechanisms
+that drive short-term price movement.
+
+================================================================================
+MARKET PHYSICS RESEARCH STACK
+================================================================================
+
+Layer 1 — Market Data
+---------------------
+
+Inputs
+
+    • Trades
+
+    • Order Book
+
+    • OHLCV
+
+    • Open Interest
+
+    • Funding Rate
+
+            │
+            ▼
+
+Layer 2 — Participant Models
+----------------------------
+
+    • Spot Trader Model
+
+    • Derivatives Trader Model
+
+    • Market Maker Model
+
+    • Institution Model (Approximation)
+
+            │
+            ▼
+
+Layer 3 — Interaction Engine
+----------------------------
+
+Simulates
+
+    • Decisions
+
+    • Order Submission
+
+    • Liquidity Interaction
+
+            │
+            ▼
+
+Layer 4 — Market Output
+-----------------------
+
+Produces
+
+    • Price
+
+    • Trend
+
+    • Volatility
+
+    • Liquidity Changes
+
+            │
+            ▼
+
+Layer 5 — Validation
+--------------------
+
+Compare
+
+    Simulated Market
+
+                vs
+
+    Real Exchange Data
+
+Iteratively improve participant models
+until they better explain observed behavior.
+
+================================================================================
+FOUNDATIONAL RESEARCH PHILOSOPHY
+================================================================================
+
+The objective is NOT
+
+    "Build a perfect market simulator."
+
+The objective IS
+
+    "Build progressively more realistic behavioral models
+     that explain observable market phenomena."
+
+Markets are too complex to replicate perfectly.
+
+However,
+
+they can be approximated through careful observation,
+reasonable assumptions, empirical validation,
+and continuous refinement.
+
+================================================================================
+LONG-TERM VISION
+================================================================================
+
+Ultimately, the system should answer
+
+    • What happened?
+
+    • Which participants were likely involved?
+
+    • What decisions could explain the observed order flow?
+
+    • How did those interactions affect liquidity?
+
+    • Why did price move the way it did?
+
+The goal is not prediction alone.
+
+The goal is mechanistic understanding,
+from which probabilistic predictions can naturally emerge.
+
+================================================================================

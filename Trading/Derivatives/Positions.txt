@@ -1,0 +1,383 @@
+
+================================================================================
+LESSON 1 — POSITIONS
+Understanding Financial Exposure
+================================================================================
+
+Objective
+---------
+Develop an intuitive understanding of what a POSITION is before learning
+Long, Short, Profit & Loss, Leverage, and Liquidity.
+
+This lesson intentionally avoids mathematics and focuses on the underlying
+mechanism.
+
+================================================================================
+COMMON MISCONCEPTION
+================================================================================
+
+A Position is NOT:
+
+    • Bitcoin
+    • Ethereum
+    • Cash
+    • A completed trade
+    • Profit
+    • Loss
+
+A position is something entirely different.
+
+================================================================================
+DEFINITION
+================================================================================
+
+A Position is:
+
+    "Your current financial exposure to future market price movement."
+
+Breaking the definition down
+
+Financial
+
+    • The position can gain value.
+    • The position can lose value.
+
+Exposure
+
+    • Your account is now affected by market movement.
+
+Future Price Movement
+
+    • Every price change affects the value
+      of your position while it remains open.
+
+================================================================================
+MENTAL MODEL
+================================================================================
+
+Without a Position
+
+        Market Moves
+              │
+              ▼
+      Nothing Happens To You
+
+------------------------------------------------------------
+
+With a Position
+
+        Market Moves
+              │
+              ▼
+    Position Changes In Value
+
+The market moves regardless of whether you participate.
+
+A position simply determines whether your account is affected.
+
+================================================================================
+THE IMPORTANT SHIFT
+================================================================================
+
+Do NOT think
+
+    "I own Ethereum."
+
+Instead think
+
+    "I have exposure to Ethereum's price movement."
+
+In derivatives,
+
+the position is the primary object,
+
+not the asset itself.
+
+================================================================================
+ANALOGY — WEATHER
+================================================================================
+
+Suppose tomorrow it rains.
+
+Does everyone benefit?
+
+No.
+
+Examples
+
+Farmer
+
+    Rain
+        ↓
+    Good
+
+Outdoor Wedding
+
+    Rain
+        ↓
+    Bad
+
+Same event.
+
+Different outcome.
+
+Reason
+
+    • They occupy different positions.
+
+Markets work exactly the same way.
+
+The same price movement affects traders differently
+depending on the position they hold.
+
+================================================================================
+THOUGHT EXPERIMENT #1
+================================================================================
+
+Current Market
+
+    ETH = $2,000
+
+Three traders observe the exact same market.
+
+------------------------------------------------------------
+
+Alice
+
+    • No Position
+
+------------------------------------------------------------
+
+Bob
+
+    • Long Position
+
+------------------------------------------------------------
+
+Carol
+
+    • Short Position
+
+================================================================================
+MARKET MOVES
+================================================================================
+
+ETH increases
+
+    $2,000
+
+        ↓
+
+    $2,100
+
+Question
+
+What happened?
+
+Answer
+
+Alice
+
+    • No financial change.
+
+    • She had no market exposure.
+
+------------------------------------------------------------
+
+Bob
+
+    • Position increased in value.
+
+    • The market moved in his favor.
+
+------------------------------------------------------------
+
+Carol
+
+    • Position decreased in value.
+
+    • The market moved against her.
+
+Notice
+
+    • The market moved only once.
+
+    • Three different financial outcomes occurred.
+
+Reason
+
+    • Their positions were different.
+
+================================================================================
+IMPORTANT DISTINCTION
+================================================================================
+
+Avoid saying
+
+    • Bob won.
+
+    • Carol lost.
+
+Instead say
+
+    • Bob's position increased in value.
+
+    • Carol's position decreased in value.
+
+Reason
+
+    • Neither trader has closed the position.
+
+    • Profit or loss has not yet been realized.
+
+================================================================================
+OPEN POSITION
+================================================================================
+
+Suppose neither Bob nor Carol closes the position.
+
+Market
+
+    $2,000
+
+        ↓
+
+    $2,100
+
+        ↓
+
+    $2,300
+
+        ↓
+
+    $1,950
+
+        ↓
+
+    $2,400
+
+Question
+
+Can we already say Bob has made money?
+
+Answer
+
+Not yet.
+
+His position has gained value,
+
+but that value continues changing as long as
+the position remains open.
+
+================================================================================
+POSITION LIFE CYCLE
+================================================================================
+
+	Open Position
+
+			│
+
+			▼
+
+	Market Continues Moving
+
+			│
+
+			▼
+
+	Position Value Continuously Changes
+
+			│
+
+			▼
+
+	Close Position
+
+			│
+
+			▼
+
+	Profit / Loss Becomes Fixed
+
+================================================================================
+ANALOGY — TAKING A PHOTOGRAPH
+================================================================================
+
+Imagine recording a moving object.
+
+Before taking the picture
+
+    • Everything continues moving.
+
+After taking the picture
+
+    • One moment becomes permanently captured.
+
+Closing a position behaves similarly.
+
+While open
+
+    • Position value constantly changes.
+
+Once closed
+
+    • The outcome becomes fixed.
+
+================================================================================
+FOUNDATIONAL PRINCIPLE
+================================================================================
+
+The market continuously reprices every OPEN position.
+
+Only a CLOSED position has a fixed outcome.
+
+------------------------------------------------------------
+
+Open Position
+
+    • Position value changes continuously.
+
+    • Profit or loss is NOT yet finalized.
+
+------------------------------------------------------------
+
+Closed Position
+
+    • Position value stops changing.
+
+    • Profit or loss becomes realized.
+
+================================================================================
+FIRST-PRINCIPLES INSIGHT
+================================================================================
+
+The market does not reward or punish traders.
+
+The market simply moves.
+
+Your POSITION determines how that movement
+affects your account.
+
+================================================================================
+KEY TAKEAWAYS
+================================================================================
+
+• A position represents financial exposure,
+  not asset ownership.
+
+• The market moves independently of you.
+
+• An open position continuously changes in value.
+
+• Closing a position freezes the final outcome.
+
+• The same market movement can produce different
+  results for different traders because they hold
+  different positions.
+
+• Before learning Long and Short,
+  it is essential to understand that
+  a position is simply your relationship
+  to future market price movement.
+
+================================================================================

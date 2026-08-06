@@ -1,0 +1,521 @@
+================================================================================
+MARKET LEARNING FRAMEWORK
+Physics of Financial Markets (Derivatives-First)
+================================================================================
+
+Author's Note
+-------------
+This documentation establishes the default assumptions for all future
+discussions regarding trading, market microstructure, liquidity, and price
+movement.
+
+The objective is to build a FIRST-PRINCIPLES understanding of financial markets
+from the perspective of a derivatives trader.
+
+This is NOT a strategy guide.
+
+This is an attempt to understand the underlying mechanisms that govern
+financial markets.
+
+================================================================================
+DEFAULT ASSUMPTION
+================================================================================
+
+Unless explicitly stated otherwise,
+
+ALL discussions assume we are operating in:
+
+    • Crypto Perpetual Futures
+    • Futures Markets
+    • Derivatives Markets
+
+NOT
+
+    • Spot Trading
+    • Traditional Investing
+    • Long-term Asset Ownership
+
+Reason
+
+    • This matches the actual environment in which I trade.
+
+    • Learning should begin from the domain where knowledge
+      will actually be applied.
+
+================================================================================
+MENTAL MODEL
+================================================================================
+
+Do NOT think
+
+    Cash
+        ↓
+    Buy Asset
+        ↓
+    Hold Asset
+        ↓
+    Sell Asset
+        ↓
+    Profit
+
+That is the Spot Market mindset.
+
+Instead think
+
+    Market
+        ↓
+    Form a Hypothesis
+        ↓
+    Open Position
+        ↓
+    Price Changes
+        ↓
+    Close Position
+        ↓
+    Profit / Loss
+
+Notice
+
+    • The central object is NOT the asset.
+
+    • The central object is the POSITION.
+
+================================================================================
+TERMINOLOGY
+================================================================================
+
+Avoid interpreting the platform literally.
+
+Instead mentally translate the buttons.
+
+Platform Button
+
+    BUY
+
+Interpret As
+
+    Open Long Position
+
+------------------------------------------------------------
+
+Platform Button
+
+    SELL
+
+Interpret As
+
+    Open Short Position
+
+Reason
+
+    • In derivatives, BUY does not necessarily mean
+      acquiring ownership of the asset.
+
+    • Likewise, SELL does not necessarily mean
+      selling an asset already owned.
+
+They represent directional positions.
+
+================================================================================
+CORE PHILOSOPHY
+================================================================================
+
+This learning process focuses on MECHANISMS.
+
+Rather than asking
+
+    • How do I make money?
+
+Ask
+
+    • What mechanism makes profit possible?
+
+------------------------------------------------------------
+
+Rather than asking
+
+    • When should I buy?
+
+Ask
+
+    • What actually happens when I open a Long position?
+
+------------------------------------------------------------
+
+Rather than asking
+
+    • Why did price move?
+
+Ask
+
+    • What interaction caused price to move?
+
+The objective is explanation before prediction.
+
+================================================================================
+FIRST-PRINCIPLES APPROACH
+================================================================================
+
+Every concept should be reduced into four fundamental questions.
+
+------------------------------------------------------------
+
+1. COMPONENTS
+
+Questions
+
+    • What objects exist?
+
+    • Who participates?
+
+    • What are the building blocks?
+
+Examples
+
+    • Traders
+
+    • Orders
+
+    • Positions
+
+    • Liquidity
+
+    • Matching Engine
+
+------------------------------------------------------------
+
+2. INTERACTIONS
+
+Questions
+
+    • How do these components interact?
+
+    • What causes one component to affect another?
+
+Examples
+
+    • Market Orders consume liquidity.
+
+    • Limit Orders provide liquidity.
+
+    • Buyers and sellers are matched.
+
+------------------------------------------------------------
+
+3. CONSTRAINTS
+
+Questions
+
+    • What MUST happen?
+
+    • What CANNOT happen?
+
+Examples
+
+    • Every executed trade requires counterparties.
+
+    • Liquidity cannot become negative.
+
+    • Orders cannot execute without available liquidity.
+
+------------------------------------------------------------
+
+4. EMERGENT BEHAVIOR
+
+Questions
+
+    • What larger behavior emerges?
+
+    • Why does it naturally arise?
+
+Examples
+
+    • Trends
+
+    • Reversals
+
+    • Breakouts
+
+    • Volatility
+
+================================================================================
+LEARNING PHILOSOPHY
+================================================================================
+
+Knowledge should be constructed from the bottom upward.
+
+NOT
+
+    Strategy
+
+        ↓
+
+    Indicators
+
+        ↓
+
+    Theory
+
+Instead
+
+    Components
+
+        ↓
+
+    Mechanisms
+
+        ↓
+
+    Constraints
+
+        ↓
+
+    Emergent Behavior
+
+        ↓
+
+    Mathematics
+
+        ↓
+
+    Statistics
+
+        ↓
+
+    Strategy
+
+Understanding precedes optimization.
+
+================================================================================
+RESEARCH ROADMAP
+================================================================================
+
+PHASE 1 — POSITIONS
+-------------------
+
+Objective
+
+    Understand what a position actually is.
+
+Topics
+
+    • Position
+
+    • Long
+
+    • Short
+
+    • Opening Positions
+
+    • Closing Positions
+
+    • Unrealized P&L
+
+    • Realized P&L
+
+------------------------------------------------------------
+
+PHASE 2 — PROFIT MECHANISM
+--------------------------
+
+Objective
+
+    Understand WHY profit is possible.
+
+Questions
+
+    • Why does a Long make money?
+
+    • Why does a Short make money?
+
+    • Who pays whom?
+
+    • Where does profit actually come from?
+
+------------------------------------------------------------
+
+PHASE 3 — MATCHING ENGINE
+-------------------------
+
+Objective
+
+    Understand how trades are executed.
+
+Topics
+
+    • Market Orders
+
+    • Limit Orders
+
+    • Matching Process
+
+    • Counterparties
+
+------------------------------------------------------------
+
+PHASE 4 — ORDER BOOK
+--------------------
+
+Objective
+
+    Understand how the market organizes liquidity.
+
+Topics
+
+    • Bid Side
+
+    • Ask Side
+
+    • Spread
+
+    • Queue Priority
+
+------------------------------------------------------------
+
+PHASE 5 — LIQUIDITY
+-------------------
+
+Objective
+
+    Understand liquidity as market capacity.
+
+Topics
+
+    • Liquidity
+
+    • Absorption
+
+    • Capacity
+
+    • Exhaustion
+
+    • Replenishment
+
+------------------------------------------------------------
+
+PHASE 6 — PRICE FORMATION
+-------------------------
+
+Objective
+
+    Understand why price moves.
+
+Topics
+
+    • Price Discovery
+
+    • Order Flow
+
+    • Supply
+
+    • Demand
+
+    • Liquidity Consumption
+
+------------------------------------------------------------
+
+PHASE 7 — MARKET MICROSTRUCTURE
+-------------------------------
+
+Objective
+
+    Study the deeper mechanics of modern electronic markets.
+
+Topics
+
+    • Market Makers
+
+    • HFT
+
+    • Hidden Liquidity
+
+    • Iceberg Orders
+
+    • Slippage
+
+    • Price Impact
+
+================================================================================
+LEARNING STYLE
+================================================================================
+
+Every topic should be introduced in the following order.
+
+1. Big Picture
+
+    • Why does this concept exist?
+
+------------------------------------------------------------
+
+2. Components
+
+    • What objects are involved?
+
+------------------------------------------------------------
+
+3. Mechanism
+
+    • How do those objects interact?
+
+------------------------------------------------------------
+
+4. Constraints
+
+    • What must happen?
+
+    • What cannot happen?
+
+------------------------------------------------------------
+
+5. Thought Experiments
+
+    • Simulate scenarios.
+
+    • Build intuition.
+
+------------------------------------------------------------
+
+6. Mathematics
+
+    • Quantify the mechanism.
+
+------------------------------------------------------------
+
+7. Statistics
+
+    • Validate observations.
+
+------------------------------------------------------------
+
+8. Applications
+
+    • Trading
+
+    • Market Analysis
+
+    • Risk Management
+
+================================================================================
+FINAL OBJECTIVE
+================================================================================
+
+The goal is NOT to memorize trading concepts.
+
+The goal is to develop a mechanistic intuition.
+
+An intuition where every market event is interpreted through
+the interaction of underlying components.
+
+Ultimately, every explanation should answer:
+
+    • What happened?
+
+    • Why did it happen?
+
+    • Which mechanism caused it?
+
+    • Which constraints governed it?
+
+Only after understanding these questions should mathematics,
+statistics, and trading strategy be introduced.
+

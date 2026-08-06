@@ -1,0 +1,94 @@
+
+• HH (Higher High) – A new high that is higher than the previous high. Indicates buyers are pushing price higher.
+• LH (Lower High) – A new high that is lower than the previous high. Indicates buyers are becoming weaker.
+• HL (Higher Low) – A new low that is higher than the previous low. Indicates buyers are defending higher prices.
+• LL (Lower Low) – A new low that is lower than the previous low. Indicates sellers are pushing price lower.
+
+
+• HH = Buyers made a higher peak.
+• HL = Buyers defended a higher floor.
+• LH = Buyers failed to reach the previous peak.
+• LL = Sellers pushed to a lower floor.
+
+
+===========================================================================
+
+Key Principle
+
+HH, HL, LH, and LL are NOT determined by candle color.
+
+They are determined by price action—specifically the High and Low reached by price.
+
+
+Candle Color
+------------
+
+	• A candle can be:
+
+		• 🟢 Green
+		• 🔴 Red
+		• Doji
+
+	• Any of them can form a HH, HL, LH, or LL.
+
+	• Candle color does not define market structure.
+	
+	
+
+Psychology
+-----------
+	• While candle color does not determine market structure, it reveals the psychology behind it.
+
+		Scenario A
+		----------
+			• Long green candle
+
+				████████
+			• Strong buyers.
+
+
+		Scenario B
+		----------
+			• Tiny doji
+
+				──┼──
+			• Indecision.
+
+
+		Scenario C
+		----------
+			• Long upper wick
+
+					 │
+
+				 ████
+
+					 │
+			• Buyers pushed price higher...
+
+			• but sellers forced it back down before the candle closed.
+
+			• That upper wick tells a story that market structure alone doesn't.
+	
+	
+===========================================================================
+
+Mental Model
+
+	• Market Structure answers: "Where did price go?"
+	• Candlestick Psychology answers: "How did price get there?"
+	
+	
+===========================================================================
+
+Practice
+
+For every swing, ask yourself:
+
+	• Where is the latest swing high?
+	• Where is the latest swing low?
+	• Did buyers create a Higher High?
+	• Did buyers defend a Higher Low?
+	• Did sellers create a Lower Low?
+	• Did buyers fail to create a Higher High?
+	• What story do the candles tell at those swing points?

@@ -1,0 +1,511 @@
+================================================================================
+THE FINANCIAL MARKET ECOSYSTEM
+Who Are The Players And How Do They Interact?
+================================================================================
+
+Objective
+---------
+Understand each market participant by answering:
+
+    • Who are they?
+
+    • What is their objective?
+
+    • What information do they observe?
+
+    • What decisions do they make?
+
+    • How do they influence other participants?
+
+Rather than studying participants in isolation,
+
+we study them as an interacting ecosystem.
+
+================================================================================
+THE COMPLETE ECOSYSTEM
+================================================================================
+
+                        NEWS
+                      ECONOMY
+                    MACRO EVENTS
+                         │
+                         ▼
+
+                ┌──────────────────┐
+                │   Institutions   │
+                └──────────────────┘
+                         │
+              Large Orders / Capital
+                         │
+                         ▼
+
+        ┌────────────────────────────────────┐
+        │        MARKET MECHANISM            │
+        │                                    │
+        │             Orders                 │
+        │               ↓                    │
+        │         Matching Engine            │
+        │               ↓                    │
+        │           Liquidity                │
+        │               ↓                    │
+        │             Price                  │
+        └────────────────────────────────────┘
+
+		▲          ▲            ▲          ▲
+		│          │            │          │
+
+	  Spot   Derivatives   Market Makers  HFT
+
+				 Traders     Traders
+
+						▲
+						│
+
+				   Arbitrageurs
+
+================================================================================
+NOTICE SOMETHING IMPORTANT
+================================================================================
+
+Nobody directly changes price.
+
+Every participant only submits orders.
+
+Those orders interact through
+
+    • Liquidity
+
+    • Matching Engine
+
+Price is therefore
+
+    An emergent consequence,
+
+not a decision made by any participant.
+
+================================================================================
+PARTICIPANT #1
+SPOT TRADERS
+================================================================================
+
+Definition
+
+People or organizations that buy or sell
+the actual asset.
+
+Objective
+
+    Own the asset.
+
+Examples
+
+    Buy Bitcoin
+
+    Hold Ethereum
+
+Typical Decisions
+
+    Buy
+
+    Hold
+
+    Sell
+
+Observable Inputs
+
+    • Price
+
+    • Trend
+
+    • Volume
+
+Produces
+
+    Buy Orders
+
+    Sell Orders
+
+Influences
+
+    Liquidity
+
+    Price
+
+================================================================================
+PARTICIPANT #2
+DERIVATIVES TRADERS
+================================================================================
+
+Definition
+
+Participants trading contracts whose value
+depends on the underlying asset.
+
+Objective
+
+    Profit from future price movement.
+
+They care about
+
+    Direction.
+
+Not ownership.
+
+Typical Decisions
+
+    Open Long
+
+    Open Short
+
+    Close Position
+
+Observable Inputs
+
+    • Price
+
+    • Volume
+
+    • Funding
+
+    • Open Interest
+
+Produces
+
+    Long Orders
+
+    Short Orders
+
+Influences
+
+    Liquidity
+
+    Price Discovery
+
+================================================================================
+PARTICIPANT #3
+MARKET MAKERS
+================================================================================
+
+Definition
+
+Participants continuously providing
+buy and sell quotes.
+
+Objective
+
+    Earn the bid-ask spread.
+
+Secondary Objective
+
+    Avoid excessive inventory.
+
+Typical Decisions
+
+    Add Bid
+
+    Add Ask
+
+    Adjust Quotes
+
+Observable Inputs
+
+    • Order Book
+
+    • Spread
+
+    • Inventory
+
+Produces
+
+    Liquidity
+
+Without market makers
+
+Liquidity would become thin.
+
+================================================================================
+PARTICIPANT #4
+INSTITUTIONS
+================================================================================
+
+Definition
+
+Large financial organizations.
+
+Examples
+
+    Asset Managers
+
+    Hedge Funds
+
+    Pension Funds
+
+    Banks
+
+Objective
+
+    Execute very large positions
+    efficiently.
+
+Typical Decisions
+
+    Split Orders
+
+    Hide Intent
+
+    Minimize Market Impact
+
+Observable Inputs
+
+    • Macro Events
+
+    • Valuation
+
+    • Risk Models
+
+Produces
+
+    Sustained Order Flow
+
+Often responsible for
+
+    Large trends.
+
+================================================================================
+PARTICIPANT #5
+HIGH FREQUENCY TRADERS (HFT)
+================================================================================
+
+Definition
+
+Algorithms operating at extremely
+high speed.
+
+Objective
+
+    Exploit tiny opportunities.
+
+Typical Decisions
+
+    Submit Orders
+
+    Cancel Orders
+
+    Update Quotes
+
+Observable Inputs
+
+    • Order Book
+
+    • Latency
+
+    • Market Microstructure
+
+Produces
+
+    Extremely rapid liquidity changes.
+
+================================================================================
+PARTICIPANT #6
+ARBITRAGEURS
+================================================================================
+
+Definition
+
+Participants exploiting temporary
+price differences.
+
+Example
+
+Binance
+
+    BTC = $120,000
+
+Bybit
+
+    BTC = $120,050
+
+Decision
+
+    Buy Binance
+
+    Sell Bybit
+
+Result
+
+Prices converge.
+
+Objective
+
+    Keep markets aligned.
+
+Produces
+
+    Cross-market efficiency.
+
+================================================================================
+PARTICIPANT #7
+RETAIL TRADERS
+================================================================================
+
+Definition
+
+Individual traders.
+
+Important Clarification
+
+Retail is NOT another market mechanism.
+
+Retail describes
+
+    The size and nature of the participant.
+
+A retail trader may be
+
+    • Spot Trader
+
+    • Derivatives Trader
+
+    • Swing Trader
+
+    • Scalper
+
+Retail simply means
+
+    An individual participant.
+
+================================================================================
+THE INTERACTION LOOP
+================================================================================
+
+Every participant repeatedly performs
+the same cycle.
+
+        Observe Market
+
+               │
+
+               ▼
+
+      Interpret Information
+
+               │
+
+               ▼
+
+      Make A Decision
+
+               │
+
+               ▼
+
+      Submit Orders
+
+               │
+
+               ▼
+
+ Orders Interact With Liquidity
+
+               │
+
+               ▼
+
+ Price Changes
+
+               │
+
+               ▼
+
+Everyone Observes The New Price
+
+               │
+
+               └───────────────┐
+                               │
+                               ▼
+
+                      Cycle Repeats
+
+================================================================================
+THE MARKET IS A FEEDBACK SYSTEM
+================================================================================
+
+Participant A
+
+    submits an order.
+
+            │
+
+            ▼
+
+Price changes.
+
+            │
+
+            ▼
+
+Participant B observes
+the new price.
+
+            │
+
+            ▼
+
+Participant B submits
+another order.
+
+            │
+
+            ▼
+
+Participant C reacts.
+
+            │
+
+            ▼
+
+Price changes again.
+
+No participant acts in isolation.
+
+Each participant continuously reacts
+to the actions of others.
+
+================================================================================
+FIRST-PRINCIPLES INSIGHT
+================================================================================
+
+The market is NOT simply
+
+    Buyers
+
+versus
+
+    Sellers.
+
+The market is a complex adaptive system
+composed of many participant classes,
+each with different objectives,
+constraints,
+information,
+and decision rules.
+
+Their continuous interaction produces
+
+    • Order Flow
+
+    • Liquidity Changes
+
+    • Price Discovery
+
+    • Trends
+
+    • Volatility
+
+Understanding the market therefore requires
+understanding the behavior and interaction
+of its participants rather than studying
+price alone.
+
+================================================================================

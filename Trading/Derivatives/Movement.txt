@@ -1,0 +1,144 @@
+================================================================================
+FIRST-PRINCIPLES INSIGHT
+Market Movement Is The Result Of Interacting Decision Makers
+================================================================================
+
+The market does not move by itself.
+
+Markets move because participants continuously make decisions.
+
+Every participant has
+
+    • Objectives
+    • Constraints
+    • Information
+    • Decision Rules
+
+The interaction of those decisions produces
+
+    • Order Flow
+    • Liquidity Changes
+    • Price Movement
+    • Trends
+    • Reversals
+    • Volatility
+
+================================================================================
+EVERY PARTICIPANT IS SOLVING A DIFFERENT PROBLEM
+================================================================================
+
+Spot Trader
+
+Objective
+
+    • Acquire or dispose of an asset.
+
+------------------------------------------------------------
+
+Derivatives Trader
+
+Objective
+
+    • Profit from future price movement.
+
+------------------------------------------------------------
+
+Market Maker
+
+Objective
+
+    • Continuously provide liquidity.
+    • Earn the bid-ask spread.
+    • Manage inventory risk.
+
+------------------------------------------------------------
+
+Institution
+
+Objective
+
+    • Execute very large orders.
+    • Minimize market impact.
+    • Obtain favorable execution prices.
+
+------------------------------------------------------------
+
+High Frequency Trader (HFT)
+
+Objective
+
+    • Exploit very short-lived opportunities.
+    • React faster than competitors.
+
+------------------------------------------------------------
+
+Arbitrageur
+
+Objective
+
+    • Profit from temporary price differences
+      between markets.
+
+================================================================================
+IMPORTANT OBSERVATION
+================================================================================
+
+Every participant may observe
+
+    The same market.
+
+But each participant asks
+
+    A different question.
+
+Because their objectives differ,
+
+their decisions differ.
+
+Because their decisions differ,
+
+their orders differ.
+
+Because their orders interact,
+
+market behavior emerges.
+
+================================================================================
+THE MARKET AS A COMPLEX SYSTEM
+================================================================================
+
+Think of the market as a living ecosystem.
+
+Every participant continuously
+
+      Observe
+
+        ↓
+
+      Think
+
+        ↓
+
+      Decide
+
+        ↓
+
+      Submit Orders
+
+        ↓
+
+      Affect Liquidity
+
+        ↓
+
+      Affect Other Participants
+
+        ↓
+
+      Repeat
+
+The market is therefore
+
+    A network of interacting decision makers.
+
+================================================================================
