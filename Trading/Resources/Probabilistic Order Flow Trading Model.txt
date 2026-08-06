@@ -1,0 +1,252 @@
+============
+Layer 1 — Mathematical Foundation (Highest Priority)
+============
+
+• 1. Probability Theory
+  • Sample spaces
+  • Random variables
+  • Probability distributions
+  • Joint probability
+  • Conditional probability
+  • Independence
+  • Law of Total Probability
+  • Bayes' Theorem
+  • Expected value
+  • Variance
+  • Covariance
+  • Core idea
+    • Your model is fundamentally:
+      • P(Win | Market State)
+    • Without probability, the project doesn't exist.
+
+• 2. Statistics
+  • Sampling
+  • Maximum Likelihood Estimation (MLE)
+  • Confidence intervals
+  • Hypothesis testing
+  • Regression
+  • Correlation
+  • Bootstrap
+  • Cross-validation
+  • Goal
+    • Determine whether your estimated edge is statistically meaningful.
+
+• 3. Bayesian Statistics
+  • Prior
+  • Likelihood
+  • Posterior
+  • Bayesian updating
+  • Conjugate priors
+  • Sequential updating
+  • Mindset
+    • Instead of:
+      • "The probability of winning is 62%."
+    • Think:
+      • "Given new order flow evidence, update my belief."
+    • This closely matches how order flow behaves.
+
+• 4. Linear Algebra
+  • Vectors
+  • Matrices
+  • Dot product
+  • Matrix multiplication
+  • Eigenvalues (basic intuition)
+  • Purpose
+    • Understand the vector-based foundations of machine learning libraries.
+
+• 5. Optimization
+  • Cost functions
+  • Gradient descent
+  • Convex optimization (basic)
+  • Regularization
+  • Purpose
+    • Machine learning is fundamentally an optimization problem.
+
+• 6. Time Series
+  • Autocorrelation
+  • Lag variables
+  • Rolling statistics
+  • Stationarity
+  • Regime changes
+  • Purpose
+    • Markets are sequential data.
+
+• 7. Stochastic Processes
+  • Markov chains
+  • Random walks
+  • Brownian motion
+  • Poisson processes
+  • Purpose
+    • Useful for modeling transitions between market states.
+
+
+============
+Layer 2 — Market Mathematics
+============
+
+• Market Microstructure
+  • Bid
+  • Ask
+  • Spread
+  • Market orders
+  • Limit orders
+  • Liquidity
+  • Order book
+  • Queue priority
+  • Aggressive buyers
+  • Aggressive sellers
+  • Purpose
+    • Forms the foundation of your market state model.
+
+• Order Flow
+  • Delta
+  • Cumulative Delta
+  • Volume imbalance
+  • Footprint charts
+  • VWAP
+  • Volume profile
+  • Order book imbalance
+
+• Risk Mathematics
+  • Expected value
+  • Sharpe Ratio
+  • Sortino Ratio
+  • Calmar Ratio
+  • Kelly Criterion
+  • Drawdown
+  • Risk of ruin
+
+
+============
+Layer 3 — Machine Learning
+============
+
+• Problem Type
+  • Supervised learning
+
+• Inputs
+  • Current market state
+
+• Output
+  • Probability of success
+
+• Models
+  • Logistic Regression
+    • Outputs probabilities
+    • Ideal first model
+
+  • Decision Trees
+    • Easy to interpret
+
+  • Random Forest
+    • Strong baseline model
+
+  • Gradient Boosting
+    • XGBoost
+    • LightGBM
+    • CatBoost
+    • Dominant approaches for tabular data
+
+• Calibration
+  • Brier Score
+  • Calibration curves
+  • Goal
+    • Ensure predicted probabilities match real-world outcomes.
+
+
+============
+Layer 4 — Python
+============
+
+• Core
+  • Python
+  • Object-Oriented Programming (OOP)
+  • Type hints
+  • Virtual environments
+  • Git
+
+• Numerical Computing
+  • NumPy
+  • SciPy
+    • Statistics
+    • Optimization
+    • Probability distributions
+  • Polars
+    • High-performance DataFrame library
+  • Pandas
+    • Still important due to its ecosystem
+
+• Machine Learning
+  • scikit-learn
+    • Logistic Regression
+    • Random Forest
+    • Cross-validation
+    • Metrics
+    • Calibration
+    • Feature selection
+  • XGBoost
+  • LightGBM
+  • CatBoost
+  • PyMC
+
+• Statistics
+  • statsmodels
+    • Regression
+    • Hypothesis testing
+    • Time series
+
+• Visualization
+  • matplotlib
+  • seaborn
+  • plotly
+
+• Backtesting
+  • vectorbt
+  • Backtrader
+
+• Data Engineering
+  • SQL
+  • DuckDB
+  • dbt
+  • Apache Parquet
+  • Purpose
+    • Efficient storage and processing of market data
+
+
+============
+Suggested Project Structure
+============
+
+• market_data/
+  • ingest/
+  • clean/
+  • features/
+
+• models/
+  • logistic/
+  • xgboost/
+  • bayesian/
+
+• backtesting/
+• evaluation/
+• visualization/
+• experiments/
+• docs/
+
+
+============
+Compressed Learning Roadmap
+============
+
+• Probability
+• Statistics
+• Python
+• NumPy + Polars
+• Market Microstructure
+• Feature Engineering
+• Logistic Regression
+• Bayesian Thinking
+• Gradient Boosting
+• Backtesting
+• Risk Metrics
+• Portfolio Construction

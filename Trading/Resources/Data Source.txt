@@ -1,0 +1,78 @@
+============================
+Institutional / “Real” Market Data Sources
+============================
+
+• Polygon.io
+  • REST API + WebSockets
+  • Stocks, options, forex, crypto
+  • Tick data + aggregates (1s, 1m, 1h, etc.)
+  • Historical datasets downloadable
+  • Strong all-in-one retail quant API
+
+• Alpha Vantage
+  • Free tier + paid plans
+  • Intraday + daily + extended history
+  • Multiple timeframes (1min, 5min, etc.)
+  • Good for prototyping, not true microstructure
+
+• Nasdaq Data Link (formerly Quandl)
+  • Large structured financial datasets
+  • API + bulk CSV downloads
+  • Macro, equities, and alternative datasets
+  • Some intraday/tick datasets (often paid)
+
+• Tiingo
+  • Clean equities + crypto data
+  • Intraday + end-of-day + fundamentals
+  • Reliable historical quality vs Yahoo
+  • Simple API design
+
+• Intrinio
+  • Institutional-grade market + fundamentals
+  • Some intraday depth depending on plan
+  • Strong finance-data pipeline orientation
+
+
+============================
+High-Frequency / Microstructure Data
+============================
+
+• TickData
+  • Historical tick-by-tick equities data
+  • Institutional-grade fidelity
+  • Used by hedge funds and research desks
+  • Expensive
+
+• QuantQuote
+  • Historical US equities tick + minute data
+  • Cleaned datasets (survivorship bias aware)
+  • Research-focused
+
+• LOBSTER
+  • Limit order book reconstruction data
+  • Level 2 / microstructure research standard
+  • Extremely granular (event-level data)
+
+
+============================
+Crypto Market Data
+============================
+
+• Kaiko
+  • Institutional crypto market data
+  • Tick + order book + historical depth
+
+• CoinAPI
+  • Multi-exchange unified data feed
+  • Tick + OHLCV + trades
+
+
+============================
+Reality Summary
+============================
+
+• OHLCV data → easy, cheap, widely available
+• Tick data → paid, more advanced
+• Order book data → expensive, institutional-level
+
+No single provider gives everything for free; you typically combine sources depending on your trading model complexity.
