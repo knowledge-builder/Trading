@@ -1,0 +1,380 @@
+===========================================================
+NEXT DEVELOPMENT STAGE
+Decoding Live MEXC Market Data
+===========================================================
+
+Current Status
+--------------
+
+The live WebSocket connection has been successfully established.
+
+Successfully completed:
+
+✓ DNS resolution
+✓ REST API connectivity
+✓ WebSocket connection
+✓ Subscription to BTCUSDT 1-minute Kline stream
+✓ Reception of live market packets
+
+The current system is successfully receiving real-time market data.
+
+===========================================================
+Current Observation
+===========================================================
+
+The received data appears as:
+
+    b'\n(spot@public.kline.v3.api.pb@BTCUSDT@Min1...'
+
+instead of
+
+    {
+        ...
+    }
+
+or
+
+    {
+        "symbol": ...
+    }
+
+This indicates that the server is transmitting binary data rather
+than JSON.
+
+===========================================================
+Problem Definition
+===========================================================
+
+The incoming WebSocket messages are encoded using
+
+    Protocol Buffers (protobuf)
+
+instead of plain JSON.
+
+Python currently displays the raw binary payload because no decoder
+has been provided.
+
+As a result, the application cannot yet access fields such as:
+
+• Symbol
+• Timestamp
+• Open
+• High
+• Low
+• Close
+• Volume
+• Interval
+
+Although the market data is arriving successfully, it remains
+unusable until it is decoded.
+
+===========================================================
+Why This Happens
+===========================================================
+
+The subscribed channel is
+
+    spot@public.kline.v3.api.pb@BTCUSDT@Min1
+
+Notice the
+
+    .pb
+
+suffix.
+
+This indicates that the exchange uses
+
+    Protocol Buffers
+
+for serialization.
+
+Protocol Buffers are a compact binary format developed by Google.
+
+Advantages include:
+
+• Smaller packets
+• Faster transmission
+• Lower latency
+• Faster parsing
+• Lower bandwidth consumption
+
+Most professional market data vendors use binary serialization
+instead of JSON.
+
+Examples include:
+
+• Databento (DBN)
+• CME MDP
+• Coinbase
+• Binance (selected feeds)
+• MEXC
+
+===========================================================
+Current Data Pipeline
+===========================================================
+
+Current architecture:
+
+    MEXC
+
+        │
+
+        ▼
+
+    WebSocket
+
+        │
+
+        ▼
+
+    Binary Protobuf Packets
+
+        │
+
+        ▼
+
+    UNKNOWN FORMAT
+
+The missing component is
+
+    Protobuf Decoding
+
+===========================================================
+Missing Component
+===========================================================
+
+To decode protobuf data, a message schema is required.
+
+Normally exchanges publish
+
+    .proto
+
+files.
+
+These define every message structure.
+
+Example:
+
+    message Kline {
+
+        ...
+
+    }
+
+Without the schema,
+
+the binary bytes cannot be interpreted into meaningful values.
+
+===========================================================
+Next Objectives
+===========================================================
+
+Step 1
+
+Research the official protobuf documentation
+provided by MEXC.
+
+-----------------------------------------------------------
+
+Step 2
+
+Locate the official
+
+    .proto
+
+files describing the market data messages.
+
+-----------------------------------------------------------
+
+Step 3
+
+Generate Python classes from the protobuf schema.
+
+-----------------------------------------------------------
+
+Step 4
+
+Deserialize the incoming binary packets into
+Python objects.
+
+Expected result:
+
+Instead of
+
+    b'\n(...'
+
+the application should produce something similar to
+
+    Symbol
+
+    BTCUSDT
+
+    Interval
+
+    1 Minute
+
+    Open
+
+    ...
+
+    High
+
+    ...
+
+    Low
+
+    ...
+
+    Close
+
+    ...
+
+    Volume
+
+    ...
+
+-----------------------------------------------------------
+
+Step 5
+
+Map the decoded object into the project's
+Canonical Market Schema.
+
+Canonical Schema:
+
+    Identity
+
+        • Symbol
+
+    OHLCV
+
+        • Open
+        • High
+        • Low
+        • Close
+        • Volume
+
+-----------------------------------------------------------
+
+Step 6
+
+Insert the decoded records into PostgreSQL.
+
+-----------------------------------------------------------
+
+Step 7
+
+Generalize the decoder so that future channels
+can reuse the same infrastructure.
+
+Examples:
+
+• Trades
+• Order Book
+• Ticker
+• Depth
+• Funding
+• Liquidations
+
+===========================================================
+Target Architecture
+===========================================================
+
+                MEXC
+
+                  │
+
+                  ▼
+
+          WebSocket Stream
+
+                  │
+
+                  ▼
+
+        Binary Protobuf Packets
+
+                  │
+
+                  ▼
+
+        Protobuf Decoder
+
+                  │
+
+                  ▼
+
+        Python Market Objects
+
+                  │
+
+                  ▼
+
+      Canonical Market Schema
+
+                  │
+
+                  ▼
+
+           PostgreSQL Storage
+
+                  │
+
+                  ▼
+
+        Quantitative Research
+
+                  │
+
+                  ▼
+
+      Signal Generation Engine
+
+                  │
+
+                  ▼
+
+      C++ Decision Support System
+
+===========================================================
+Long-Term Vision
+===========================================================
+
+The protobuf decoder should become an independent
+component within the trading system.
+
+Instead of coupling decoding logic directly to the
+WebSocket client, the architecture should separate:
+
+• Network Communication
+
+from
+
+• Message Serialization
+
+from
+
+• Database Storage
+
+This modular approach allows the system to support
+multiple market data providers in the future.
+
+Potential future providers:
+
+• Databento
+• MEXC
+• Binance
+• CME
+• Interactive Brokers
+• Sierra Chart
+
+while maintaining a common internal market schema.
+
+===========================================================
+Current Milestone
+===========================================================
+
+Live market data has been successfully acquired.
+
+The remaining task is not obtaining data,
+but interpreting it into usable market objects.

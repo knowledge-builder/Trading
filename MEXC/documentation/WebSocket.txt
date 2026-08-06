@@ -1,0 +1,633 @@
+# WebSocket Explained Through Analogy and Real System Mapping
+
+
+============================================================
+1. BASIC ANALOGY
+============================================================
+
+
+REST API = Restaurant Waiter
+
+		You:
+			"Give me the price of BTC"
+
+				|
+				|
+				v
+
+		Waiter (API)
+
+				|
+				|
+				v
+
+		Kitchen (Server)
+
+				|
+				|
+				v
+
+		Response:
+			"BTC price is 65927 USDT"
+
+
+		Flow:
+
+			Request
+			   |
+			   v
+    Response
+
+
+The conversation ends.
+
+
+------------------------------------------------------------
+
+
+WebSocket = Phone Call
+
+
+		You
+		 |
+		 |
+		 v
+
+		Friend (Server)
+
+
+		You:
+
+			"Stay on the line.
+			 Tell me whenever something happens."
+
+
+		Friend:
+
+			"Okay."
+
+
+		Later:
+
+		Friend:
+
+			"BTC price changed."
+
+
+		Friend:
+
+			"BTC candle updated."
+
+
+		Friend:
+
+			"BTC volume increased."
+
+
+		The connection stays open.
+
+
+
+============================================================
+2. REST API VS WEBSOCKET
+============================================================
+
+
+REST API:
+
+			Client
+			  |
+			  |
+			  |  "Give me BTC price"
+			  |
+			  v
+			Server
+
+			  |
+			  |
+			  |  "Here is BTC price"
+			  |
+			  v
+
+			Client
+
+
+One request.
+One response.
+
+
+------------------------------------------------------------
+
+
+		WebSocket:
+
+			Client
+			  |
+			  |
+			  |  "Keep me updated"
+			  |
+			  v
+			Server
+
+
+		Connection remains open:
+
+
+			Server
+			   |
+			   |
+			   v
+
+			Update 1
+
+			Update 2
+
+			Update 3
+
+			Update 4
+
+
+
+============================================================
+3. REAL MEXC SYSTEM
+============================================================
+
+
+		Python Application
+
+				|
+				|
+				v
+
+		WebSocket Client
+		(websocket-client library)
+
+				|
+				|
+				v
+
+		Internet Connection
+
+				|
+				|
+				v
+
+		MEXC WebSocket Server
+
+				|
+				|
+				v
+
+		BTCUSDT Market Data
+
+
+The server continuously sends:
+
+
+    Candle Update
+    Candle Update
+    Candle Update
+
+
+
+============================================================
+4. WEBSOCKET CONNECTION PROCESS
+============================================================
+
+
+STEP 1 — DNS Lookup
+
+
+Human:
+
+    wbs-api.mexc.com
+
+
+Computer needs:
+
+    IP Address
+
+
+DNS converts:
+
+
+    wbs-api.mexc.com
+
+            |
+
+            v
+
+    161.xxx.xxx.xxx
+
+
+
+------------------------------------------------------------
+
+
+STEP 2 — Create Connection
+
+
+Python:
+
+    "MEXC, I want to connect."
+
+
+MEXC:
+
+    "Connection accepted."
+
+
+
+------------------------------------------------------------
+
+
+STEP 3 — WebSocket Handshake
+
+
+Client:
+
+    "Can we keep this connection open?"
+
+
+Server:
+
+    "Yes."
+
+
+
+Now:
+
+
+    Python  <================>  MEXC
+
+
+Communication channel exists.
+
+
+
+------------------------------------------------------------
+
+
+STEP 4 — Subscribe
+
+
+Python sends:
+
+
+{
+    "method": "SUBSCRIPTION",
+    "params": [
+        "spot@public.kline.v3.api.pb@BTCUSDT@Min1"
+    ]
+}
+
+
+Meaning:
+
+
+    "Send me BTCUSDT 1-minute candle updates."
+
+
+
+------------------------------------------------------------
+
+
+STEP 5 — Receive Stream
+
+
+MEXC sends:
+
+
+BTCUSDT
+
+Open:
+65924.45
+
+High:
+65927.76
+
+Low:
+65924.45
+
+Close:
+65927.75
+
+Volume:
+0.97362217
+
+
+
+============================================================
+5. IMPORTANT WEBSOCKET TERMS
+============================================================
+
+
+Client
+
+Definition:
+
+    The program requesting the connection.
+
+
+Example:
+
+    Your Python script
+
+
+Analogy:
+
+    You making the phone call.
+
+
+
+------------------------------------------------------------
+
+
+Server
+
+Definition:
+
+    The computer providing the service.
+
+
+Example:
+
+    MEXC WebSocket server
+
+
+Analogy:
+
+    Your friend answering the phone.
+
+
+
+------------------------------------------------------------
+
+
+Connection
+
+Definition:
+
+    Active communication link between two computers.
+
+
+Example:
+
+
+    Python  <-------->  MEXC
+
+
+
+Analogy:
+
+    Phone call in progress.
+
+
+
+------------------------------------------------------------
+
+
+Protocol
+
+Definition:
+
+    Rules that define how computers communicate.
+
+
+Examples:
+
+    HTTP
+    WebSocket
+    TCP
+
+
+Analogy:
+
+    Language used during the conversation.
+
+
+
+------------------------------------------------------------
+
+
+Socket
+
+Definition:
+
+    A software endpoint that allows programs to communicate
+    over a network.
+
+
+Analogy:
+
+    The phone device.
+
+
+
+------------------------------------------------------------
+
+
+Port
+
+Definition:
+
+    A communication channel number.
+
+
+Example:
+
+
+    IP Address:
+        161.xxx.xxx.xxx
+
+
+    Port:
+        443
+
+
+Together:
+
+
+    161.xxx.xxx.xxx:443
+
+
+Analogy:
+
+    Building address + apartment number.
+
+
+
+------------------------------------------------------------
+
+
+Message
+
+Definition:
+
+    A piece of information sent through WebSocket.
+
+
+Example:
+
+    BTC price update
+
+
+
+------------------------------------------------------------
+
+
+Stream
+
+Definition:
+
+    Continuous flow of data.
+
+
+Example:
+
+
+    BTC update
+    BTC update
+    BTC update
+    BTC update
+
+
+
+Analogy:
+
+    Water flowing through a pipe.
+
+
+
+------------------------------------------------------------
+
+
+Subscribe
+
+Definition:
+
+    Request to receive specific information.
+
+
+Example:
+
+
+    Subscribe to:
+
+        BTCUSDT
+        1-minute candles
+
+
+
+Analogy:
+
+    "Notify me whenever something happens."
+
+
+
+------------------------------------------------------------
+
+
+Disconnect
+
+Definition:
+
+    Closing the communication channel.
+
+
+Examples:
+
+
+    CTRL + C
+
+
+or:
+
+
+    ws.close()
+
+
+
+============================================================
+6. COMPLETE MENTAL MODEL
+============================================================
+
+
+Domain Name
+
+			wbs-api.mexc.com
+
+					|
+					v
+
+		DNS Resolution
+
+					|
+					v
+
+		IP Address
+
+					|
+					v
+
+		Socket Connection
+
+					|
+					v
+
+		WebSocket Handshake
+
+					|
+					v
+
+		Subscription
+
+					|
+					v
+
+		Market Data Stream
+
+					|
+					v
+
+		Protobuf Decoder
+
+					|
+					v
+
+		Python Object
+
+					|
+					v
+
+		OHLCV Data
+
+
+
+============================================================
+7. ONE SENTENCE SUMMARY
+============================================================
+
+
+API:
+
+    "I ask the server for information."
+
+
+WebSocket:
+
+    "I open a permanent communication line with the server
+     so the server can continuously send information to me."
+
+
+MEXC Example:
+
+
+    Python:
+
+        "Keep me updated about BTCUSDT."
+
+
+    MEXC:
+
+        "Here is every BTCUSDT candle update."

@@ -1,0 +1,317 @@
+# MEXC Protocol Buffers Setup and Decoder Generation
+
+## Objective
+
+The goal of this phase was to prepare the development environment to decode MEXC's live WebSocket binary messages into structured Python objects.
+
+Without this step, the WebSocket client only receives raw binary bytes that are difficult to interpret manually.
+
+---
+
+# Problem Statement
+
+After successfully connecting to the MEXC WebSocket, the application began receiving messages such as:
+
+```python
+b'\n(spot@public.kline.v3.api.pb@BTCUSDT@Min1...'
+```
+
+These messages are **Protocol Buffers (protobuf)** encoded binary payloads.
+
+They are **not**:
+
+* JSON
+* CSV
+* Plain text
+* Readable Python dictionaries
+
+Therefore, the application could not directly extract fields such as:
+
+* Symbol
+* Open
+* High
+* Low
+* Close
+* Volume
+* Timestamp
+
+Without understanding the protobuf schema, the binary stream is essentially unreadable.
+
+---
+
+# Solution
+
+Instead of reverse engineering the binary packets manually, we used the **official protobuf definitions published by MEXC**.
+
+This allows us to decode every packet exactly as MEXC intended.
+
+---
+
+# Steps Performed
+
+## 1. Installed the Protocol Buffer Compiler
+
+Downloaded:
+
+```text
+protoc-35.1-win64.zip
+```
+
+Extracted to:
+
+```text
+C:\protobuf
+```
+
+Directory structure:
+
+```text
+C:\protobuf
+│
+├── bin
+│     protoc.exe
+│
+├── include
+│
+└── ...
+```
+
+---
+
+## 2. Added protoc to PATH
+
+Added:
+
+```text
+C:\protobuf\bin
+```
+
+to the Windows **User PATH**.
+
+Purpose:
+
+This allows the command
+
+```cmd
+protoc
+```
+
+to be executed from any directory.
+
+---
+
+## 3. Verified Installation
+
+Executed:
+
+```cmd
+protoc --version
+```
+
+Output:
+
+```text
+libprotoc 35.1
+```
+
+This confirmed that the protobuf compiler was installed correctly.
+
+---
+
+## 4. Downloaded MEXC Official Schema
+
+Cloned the official repository:
+
+```bash
+git clone https://github.com/mexcdevelop/websocket-proto.git
+```
+
+Project location:
+
+```text
+D:\Data Projects\MEXC API Architecture\websocket-proto
+```
+
+Contents included:
+
+```text
+PushDataV3ApiWrapper.proto
+PublicSpotKlineV3Api.proto
+PublicDealsV3Api.proto
+...
+```
+
+These `.proto` files define the exact binary message formats used by the MEXC WebSocket API.
+
+---
+
+## 5. Generated Python Decoder Classes
+
+Executed:
+
+```cmd
+protoc *.proto --python_out=.
+```
+
+This automatically generated Python modules:
+
+	PushDataV3ApiWrapper_pb2.py
+	PublicSpotKlineV3Api_pb2.py
+	PublicDealsV3Api_pb2.py
+
+These modules contain Python classes capable of parsing protobuf binary messages.
+
+---
+
+## 6. Verified Decoder Generation
+
+Confirmed that all generated files exist:
+
+```text
+*_pb2.py
+```
+
+This verified that the protobuf compilation process completed successfully.
+
+---
+
+# What Exactly Did We Build?
+
+	We did **not** build a trading system.
+
+	We did **not** build a strategy.
+
+	We built the **serialization layer** between MEXC's binary network protocol and Python.
+
+Conceptually:
+
+
+		Raw Binary
+				│
+				▼
+		Protocol Buffer Decoder
+				│
+				▼
+		Python Objects
+
+
+This is equivalent to how:
+
+* JSON becomes Python dictionaries
+* CSV becomes pandas DataFrames
+* XML becomes XML objects
+
+In our case:
+
+
+		protobuf bytes
+
+		    ↓
+
+		Python market objects
+
+
+---
+
+# Why Is This Important?
+
+Before this setup:
+
+
+		WebSocket
+
+		   ↓
+
+		Raw Bytes
+
+		   ↓
+
+		Unreadable
+
+
+After this setup:
+
+
+		WebSocket
+
+		    ↓
+
+		Raw Bytes
+
+		    ↓
+
+		Official Decoder
+
+		    ↓
+
+		Python Objects
+
+		    ↓
+
+		Market Data
+
+
+Instead of manually decoding hexadecimal values, Python can now understand the message structure automatically.
+
+---
+
+# Architectural Importance
+
+This layer becomes the foundation of the entire market data pipeline.
+
+
+		MEXC WebSocket
+				│
+				▼
+		Binary Messages
+				│
+				▼
+		protobuf Decoder
+				│
+				▼
+		Python Objects
+				│
+				▼
+		Canonical Market Schema
+				│
+				▼
+		PostgreSQL
+				│
+				▼
+		Research
+				│
+				▼
+C++ Decision Engine
+
+
+Notice that:
+
+	* PostgreSQL should never interact directly with protobuf.
+	* Research code should never depend on protobuf.
+	* The future C++ decision engine should never need to understand protobuf.
+
+Only the decoder layer communicates with the exchange-specific protocol.
+
+---
+
+# Benefits
+
+	* Uses MEXC's official message specification.
+	* Eliminates manual binary decoding.
+	* Ensures compatibility with future MEXC updates.
+	* Produces strongly typed Python objects.
+	* Creates a clean separation between transport, decoding, storage, and analysis.
+	* Establishes a reusable foundation for the future C++ trading platform.
+
+---
+
+# Milestone Achieved
+
+At the completion of this phase, the project can:
+
+	* Connect to the MEXC WebSocket.
+	* Receive live binary market data.
+	* Decode that binary data using the official protobuf definitions.
+	* Prepare the decoded information for mapping into the project's canonical market model.
+
+This marks the completion of the **protocol decoding infrastructure**, a prerequisite for building a reliable real-time market data pipeline.

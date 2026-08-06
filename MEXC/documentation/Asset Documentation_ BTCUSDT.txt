@@ -1,0 +1,268 @@
+# Asset Documentation: BTCUSDT
+
+## Overview
+
+BTCUSDT is a cryptocurrency trading pair representing the exchange rate between:
+
+    BTC  = Bitcoin
+    USDT = Tether (USD-pegged stablecoin)
+
+The pair expresses the value of Bitcoin in terms of USDT.
+
+Example:
+
+    BTCUSDT = 65,927.75
+
+Means:
+
+    1 BTC = 65,927.75 USDT
+
+In practical terms:
+
+    Buying BTCUSDT
+        =
+    Buying Bitcoin using USDT
+
+    Selling BTCUSDT
+        =
+    Selling Bitcoin and receiving USDT
+
+
+---
+
+# Asset Classification
+
+BTCUSDT belongs to:
+
+    Asset Class:
+        Cryptocurrency
+
+    Market:
+        Digital Asset Market
+
+    Instrument Type:
+        Spot Trading Pair
+
+    Exchange:
+        MEXC
+
+    Quote Currency:
+        USDT
+
+    Base Currency:
+        BTC
+
+
+---
+
+# Understanding Trading Pairs
+
+A trading pair always has two components:
+
+
+        BASE / QUOTE
+
+
+Example:
+
+        BTC / USDT
+
+
+## Base Asset
+
+The first symbol:
+
+    BTC
+
+
+Represents the asset being traded.
+
+
+Meaning:
+
+    "How much BTC are we buying or selling?"
+
+
+Example:
+
+    Buy 1 BTC
+
+
+You are acquiring:
+
+    1 Bitcoin
+
+
+
+---
+
+## Quote Asset
+
+The second symbol:
+
+    USDT
+
+
+Represents the currency used to price the base asset.
+
+
+Meaning:
+
+    "How much does BTC cost?"
+
+
+Example:
+
+    BTCUSDT = 65,927
+
+
+Means:
+
+    1 BTC costs 65,927 USDT
+
+
+
+---
+
+# What is Bitcoin (BTC)?
+
+## Definition
+
+Bitcoin is a decentralized digital currency created in 2009.
+
+It operates on:
+
+    Blockchain technology
+
+
+Unlike traditional currencies:
+
+    USD
+    EUR
+    PHP
+
+
+Bitcoin is not controlled by a central bank.
+
+
+---
+
+# Bitcoin Characteristics
+
+## 1. Fixed Supply
+
+Bitcoin has a maximum supply:
+
+    21 million BTC
+
+
+This creates scarcity.
+
+Comparison:
+
+Gold:
+
+    Limited physical supply
+
+Bitcoin:
+
+    Limited digital supply
+
+
+
+---
+
+## 2. Decentralized Network
+
+Bitcoin transactions are validated by:
+
+    Global network of computers
+
+
+No single entity controls:
+
+    - issuance
+    - transaction validation
+    - monetary policy
+
+
+---
+
+## 3. Blockchain Ledger
+
+Every Bitcoin transaction is recorded on:
+
+    Bitcoin blockchain
+
+
+Structure:
+
+    Transaction
+        |
+        ▼
+    Block
+        |
+        ▼
+    Blockchain
+
+
+
+---
+
+# What is USDT?
+
+## Definition
+
+USDT (Tether) is a stablecoin designed to maintain:
+
+    1 USDT ≈ 1 USD
+
+
+It is commonly used as a digital representation of USD inside cryptocurrency exchanges.
+
+
+---
+
+# Why USDT Exists
+
+Crypto markets operate 24/7 globally.
+
+Traditional banking:
+
+    USD
+        |
+        |
+    Bank transfer
+        |
+        |
+    Exchange
+
+
+Can be slow.
+
+
+USDT provides:
+
+    Crypto-native dollar liquidity
+
+
+Example:
+
+Trader deposits USDT:
+
+    USD
+      |
+      ▼
+    USDT
+      |
+      ▼
+    BTC purchase
+
+
+---
+
+# BTCUSDT Price Meaning
+
+Example:
+
+MEXC sends:

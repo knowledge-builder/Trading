@@ -1,0 +1,442 @@
+# Creating Python Virtual Environment (VM) for MEXC API Architecture
+
+## Problem
+
+The initial development environment used the global Python installation.
+
+This creates several risks:
+
+- Dependencies from different projects become mixed.
+- Package version conflicts can occur.
+- Updating one package may break unrelated projects.
+- Reproducing the project on another machine becomes difficult.
+
+Example:
+
+Global Python:
+
+    Python 3.13
+        |
+        ├── pandas
+        ├── fastapi
+        ├── protobuf
+        ├── websocket-client
+        ├── numpy
+        └── other project dependencies
+
+
+For the MEXC market data project, we need an isolated environment.
+
+Solution:
+
+Create a dedicated Python virtual environment named:
+
+    mexc
+
+
+This environment will contain only dependencies required for:
+
+- MEXC WebSocket connection
+- protobuf decoding
+- market data ingestion
+- future database integration
+- research pipeline
+
+
+---
+
+# Objective
+
+Create:
+
+    MEXC API Architecture
+    |
+    ├── websocket-proto
+    |
+    └── python
+        |
+        ├── mexc              <-- Virtual Environment
+        |
+        └── application files
+
+
+The `mexc` environment acts as the isolated Python runtime for this project.
+
+
+---
+
+# Step 1 — Navigate to Project Folder
+
+Open Command Prompt.
+
+Navigate to:
+
+    D:\Data Projects\MEXC API Architecture
+
+
+Command:
+
+cd /d "D:\Data Projects\MEXC API Architecture"
+
+
+Explanation:
+
+- `/d` allows changing drives.
+- Without `/d`, CMD cannot switch from C: to D:.
+
+
+Example:
+
+Before:
+
+    C:\Windows\System32>
+
+
+After:
+
+    D:\Data Projects\MEXC API Architecture>
+
+
+---
+
+# Step 2 — Create Python Application Folder
+
+Create a dedicated folder for Python code.
+
+Command:
+
+mkdir python
+
+
+Result:
+
+    MEXC API Architecture
+    |
+    ├── websocket-proto
+    |
+    └── python
+
+
+Purpose:
+
+Separates:
+
+- protobuf definitions
+- generated decoder files
+- application code
+
+
+---
+
+# Step 3 — Enter Python Folder
+
+
+Command:
+
+cd python
+
+
+Current location:
+
+    D:\Data Projects\MEXC API Architecture\python
+
+
+All Python development will happen here.
+
+
+---
+
+# Step 4 — Create Virtual Environment
+
+Create a virtual environment named:
+
+    mexc
+
+
+Command:
+
+python -m venv mexc
+
+
+This creates:
+
+
+    python
+    |
+    └── mexc
+        |
+        ├── Scripts
+        |
+        ├── Lib
+        |
+        └── Include
+
+
+Explanation:
+
+The virtual environment contains:
+
+Scripts:
+- activation commands
+- local Python executable
+
+Lib:
+- installed packages
+
+Include:
+- Python headers
+
+
+---
+
+# Step 5 — Activate Virtual Environment
+
+
+Command:
+
+mexc\Scripts\activate
+
+
+Successful activation changes the terminal prompt.
+
+
+Before:
+
+    D:\Data Projects\MEXC API Architecture\python>
+
+
+After:
+
+    (mexc) D:\Data Projects\MEXC API Architecture\python>
+
+
+The `(mexc)` indicates:
+
+"You are now working inside the MEXC Python environment."
+
+
+---
+
+# Step 6 — Upgrade pip
+
+
+Command:
+
+python -m pip install --upgrade pip
+
+
+Purpose:
+
+pip manages Python packages.
+
+Updating ensures:
+
+- better dependency resolution
+- compatibility with newer packages
+- security fixes
+
+
+Verification:
+
+
+pip --version
+
+
+Expected:
+
+
+pip 26.1.2 from ...
+
+The path should point inside:
+
+    python\mexc\Lib\site-packages
+
+
+This confirms pip belongs to the virtual environment.
+
+
+---
+
+# Step 7 — Install Project Dependencies
+
+
+Required libraries:
+
+## websocket-client
+
+Purpose:
+
+Connects Python to MEXC WebSocket.
+
+
+Architecture:
+
+    Python
+       |
+       |
+       ▼
+    MEXC WebSocket
+
+
+---
+
+## protobuf
+
+Purpose:
+
+Decode MEXC binary messages.
+
+
+Before:
+
+    b'\n(spot@public.kline...'
+
+
+After:
+
+    BTCUSDT
+    open
+    high
+    low
+    close
+    volume
+
+
+Install:
+
+
+pip install websocket-client protobuf
+
+
+---
+
+# Step 8 — Verify Installed Packages
+
+
+Command:
+
+
+pip list
+
+
+Expected:
+
+
+Package          Version
+---------------- -------
+pip              26.1.2
+protobuf         7.35.1
+websocket-client 1.9.0
+
+
+This confirms the environment is ready.
+
+
+---
+
+# Step 9 — Record Dependencies
+
+
+Create a dependency file:
+
+
+pip freeze > requirements.txt
+
+
+Result:
+
+
+python
+|
+├── mexc
+|
+├── requirements.txt
+
+
+Example:
+
+
+protobuf==7.35.1
+websocket-client==1.9.0
+
+
+Purpose:
+
+Allows another machine to recreate the same environment:
+
+
+pip install -r requirements.txt
+
+
+---
+
+# Final Environment Architecture
+
+
+D:\Data Projects\MEXC API Architecture
+
+|
+├── websocket-proto
+|   |
+|   ├── *.proto
+|   ├── *_pb2.py
+|
+|
+└── python
+    |
+    ├── mexc
+    |   |
+    |   ├── Python runtime
+    |   └── installed packages
+    |
+    ├── requirements.txt
+    |
+    └── application scripts
+
+
+
+---
+
+# Why This Is Important
+
+The virtual environment creates a boundary:
+
+Exchange Layer:
+
+    MEXC
+      |
+      |
+      ▼
+
+Python Application Layer:
+
+    mexc environment
+
+
+Future architecture:
+
+
+    MEXC WebSocket
+          |
+          |
+          ▼
+    protobuf decoder
+          |
+          |
+          ▼
+    Market Data Engine
+          |
+          |
+          ▼
+    PostgreSQL
+          |
+          |
+          ▼
+    Research Engine
+          |
+          |
+          ▼
+    C++ Decision Platform
+
+
+The virtual environment ensures the entire Python side remains isolated, stable, and reproducible.

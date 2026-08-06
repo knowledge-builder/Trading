@@ -1,0 +1,451 @@
+===========================================================
+DNS TROUBLESHOOTING DOCUMENTATION
+Resolving MEXC API Name Resolution Failure
+===========================================================
+
+Problem
+-------
+
+While attempting to access the MEXC REST API using Python:
+
+    https://api.mexc.com/api/v3/...
+
+the following exception occurred:
+
+    gaierror: [Errno 11001] getaddrinfo failed
+
+This prevented Python from establishing an HTTPS connection to
+the MEXC API.
+
+-----------------------------------------------------------
+Observed Python Error
+-----------------------------------------------------------
+
+	requests.exceptions.ConnectionError
+
+		  ↓
+
+	urllib3.exceptions.NameResolutionError
+
+		  ↓
+
+	socket.gaierror
+
+		  ↓
+
+	getaddrinfo failed
+
+Meaning:
+
+Python was unable to translate
+
+    api.mexc.com
+
+into an IP address.
+
+This indicates a DNS resolution failure rather than an API
+or Python programming error.
+
+===========================================================
+Initial Hypotheses
+===========================================================
+
+Possible causes considered:
+
+	• Wrong API endpoint
+	• Incorrect Python code
+	• requests library issue
+	• Firewall
+	• MEXC API outage
+	• ISP DNS problem
+	• Router DNS configuration
+	• Regional restriction
+
+===========================================================
+Step 1
+Verify DNS Resolution using nslookup
+===========================================================
+
+Command:
+
+    nslookup api.mexc.com
+
+Result:
+
+    Server:
+        dev.opt
+
+    Address:
+        192.168.100.1
+
+    Query refused
+
+Interpretation:
+
+The local DNS server (router)
+
+    192.168.100.1
+
+was refusing DNS requests for
+
+    api.mexc.com
+
+At this stage we already knew:
+
+• Python was not the problem.
+• The failure occurred before an HTTPS connection was made.
+
+===========================================================
+Step 2
+Verify General DNS Functionality
+===========================================================
+
+Command:
+
+    nslookup google.com
+
+Result:
+
+Successful.
+
+Interpretation:
+
+General DNS resolution was functioning correctly.
+
+Only
+
+    api.mexc.com
+
+was failing.
+
+This suggested a domain-specific DNS problem.
+
+===========================================================
+Step 3
+Test Public DNS Servers
+===========================================================
+
+Cloudflare:
+
+    nslookup api.mexc.com 1.1.1.1
+
+Result:
+
+    api.mexc.com
+
+resolved successfully.
+
+Google:
+
+    nslookup api.mexc.com 8.8.8.8
+
+Result:
+
+    api.mexc.com
+
+resolved successfully.
+
+Interpretation:
+
+The MEXC domain itself was healthy.
+
+Only the router / ISP DNS server was refusing the query.
+
+This isolated the problem to:
+
+    Local DNS Configuration
+
+rather than
+
+    MEXC.
+
+===========================================================
+Diagnosis
+===========================================================
+
+Router DNS
+
+    192.168.100.1
+
+		 ↓
+
+	Query Refused
+
+		 ↓
+
+	Python cannot resolve hostname
+
+		 ↓
+
+	getaddrinfo failed
+
+===========================================================
+Step 4
+Inspect Current Network Configuration
+===========================================================
+
+Command:
+
+    ipconfig /all
+
+Important observation:
+
+    DNS Servers
+
+still showed
+
+    192.168.100.1
+
+meaning Windows was still using the router's DNS server.
+
+===========================================================
+Step 5
+Change DNS to Cloudflare
+===========================================================
+
+Windows
+
+	Settings
+
+	  ↓
+
+	Network & Internet
+
+	  ↓
+
+	Ethernet
+
+	  ↓
+
+	DNS Server Assignment
+
+	  ↓
+
+	Manual
+
+Configured:
+
+Preferred DNS
+
+    1.1.1.1
+
+Alternate DNS
+
+    1.0.0.1
+
+DNS over HTTPS
+
+    Enabled
+
+Template
+
+    https://cloudflare-dns.com/dns-query
+
+===========================================================
+Step 6
+Flush DNS Cache
+===========================================================
+
+Command:
+
+    ipconfig /flushdns
+
+Result:
+
+Successfully flushed DNS Resolver Cache.
+
+===========================================================
+Step 7
+Verify New DNS Server
+===========================================================
+
+Command:
+
+    nslookup api.mexc.com
+
+Result:
+
+    Server:
+
+        one.one.one.one
+
+        1.1.1.1
+
+Result:
+
+    api.mexc.com
+
+↓
+
+Resolved successfully
+
+Aliases:
+
+    api.mexc.com.edgesuite.net
+
+IP addresses returned successfully.
+
+Interpretation:
+
+The machine was now querying Cloudflare instead of the router.
+
+DNS resolution was fixed.
+
+===========================================================
+Step 8
+Verify Python DNS Resolution
+===========================================================
+
+Python:
+
+    import socket
+
+    socket.gethostbyname("api.mexc.com")
+
+Result:
+
+Returned a valid IP address.
+
+Interpretation:
+
+Python can now resolve the hostname correctly.
+
+===========================================================
+Step 9
+Verify REST API Connectivity
+===========================================================
+
+	Python:
+
+		requests.get(
+			"https://api.mexc.com/api/v3/ping"
+		)
+
+	Result:
+
+		HTTP 200
+
+	Response:
+
+		{}
+
+Interpretation:
+
+The REST API was successfully reached.
+
+Network connectivity was confirmed.
+
+===========================================================
+Root Cause
+===========================================================
+
+The problem was NOT:
+
+	✗ Python
+	✗ requests
+	✗ urllib3
+	✗ MEXC API
+	✗ Internet connectivity
+
+The problem WAS:
+
+	✓ Router DNS (192.168.100.1)
+
+which refused DNS queries for
+
+    api.mexc.com
+
+===========================================================
+Final Architecture
+===========================================================
+
+		Before
+
+		Python
+
+		   ↓
+
+		Router DNS
+
+		   ↓
+
+		Query Refused
+
+		   ↓
+
+		Hostname unresolved
+
+		   ↓
+
+		getaddrinfo failed
+
+
+
+		After
+
+		Python
+
+		   ↓
+
+		Cloudflare DNS
+
+		   ↓
+
+		Hostname resolved
+
+		   ↓
+
+		api.mexc.com
+
+		   ↓
+
+		HTTPS Connection
+
+		   ↓
+
+		HTTP 200
+
+		   ↓
+
+		MEXC REST API
+
+===========================================================
+Key Lessons
+===========================================================
+
+• "getaddrinfo failed" usually indicates a hostname resolution
+  problem, not an API problem.
+
+• Always verify DNS before debugging application code.
+
+• Use:
+
+      nslookup
+
+  to isolate DNS issues.
+
+• Test against public DNS providers (Cloudflare or Google)
+  to distinguish between:
+
+      • Local DNS issues
+      • ISP DNS issues
+      • API outages
+
+• DNS problems can prevent any HTTP request from being sent,
+  regardless of whether the application code is correct.
+
+• Public DNS providers such as Cloudflare (1.1.1.1) are often
+  more reliable than ISP/router DNS servers for development
+  environments that depend on external APIs.
+
+===========================================================
+Outcome
+===========================================================
+
+✓ DNS issue resolved
+
+✓ Python networking functional
+
+✓ MEXC REST API reachable
+
+✓ Ready to begin historical and live data ingestion.

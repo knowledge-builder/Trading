@@ -1,0 +1,88 @@
+MEXC API Architecture
+
+https://www.mexc.com/api-docs/spot-v3/introduction
+---------------------
+
+                MEXC Exchange
+                      │
+        ┌─────────────┴─────────────┐
+        │                           │
+   REST API                    WebSocket API
+(Historical Queries)         (Live Streaming)
+        │                           │
+        ▼                           ▼
+ Python / C++                Python / C++
+ 
+============================================
+ 
+1. REST API (Historical Data)
+
+Use this when you want to download:
+
+	• OHLCV candles
+	• Tickers
+	• Exchange information
+	• Symbols
+
+Example:
+
+GET /api/v3/klines
+
+Returns:
+
+	• Open
+	• High
+	• Low
+	• Close
+	• Volume
+
+for a specified interval.
+
+2. WebSocket API (Live Data)
+
+Use this when you want
+
+	• Live trades
+	• Live candles
+	• Live order book
+	• Live ticker
+
+This is equivalent to what you've been doing with Databento's live stream.
+	
+============================================
+
+Public Endpoints
+----------------
+No API key required.
+
+Examples
+
+Exchange Information
+
+	/api/v3/exchangeInfo
+	Current Price
+
+	/api/v3/ticker/price
+	24h Statistics
+
+	/api/v3/ticker/24hr
+	Historical Candles
+
+	/api/v3/klines
+	
+============================================
+	
+Private Endpoints
+-----------------
+
+Require
+
+API Key
+Secret Key
+
+Used for
+
+	• Place orders
+	• Cancel orders
+	• Get balances
+	• Trade history
