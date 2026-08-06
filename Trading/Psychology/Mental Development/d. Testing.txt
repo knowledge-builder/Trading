@@ -1,0 +1,391 @@
+===============================================================================
+THE TESTING MINDSET
+From Assumptions to Evidence
+===============================================================================
+
+Objective
+---------
+
+Develop the habit of treating every observation, intuition, strategy,
+or idea as a hypothesis that requires validation.
+
+The objective is not to prove yourself right.
+
+The objective is to discover what is actually true.
+
+===============================================================================
+The Core Principle
+===============================================================================
+
+Do not immediately conclude.
+
+Instead,
+
+Observe.
+
+Question.
+
+Test.
+
+Measure.
+
+Then conclude.
+
+===============================================================================
+A Refined Scientific Principle
+===============================================================================
+
+Instead of saying
+
+    "Assume nothing. Question everything."
+
+Adopt a more practical mindset.
+
+    "Assume as little as possible.
+
+     Validate as much as possible."
+
+Every assumption should eventually become either
+
+    • Supported by evidence
+
+or
+
+    • Rejected by evidence.
+
+===============================================================================
+The Scientific Thinking Process
+===============================================================================
+
+                  Observation
+
+                      ↓
+
+                   Question
+
+                      ↓
+
+                 Hypothesis
+
+                      ↓
+
+               Design Experiment
+
+                      ↓
+
+               Collect Evidence
+
+                      ↓
+
+                 Analyze Data
+
+                      ↓
+
+                 Draw Conclusion
+
+                      ↓
+
+               Update Beliefs
+
+                      ↓
+
+                    Repeat
+
+Scientific thinking is iterative.
+
+Every conclusion remains open to revision when new evidence becomes
+available.
+
+===============================================================================
+The Common Cognitive Mistake
+===============================================================================
+
+Many people unconsciously follow this process.
+
+           Observation
+
+                ↓
+
+        Immediate Conclusion
+
+                ↓
+
+         Confirmation Bias
+
+                ↓
+
+         Reinforce Belief
+
+This process feels natural.
+
+However,
+
+It often produces conclusions based more on intuition than evidence.
+
+===============================================================================
+The Testing Mindset
+===============================================================================
+
+A disciplined researcher inserts an important step.
+
+            Observation
+
+                ↓
+
+            Hypothesis
+
+                ↓
+
+             Testing
+
+                ↓
+
+             Evidence
+
+                ↓
+
+           Conclusion
+
+The hypothesis delays certainty.
+
+The experiment determines whether the hypothesis deserves confidence.
+
+===============================================================================
+Trading Example
+===============================================================================
+
+Observation
+
+    Large buying pressure appears in the order book.
+
+Emotional Conclusion
+
+    "Price is going to increase."
+
+Testing Mindset
+
+    Hypothesis
+
+        Large buying pressure may increase the probability
+        of short-term upward price movement.
+
+Research Questions
+
+    • How often does this happen?
+
+    • Under what market conditions?
+
+    • How long does the effect last?
+
+    • Does liquidity size matter?
+
+    • Does this remain true across different assets?
+
+Only after testing should a conclusion be formed.
+
+===============================================================================
+Strategy Evaluation Example
+===============================================================================
+
+Observation
+
+    A trader consistently profits while trading live.
+
+Emotional Conclusion
+
+    "His strategy works."
+
+Testing Mindset
+
+    Hypothesis
+
+        This strategy may have positive expectancy.
+
+Research Process
+
+    • Identify the trading rules.
+
+    • Collect sufficient trade data.
+
+    • Backtest the strategy.
+
+    • Forward test the strategy.
+
+    • Measure performance.
+
+Only then should confidence increase.
+
+===============================================================================
+Feature Engineering Example
+===============================================================================
+
+Observation
+
+    A new predictor variable has been created.
+
+Example
+
+    Order Book Imbalance
+
+Emotional Conclusion
+
+    "This will improve my model."
+
+Testing Mindset
+
+    Hypothesis
+
+        Order Book Imbalance may improve predictive performance.
+
+Research Process
+
+    • Add the feature.
+
+    • Train the model.
+
+    • Compare against the baseline.
+
+    • Evaluate performance metrics.
+
+    • Determine whether the improvement is statistically meaningful.
+
+===============================================================================
+The Goal Is Not To Be Right
+===============================================================================
+
+An immature mindset asks
+
+    "How can I prove my idea is correct?"
+
+A scientific mindset asks
+
+    "How can I discover whether my idea is correct?"
+
+These are fundamentally different objectives.
+
+===============================================================================
+Belief Formation
+===============================================================================
+
+Beliefs should not originate from
+
+    • Excitement
+
+    • Intuition
+
+    • Authority
+
+    • Popularity
+
+    • Marketing
+
+Beliefs should emerge from
+
+    • Observation
+
+    • Evidence
+
+    • Repeated testing
+
+    • Statistical analysis
+
+    • Reproducible results
+
+===============================================================================
+Mental Conditioning
+===============================================================================
+
+Whenever an idea appears, ask
+
+    □ What exactly did I observe?
+
+    □ What assumptions am I making?
+
+    □ What evidence currently supports this idea?
+
+    □ What evidence would contradict this idea?
+
+    □ How can I test this objectively?
+
+    □ What data do I need before reaching a conclusion?
+
+These questions slow down emotional reasoning and encourage
+analytical thinking.
+
+===============================================================================
+Daily Mental Conditioning Statements
+===============================================================================
+
+    • Every idea begins as a hypothesis.
+
+    • Evidence determines confidence.
+
+    • I delay conclusions until sufficient data is available.
+
+    • Being wrong is part of learning.
+
+    • Every failed hypothesis improves my understanding.
+
+    • My objective is not to defend my ideas.
+
+    • My objective is to understand reality.
+
+===============================================================================
+The Research Loop
+===============================================================================
+
+        Observe
+
+            ↓
+
+        Question
+
+            ↓
+
+        Hypothesis
+
+            ↓
+
+        Experiment
+
+            ↓
+
+        Evidence
+
+            ↓
+
+        Conclusion
+
+            ↓
+
+        Refine Understanding
+
+            ↓
+
+        Repeat
+
+Each iteration improves both knowledge and analytical maturity.
+
+===============================================================================
+Final Principle
+===============================================================================
+
+A researcher is not measured by how many hypotheses are confirmed.
+
+A researcher is measured by the willingness to let evidence
+change previously held beliefs.
+
+Scientific maturity is the ability to say
+
+    "This idea seemed promising.
+
+     The evidence says otherwise.
+
+     Therefore, I will revise my understanding."
+
+The goal is not certainty.
+
+The goal is continuously improving the quality of your understanding
+through observation, testing, and evidence.
+
+===============================================================================
