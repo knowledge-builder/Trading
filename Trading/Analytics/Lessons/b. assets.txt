@@ -1,0 +1,391 @@
+===============================================================================
+FINANCIAL ASSETS
+===============================================================================
+
+Definition
+----------
+
+A financial asset is something that has economic value and can be bought,
+sold, or traded in a financial market.
+
+Different financial assets represent different legal relationships between
+the buyer and the issuer.
+
+===============================================================================
+1. STOCKS
+===============================================================================
+
+Definition
+
+    A stock represents partial ownership of a company.
+
+When you buy a stock, you become a shareholder and own a small portion
+of the business.
+
+Examples
+
+    • Apple (AAPL)
+
+    • Microsoft (MSFT)
+
+    • NVIDIA (NVDA)
+
+Purpose
+
+    • Ownership
+
+    • Capital Appreciation
+
+    • Dividend Income
+
+Investor Relationship
+
+    Investor
+
+        ↓
+
+    Partial Owner of Company
+
+Returns
+
+    • Stock Price Appreciation
+
+    • Dividends
+
+===============================================================================
+2. BONDS
+===============================================================================
+
+Definition
+
+    A bond represents a loan made to a government or corporation.
+
+Instead of becoming an owner, the investor becomes a lender.
+
+Examples
+
+    • U.S. Treasury Bonds
+
+    • Corporate Bonds
+
+Purpose
+
+    • Interest Income
+
+    • Capital Preservation
+
+    • Lower Investment Risk
+
+Investor Relationship
+
+    Investor
+
+        ↓
+
+    Lender
+
+        ↓
+
+    Government / Corporation
+
+Returns
+
+    • Interest Payments
+
+    • Return of Principal at Maturity
+
+===============================================================================
+3. FUTURES
+===============================================================================
+
+Definition
+
+    A futures contract is a standardized agreement to buy or sell an
+    asset at a predetermined price on a future date.
+
+A futures contract is NOT ownership of the underlying asset.
+
+It is a legally binding contract.
+
+Underlying Assets
+
+    • Gold
+
+    • Crude Oil
+
+    • Corn
+
+    • Stock Indices
+
+    • Currencies
+
+Purpose
+
+    • Hedging
+
+    • Speculation
+
+    • Price Discovery
+
+Relationship
+
+    Buyer
+
+        ↔
+
+    Futures Contract
+
+        ↔
+
+    Seller
+
+Returns
+
+    • Profit or Loss from Price Changes
+
+===============================================================================
+4. OPTIONS
+===============================================================================
+
+Definition
+
+    An option gives the holder the RIGHT, but NOT the obligation,
+    to buy or sell an asset at a specified price before or on a
+    specified expiration date.
+
+Types
+
+    • Call Option
+
+        Right to Buy
+
+    • Put Option
+
+        Right to Sell
+
+Purpose
+
+    • Hedging
+
+    • Speculation
+
+    • Income Generation
+
+Relationship
+
+    Option Buyer
+
+        ↓
+
+    Purchases a Right
+
+        ↓
+
+    Chooses Whether to Exercise It
+
+Returns
+
+    • Profit if exercised advantageously
+
+    • Maximum Loss generally limited to the premium paid by the buyer
+
+===============================================================================
+5. CURRENCIES
+===============================================================================
+
+Definition
+
+    A currency is the official money issued by a country or monetary
+    union.
+
+Currencies are traded in exchange pairs.
+
+Examples
+
+    • USD - United States Dollar
+
+    • EUR - Euro
+
+    • JPY - Japanese Yen
+
+    • GBP - British Pound
+
+Purpose
+
+    • International Trade
+
+    • Foreign Exchange
+
+    • Investment
+
+    • Travel
+
+Relationship
+
+    Currency A
+
+        ↔
+
+    Currency B
+
+Returns
+
+    • Profit or Loss from Exchange Rate Changes
+
+
+===============================================================================
+6. CRYPTOCURRENCIES
+===============================================================================
+
+Definition
+
+    A cryptocurrency is a digital asset that uses cryptography and
+    blockchain technology to enable peer-to-peer transactions without
+    requiring a central authority.
+
+Unlike traditional currencies, most cryptocurrencies are decentralized
+and operate on distributed ledger technology.
+
+Examples
+
+    • Bitcoin (BTC)
+
+    • Ethereum (ETH)
+
+    • Solana (SOL)
+
+    • XRP
+
+Purpose
+
+    • Digital Payments
+
+    • Store of Value
+
+    • Smart Contracts
+
+    • Decentralized Finance (DeFi)
+
+    • Speculation
+
+Investor Relationship
+
+    Investor
+
+        ↓
+
+    Owns Digital Tokens
+
+Returns
+
+    • Price Appreciation
+
+    • Staking Rewards (for some cryptocurrencies)
+
+    • Participation in Blockchain Networks
+	
+
+===============================================================================
+SUMMARY
+===============================================================================
+
+Stocks
+
+    Represents
+
+        • Ownership
+
+Relationship
+
+        • Investor becomes a shareholder.
+
+Primary Goal
+
+        • Growth and dividends.
+
+------------------------------------------------------------
+
+Bonds
+
+    Represents
+
+        • A Loan
+
+Relationship
+
+        • Investor becomes a lender.
+
+Primary Goal
+
+        • Interest income and capital preservation.
+
+------------------------------------------------------------
+
+Futures
+
+    Represents
+
+        • A Contract
+
+Relationship
+
+        • Agreement to buy or sell later.
+
+Primary Goal
+
+        • Hedging and speculation.
+
+------------------------------------------------------------
+
+Options
+
+    Represents
+
+        • A Right
+
+Relationship
+
+        • Right to buy or sell without obligation.
+
+Primary Goal
+
+        • Hedging and speculation.
+
+------------------------------------------------------------
+
+Currencies
+
+    Represents
+
+        • Money
+
+Relationship
+
+        • Exchange between different national currencies.
+
+Primary Goal
+
+        • Trade, investment, and foreign exchange.
+
+===============================================================================
+KEY TAKEAWAY
+===============================================================================
+
+Every financial asset represents a different legal relationship.
+
+    • Stock          → Ownership
+
+    • Bond           → Loan
+
+    • Future         → Contract
+
+    • Option         → Right
+
+    • Currency       → Money
+	
+	• Cryptocurrency → Digital Asset
+
+Understanding what each asset represents is the first step toward
+understanding how financial markets operate and how prices are formed.
+
+===============================================================================

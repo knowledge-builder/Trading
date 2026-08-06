@@ -1,0 +1,176 @@
+===============================================================================
+FACTORS THAT INFLUENCE MARKET PRICES
+===============================================================================
+
+Market Microstructure recognizes that an asset's observed market price
+is influenced not only by its fundamental value, but also by the trading
+process itself.
+
+These influences are commonly referred to as market frictions.
+
+===============================================================================
+MARKET FRICTIONS
+===============================================================================
+
+| Factor                    | Definition                      | Illustration                                | Example                                      |
+|---------------------------|---------------------------------|---------------------------------------------|----------------------------------------------|
+| **Bid-Ask Spread**        | Bid vs. Ask price difference.   | Bid = $99.95, Ask = $100.00                 | Buying pays Ask; selling receives Bid.       |
+| **Trading Costs**         | Costs of executing a trade.     | Price + Fees + Taxes + Spread               | Buying BTC costs more than the quoted price. |
+| **Liquidity Constraints** | Limited buyers or sellers.      | Large order consumes available liquidity.   | Low-volume coins move sharply on big trades. |
+| **Information Asymmetry** | Unequal access to information.  | Some traders know or react sooner.          | HFT reacts to news before retail traders.    |
+| **Order Flow**            | Stream of buy and sell orders.  | Heavy buying pushes prices upward.          | Strong buying after positive news.           |
+| **Market Participants**   | Entities trading in the market. | Retail, institutions, banks, market makers. | Pension fund orders move markets more.       |
+| **Exchange Rules**        | Rules governing trading.        | Tick size, order types, trading hours.      | Circuit breakers pause trading.              |
+| **Trading Technology**    | Technology used for execution.  | Faster systems execute sooner.              | HFT uses ultra-low-latency networks.         | 
+
+===============================================================================
+HOW EACH FACTOR INFLUENCES PRICE
+===============================================================================
+
+Bid-Ask Spread
+
+    ↓
+
+Different buying and selling prices increase transaction costs.
+
+------------------------------------------------------------
+
+Trading Costs
+
+    ↓
+
+Higher costs reduce trading efficiency and affect profitability.
+
+------------------------------------------------------------
+
+Liquidity Constraints
+
+    ↓
+
+Large orders may significantly move prices when insufficient liquidity
+is available.
+
+------------------------------------------------------------
+
+Information Asymmetry
+
+    ↓
+
+Participants with faster or better information may react before others,
+causing prices to adjust.
+
+------------------------------------------------------------
+
+Order Flow
+
+    ↓
+
+An imbalance between buy and sell orders influences short-term price
+movement.
+
+------------------------------------------------------------
+
+Market Participants
+
+    ↓
+
+Different participants have different objectives, resources, and trading
+behavior, all of which influence market dynamics.
+
+------------------------------------------------------------
+
+Exchange Rules
+
+    ↓
+
+Market structure and exchange regulations determine how orders are
+processed and how prices evolve.
+
+------------------------------------------------------------
+
+Trading Technology
+
+    ↓
+
+Execution speed and trading infrastructure influence market efficiency
+and price discovery.
+
+===============================================================================
+KEY INSIGHT
+===============================================================================
+
+Traditional Asset Pricing assumes:
+
+    Fundamental Value
+
+            ↓
+
+        Market Price
+
+------------------------------------------------------------
+
+Market Microstructure recognizes that the observed market price is also
+influenced by the mechanics of trading.
+
+    Fundamental Value
+
+            +
+
+    Bid-Ask Spread
+
+            +
+
+    Trading Costs
+
+            +
+
+    Liquidity Constraints
+
+            +
+
+    Information Asymmetry
+
+            +
+
+    Order Flow
+
+            +
+
+    Market Participants
+
+            +
+
+    Exchange Rules
+
+            +
+
+    Trading Technology
+
+            ↓
+
+    Observed Market Price
+
+===============================================================================
+FINAL PRINCIPLE
+===============================================================================
+
+Market prices are not determined solely by an asset's intrinsic value.
+
+The observed market price is the result of:
+
+    • The asset's fundamental value.
+
+    • The interaction of buyers and sellers.
+
+    • The availability of liquidity.
+
+    • The flow of market orders.
+
+    • The structure of the exchange.
+
+    • The technology used to execute trades.
+
+Understanding these market frictions is the primary objective of
+Market Microstructure.
+
+===============================================================================

@@ -1,0 +1,194 @@
+===============================================================================
+ASSET PRICING VS MARKET MICROSTRUCTURE
+===============================================================================
+
+Although both fields study financial markets, they answer different
+questions.
+
+Asset Pricing focuses on an asset's theoretical value.
+
+Market Microstructure focuses on how that value becomes the observed
+market price.
+
+===============================================================================
+CLASSICAL FINANCE (ASSET PRICING)
+===============================================================================
+
+Primary Question
+
+    "What should this asset be worth?"
+
+Core Assumption
+
+    Markets are perfect.
+
+Assumptions include:
+
+    • Everyone has access to the same information.
+
+    • Everyone can trade freely.
+
+    • There are no trading costs.
+
+    • There are no bid-ask spreads.
+
+    • No participant is large enough to influence prices.
+
+    • Prices reflect the consensus view of investors.
+
+Price Formation
+
+    Asset Fundamentals
+
+            ↓
+
+       Fair Value
+
+            ↓
+
+       Market Price
+
+Focus
+
+    • Future Cash Flows
+
+    • Risk
+
+    • Discount Rates
+
+    • Intrinsic Value
+
+Objective
+
+    Estimate the fair or theoretical value of an asset.
+
+===============================================================================
+MARKET MICROSTRUCTURE
+===============================================================================
+
+Primary Question
+
+    "How does the market actually arrive at this price?"
+
+Core Assumption
+
+    Markets are NOT perfect.
+
+Real-world markets contain imperfections that influence prices.
+
+Examples
+
+    • Bid-Ask Spreads
+
+    • Trading Costs
+
+    • Liquidity Constraints
+
+    • Information Asymmetry
+
+    • Order Flow
+
+    • Market Participants
+
+    • Exchange Rules
+
+    • Trading Technology
+
+Price Formation
+
+    Fundamental Value
+
+            +
+
+    Order Flow
+
+            +
+
+    Liquidity
+
+            +
+
+    Market Frictions
+
+            +
+
+    Trading Activity
+
+            ↓
+
+    Observed Market Price
+
+Focus
+
+    • Price Discovery
+
+    • Order Book
+
+    • Liquidity
+
+    • Market Makers
+
+    • Trading Costs
+
+    • Execution Quality
+
+Objective
+
+    Understand how trading mechanics determine the prices observed in
+    financial markets.
+
+===============================================================================
+COMPARISON
+===============================================================================
+
+Asset Pricing
+
+    Studies
+
+        • What an asset should be worth.
+
+    Assumes
+
+        • Perfect markets.
+
+    Main Concern
+
+        • Fair value.
+
+------------------------------------------------------------
+
+Market Microstructure
+
+    Studies
+
+        • How prices are actually formed.
+
+    Assumes
+
+        • Imperfect markets.
+
+    Main Concern
+
+        • Trading process.
+
+===============================================================================
+KEY INSIGHT
+===============================================================================
+
+Asset Pricing explains:
+
+    "Why an asset has value."
+
+Market Microstructure explains:
+
+    "How buyers and sellers, through trading, produce the price observed
+     in the market."
+
+Both fields complement each other.
+
+Asset Pricing provides the theoretical value.
+
+Market Microstructure explains the real-world process by which that
+value is reflected in market prices.
+
+===============================================================================

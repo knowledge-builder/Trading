@@ -1,0 +1,546 @@
+===============================================================================
+ORDER FLOW
+Core Concepts
+===============================================================================
+
+Definition
+----------
+
+Order Flow is the real-time observation of executed buy and sell trades.
+
+It focuses on how aggressive market orders interact with resting limit
+orders to produce price movement.
+
+Unlike candlesticks, which summarize price, order flow explains how
+those prices were formed.
+
+===============================================================================
+1. MARKET ORDERS
+===============================================================================
+
+Definition
+
+    A market order is an aggressive order that executes immediately at
+    the best available price.
+
+Priority
+
+    Speed over Price
+
+Characteristics
+
+    • Executes immediately.
+
+    • Removes liquidity from the order book.
+
+    • Can move price.
+
+==================
+Aggressive Buying
+==================
+
+Illustration
+
+Current Order Book
+
+    SELLERS (Ask)
+
+    $100.00     10
+
+    $100.05     20
+
+    $100.10     30
+
+--------------------------------------------
+
+    BUYERS (Bid)
+
+    $99.95      15
+
+    $99.90      25
+
+Market Buy Order
+
+    Buy 25 Shares
+
+Execution
+
+    10 @ $100.00
+
+    15 @ $100.05
+
+Result
+
+    Market Buy
+
+            ↓
+
+    Consumes Ask Liquidity
+
+            ↓
+
+    Price Moves Higher
+
+Example
+
+    Imagine entering a grocery store and saying:
+
+        "I don't care about the price.
+
+         Give me 25 apples immediately."
+
+    You purchase whatever inventory is available.
+
+Mental Model
+
+    "Trade NOW."
+	
+===================
+Aggressive Selling
+===================
+
+Definition
+
+    A market sell order is an aggressive order that executes immediately
+    at the best available buying prices.
+
+Priority
+
+    Speed over Price
+
+Characteristics
+
+    • Executes immediately.
+
+    • Removes liquidity from the order book.
+
+    • Can move price downward.
+
+Illustration
+
+Current Order Book
+
+    SELLERS (Ask)
+
+    $100.05     20
+
+    $100.10     30
+
+--------------------------------------------
+
+    BUYERS (Bid)
+
+    $100.00     10
+
+    $99.95      15
+
+    $99.90      25
+
+Market Sell Order
+
+    Sell 25 Shares
+
+Execution
+
+    10 @ $100.00
+
+    15 @ $99.95
+
+Result
+
+    Market Sell
+
+            ↓
+
+    Consumes Bid Liquidity
+
+            ↓
+
+    Best Bid Disappears
+
+            ↓
+
+    Price Moves Lower
+
+Example
+
+    Imagine you urgently need cash.
+
+    You walk into a marketplace and say:
+
+        "I don't care what price I get.
+
+         Buy all 25 apples from me immediately."
+
+    Buyers purchase your apples beginning with the
+    highest price they are willing to pay.
+
+    Once those buyers are exhausted,
+
+    your remaining apples are sold to buyers offering
+    lower prices.
+
+Mental Model
+
+    "Sell NOW."
+
+===============================================================================
+2. LIMIT ORDERS
+===============================================================================
+
+Definition
+
+    A limit order is a passive order that executes only at a specified
+    price or better.
+
+Priority
+
+    Price over Speed
+
+Characteristics
+
+    • Waits in the order book.
+
+    • Provides liquidity.
+
+    • Does not immediately move price.
+
+Illustration
+
+Limit Sell Order
+
+    Sell 100 Shares
+
+    @ $100.00
+
+Order Book
+
+    SELLERS
+
+    $100.00     110
+
+    $100.05      20
+
+Result
+
+    Limit Order
+
+            ↓
+
+    Adds Liquidity
+
+            ↓
+
+    Waits for a Market Order
+
+Example
+
+    Selling your car for $15,000.
+
+    You post the asking price and wait for someone willing to pay it.
+
+Mental Model
+
+    "Trade only at MY price."
+
+===============================================================================
+MARKET ORDER vs LIMIT ORDER
+===============================================================================
+
+Market Order
+
+    • Aggressive
+
+    • Immediate execution
+
+    • Removes liquidity
+
+    • May move price
+
+------------------------------------------------------------
+
+Limit Order
+
+    • Passive
+
+    • Waits for execution
+
+    • Provides liquidity
+
+    • Usually does not move price immediately
+
+===============================================================================
+3. DELTA
+===============================================================================
+
+Definition
+
+    Delta is the difference between aggressive buying volume and
+    aggressive selling volume.
+
+Formula
+
+    Delta
+
+        =
+
+    Aggressive Buy Volume
+
+        -
+
+    Aggressive Sell Volume
+
+Example 1
+
+    Aggressive Buying
+
+        400 Shares
+
+    Aggressive Selling
+
+        250 Shares
+
+    Delta
+
+        400 - 250
+
+        = +150
+
+Interpretation
+
+    Positive Delta
+
+        More aggressive buying than selling.
+
+------------------------------------------------------------
+
+Example 2
+
+    Aggressive Buying
+
+        120 Shares
+
+    Aggressive Selling
+
+        350 Shares
+
+    Delta
+
+        120 - 350
+
+        = -230
+
+Interpretation
+
+    Negative Delta
+
+        More aggressive selling than buying.
+
+Mental Model
+
+    Delta answers:
+
+        "Who was more aggressive?"
+
+Important
+
+    Delta does NOT answer:
+
+        "Who won?"
+
+===============================================================================
+4. ABSORPTION
+===============================================================================
+
+Definition
+
+    Absorption occurs when heavy aggressive buying or selling fails to
+    move price because large resting limit orders absorb the incoming
+    market orders.
+
+Illustration
+
+Aggressive Buyers
+
+    BUY
+
+    BUY
+
+    BUY
+
+    BUY
+
+    BUY
+
+Delta
+
+    +5,000
+
+Expected
+
+    Price rises sharply.
+
+Actual
+
+    Price remains around $100.
+
+Why?
+
+    Large Limit Seller
+
+    50,000 Shares
+
+    @ $100
+
+Every market buy is filled.
+
+Price barely moves.
+
+Result
+
+    Aggressive Buying
+
+            ↓
+
+    Large Limit Seller
+
+            ↓
+
+    Orders Absorbed
+
+            ↓
+
+    Little or No Price Movement
+
+Example
+
+    Imagine filling a swimming pool.
+
+    Every second:
+
+        +10 liters enter.
+
+    But a hidden drain removes:
+
+        -10 liters.
+
+    Water level stays the same.
+
+    This is absorption.
+
+Mental Model
+
+    "Aggression failed to move price."
+
+===============================================================================
+SUMMARY
+===============================================================================
+
+Market Order
+
+    • Aggressive
+
+    • Executes immediately
+
+    • Removes liquidity
+
+    • Can move price
+
+------------------------------------------------------------
+
+Limit Order
+
+    • Passive
+
+    • Waits for execution
+
+    • Provides liquidity
+
+    • Usually does not move price immediately
+
+------------------------------------------------------------
+
+Delta
+
+    • Measures aggressive buying vs. selling
+
+    • Indicates which side was more aggressive
+
+    • Does NOT indicate who won
+
+------------------------------------------------------------
+
+Absorption
+
+    • Large limit orders absorb aggressive orders
+
+    • High buying or selling activity
+
+    • Little or no price movement
+
+    • May indicate exhaustion and possible reversal
+
+===============================================================================
+THE ORDER FLOW PROCESS
+===============================================================================
+
+        Limit Orders
+     (Resting Liquidity)
+
+              ▲`
+              │
+
+      Market Orders
+   (Aggressive Traders)
+
+              │
+              ▼
+
+      Executed Trades
+
+              │
+              ▼
+
+            Delta
+
+              │
+              ▼
+
+    If Liquidity Runs Out
+
+        Price Moves
+
+              OR
+
+    If Orders Are Absorbed
+
+      Price Stalls
+
+              │
+              ▼
+
+       OHLC Recorded
+
+              │
+              ▼
+
+       Candlestick Drawn
+
+===============================================================================
+KEY TAKEAWAY
+===============================================================================
+
+Order Flow explains how prices are formed.
+
+Market Orders create trades.
+
+Limit Orders provide liquidity.
+
+Delta measures aggression.
+
+Absorption reveals when aggression fails to move price.
+
+Only after these interactions occur are the Open, High, Low, and Close
+(OHLC) prices recorded, producing the candlestick.
+
+===============================================================================

@@ -1,0 +1,199 @@
+===============================================================================
+MARKET MICROSTRUCTURE
+Course Introduction
+===============================================================================
+
+Definition
+----------
+
+Market Microstructure is the study of how financial markets actually
+operate and how prices are formed through the interaction of market
+participants.
+
+Unlike traditional financial theory, Market Microstructure focuses on
+the real-world mechanics of trading.
+
+===============================================================================
+COURSE OBJECTIVE
+===============================================================================
+
+Develop an understanding of:
+
+    • How financial markets function.
+
+    • How prices are formed.
+
+    • How liquidity affects markets.
+
+    • How market design influences trading.
+
+    • How information becomes reflected in prices.
+
+    • How technology and regulation change market behavior.
+
+===============================================================================
+LEARNING OUTCOMES
+===============================================================================
+
+By the end of this course, you should understand:
+
+Liquidity
+
+    • What liquidity is.
+
+    • How liquidity is measured.
+
+    • What determines market liquidity.
+
+    • Why liquidity changes.
+
+Price Formation
+
+    • How buyers and sellers determine prices.
+
+    • How trades affect price movement.
+
+    • How information becomes incorporated into prices.
+
+Market Structure
+
+    • How exchanges operate.
+
+    • How trading platforms are designed.
+
+    • How market design affects liquidity.
+
+    • How market design affects trading efficiency.
+
+Technology
+
+    • Algorithmic Trading.
+
+    • High-Frequency Trading (HFT).
+
+    • Computer-driven markets.
+
+    • Modern electronic exchanges.
+
+===============================================================================
+ASSET PRICING VS MARKET MICROSTRUCTURE
+===============================================================================
+
+Asset Pricing
+
+    Assumption
+
+        • Markets are frictionless.
+
+    Focus
+
+        • The theoretical value of an asset.
+
+    Main Question
+
+        • "What should this asset be worth?"
+
+------------------------------------------------------------
+
+Market Microstructure
+
+    Assumption
+
+        • Markets contain imperfections.
+
+    Focus
+
+        • The actual trading process.
+
+    Main Question
+
+        • "How does the market arrive at this price?"
+
+===============================================================================
+MARKET IMPERFECTIONS (FRICTIONS)
+===============================================================================
+
+Real financial markets contain frictions such as:
+
+    • Bid-Ask Spreads
+
+    • Transaction Costs
+
+    • Limited Liquidity
+
+    • Information Asymmetry
+
+    • Delays in Price Discovery
+
+These frictions influence:
+
+    • Asset Prices
+
+    • Execution Quality
+
+    • Trading Costs
+
+    • Market Efficiency
+
+===============================================================================
+WHY MARKET MICROSTRUCTURE MATTERS
+===============================================================================
+
+Understanding market microstructure helps explain:
+
+    • Why prices move.
+
+    • Why liquidity disappears.
+
+    • Why spreads widen.
+
+    • Why execution quality changes.
+
+    • Why some markets are more efficient than others.
+
+    • How new information affects prices.
+
+===============================================================================
+APPLICATIONS
+===============================================================================
+
+Market Microstructure is fundamental for:
+
+    • Quantitative Trading
+
+    • Market Analytics
+
+    • Order Book Analysis
+
+    • Liquidity Research
+
+    • Algorithmic Trading
+
+    • High-Frequency Trading
+
+    • Financial Market Research
+
+===============================================================================
+KEY TAKEAWAY
+===============================================================================
+
+Market Microstructure studies the real-world mechanics of financial
+markets.
+
+Rather than focusing only on an asset's theoretical value, it seeks to
+understand:
+
+    • How prices are formed.
+
+    • How markets function.
+
+    • How liquidity affects trading.
+
+    • How market participants interact.
+
+    • How technology and market design influence price discovery.
+
+Understanding these mechanisms provides the foundation for developing
+better market research, quantitative models, and trading systems.
+
+===============================================================================

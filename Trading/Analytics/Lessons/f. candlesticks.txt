@@ -1,0 +1,300 @@
+===============================================================================
+CANDLESTICKS
+Price Summary, NOT Market Intent
+===============================================================================
+
+Definition
+----------
+
+A candlestick is a visual summary of price movement over a specific time
+period.
+
+It records only four prices:
+
+    • Open
+
+    • High
+
+    • Low
+
+    • Close
+
+A candlestick does NOT explain how those prices were produced.
+
+===============================================================================
+WHAT A CANDLE TELLS YOU
+===============================================================================
+
+A candlestick answers:
+
+    • Where did price open?
+
+    • What was the highest traded price?
+
+    • What was the lowest traded price?
+
+    • Where did price close?
+
+Example
+
+    Open  = 100
+
+    High  = 105
+
+    Low   = 99
+
+    Close = 104
+
+Result
+
+    Green Candle
+
+Because
+
+    Close > Open
+
+===============================================================================
+WHAT A CANDLE DOES NOT TELL YOU
+===============================================================================
+
+A candlestick alone cannot answer:
+
+    • Who initiated the trades?
+
+    • Were buyers aggressive?
+
+    • Were sellers aggressive?
+
+    • Was buying absorbed?
+
+    • Was selling absorbed?
+
+    • Was Delta positive or negative?
+
+    • Was liquidity increasing or decreasing?
+
+    • Why did price move?
+
+===============================================================================
+IMPORTANT DISTINCTION
+===============================================================================
+
+A green candle DOES NOT mean:
+
+    • Buyers dominated.
+
+    • Sellers were weak.
+
+A red candle DOES NOT mean:
+
+    • Sellers dominated.
+
+    • Buyers were weak.
+
+Candle color only compares:
+
+    Close
+
+        vs
+
+    Open
+
+Nothing more.
+
+===============================================================================
+THE PRICE FORMATION PROCESS
+===============================================================================
+
+Order Flow
+
+        ↓
+
+Executed Trades
+
+        ↓
+
+Price Changes
+
+        ↓
+
+Open, High, Low, Close (OHLC)
+
+        ↓
+
+Candlestick
+
+A candlestick is the RESULT of trading activity.
+
+It is NOT the trading activity itself.
+
+===============================================================================
+MENTAL MODEL
+===============================================================================
+
+Think of a candlestick as a summary report.
+
+It tells you:
+
+    "What happened."
+
+It does NOT tell you:
+
+    "How it happened."
+
+To understand how price was formed, additional information is required,
+such as:
+
+    • Order Flow
+
+    • Order Book
+
+    • Delta
+
+    • Liquidity
+
+    • Market Orders
+
+    • Limit Orders
+
+===============================================================================
+KEY TAKEAWAY
+===============================================================================
+
+Candlesticks describe the outcome of trading.
+
+Market Microstructure explains the process that created that outcome.
+
+Do not interpret candle color as evidence of buyer or seller dominance.
+
+Instead:
+
+    Candlestick
+
+        → What happened?
+
+    Order Flow
+
+        → How did it happen?
+
+    Market Microstructure
+
+        → Why did it happen?
+
+
+===============================================================================
+GREEN CANDLE
+===============================================================================
+
+A green candle means:
+
+    Close > Open
+
+Illustration
+
+        High
+         │
+         │
+Close ├───┤
+      │███│
+      │███│
+      │███│
+Open  ├───┤
+         │
+         │
+        Low
+
+Example
+
+    Open  = 100
+
+    High  = 105
+
+    Low   = 99
+
+    Close = 104
+
+Interpretation
+
+    Price closed HIGHER than it opened.
+
+It DOES NOT mean:
+
+    • Buyers dominated.
+
+    • Sellers were weak.
+
+    • Buying pressure exceeded selling pressure.
+
+===============================================================================
+RED CANDLE
+===============================================================================
+
+A red candle means:
+
+    Close < Open
+
+Illustration
+
+        High
+         │
+         │
+Open ┌───┐
+     │███│
+     │███│
+     │███│
+Close├───┤
+     └───┘
+         │
+         │
+         ▼
+         Low
+
+Example
+
+    Open  = 104
+
+    High  = 106
+
+    Low   = 98
+
+    Close = 100
+
+Interpretation
+
+    Price closed LOWER than it opened.
+
+It DOES NOT mean:
+
+    • Sellers dominated.
+
+    • Buyers were weak.
+
+    • Selling pressure exceeded buying pressure.
+
+===============================================================================
+IMPORTANT PRINCIPLE
+===============================================================================
+
+A candle only compares:
+
+        Open
+
+            vs
+
+        Close
+
+Green Candle
+
+    Close > Open
+
+Red Candle
+
+    Close < Open
+
+Candle color is simply a visual representation of the relationship
+between the Open and Close prices.
+
+It is NOT evidence of order flow, buyer dominance, or seller dominance.
+
+===============================================================================
+
