@@ -1,0 +1,14 @@
+It discusses:
+
+Prediction
+Bayesian thinking
+Noise vs signal
+Data analysis
+Forecasting uncertainty
+
+You'll likely find yourself connecting its ideas directly to your work with:
+
+OHLCV
+Order books
+Feature engineering
+Statistical models
